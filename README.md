@@ -74,8 +74,8 @@ if self._elapsed_steps >= self._max_episode_steps:
 ### Download the code and run it
 
 ```bash
-git clone https://gitee.com/loxs/rl_learning.git
-cd rl_learning
+git clone https://github.com/uoe-agents/SaMI.git
+cd SaMI
 mkdir output
 
 # panda
