@@ -70,7 +70,7 @@ def tr_html(tr):
     """
 
 METHOD2PARAMETERS = {
-    'RNNSAC':['buffer_size','learning_rate','train_freq','gradient_steps','seed'],
+    'TESAC':['buffer_size','learning_rate','train_freq','gradient_steps','seed'],
     'OURSACFastBase':['buffer_size','learning_rate','train_freq','gradient_steps',
                       'contrast_frame_stack','encoder_eps_type','use_weighted_info_nce',
                       'contrast_batch_size','encoder_tau','seed'],

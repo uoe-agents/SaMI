@@ -45,7 +45,7 @@ def get_model(manager,train_env=None, causal_keys = None, max_step_num=50):
             contrast_batch_size = manager.model_parameters['contrast_batch_size'],
             contrast_training_interval = manager.model_parameters['contrast_training_interval']
         )
-    if manager.model_parameters['method'] == 'RNNSAC':
+    if manager.model_parameters['method'] == 'TESAC':
         if not os.path.exists(manager.save_model_path):
             kwargs['policy'] = OURMultiInputPolicyTraj
             kwargs['replay_buffer_class'] = OURDictReplayBufferTraj
@@ -53,7 +53,7 @@ def get_model(manager,train_env=None, causal_keys = None, max_step_num=50):
             model = OURSACTraj(**kwargs)
         else:
             model = OURSACTraj.load(manager.save_model_path,env=train_env)
-    if manager.model_parameters['method'] == 'ENVDIFF':
+    if manager.model_parameters['method'] == 'CCM':
         if not os.path.exists(manager.save_model_path):
             kwargs['policy'] = OURMultiInputPolicyTraj
             kwargs['replay_buffer_class'] = OURDictReplayBufferTraj
@@ -61,7 +61,7 @@ def get_model(manager,train_env=None, causal_keys = None, max_step_num=50):
             model = OURSACTraj(**kwargs)
         else:
             model = OURSACTraj.load(manager.save_model_path,env=train_env)
-    if manager.model_parameters['method'] == 'OURMethod':
+    if manager.model_parameters['method'] == 'SaCCM':
         if not os.path.exists(manager.save_model_path):
             kwargs['policy'] = OURMultiInputPolicyTraj
             kwargs['replay_buffer_class'] = OURDictReplayBufferTraj
@@ -69,7 +69,7 @@ def get_model(manager,train_env=None, causal_keys = None, max_step_num=50):
             model = OURSACTraj(**kwargs)
         else:
             model = OURSACTraj.load(manager.save_model_path,env=train_env)
-    if manager.model_parameters['method'] == 'OURMethod2':
+    if manager.model_parameters['method'] == 'SaCCM2':
         if not os.path.exists(manager.save_model_path):
             kwargs['policy'] = OURMultiInputPolicyTraj
             kwargs['replay_buffer_class'] = OURDictReplayBufferTraj
@@ -77,7 +77,7 @@ def get_model(manager,train_env=None, causal_keys = None, max_step_num=50):
             model = OURSACTraj(**kwargs)
         else:
             model = OURSACTraj.load(manager.save_model_path,env=train_env)
-    if manager.model_parameters['method'] == 'OURMethodOne':
+    if manager.model_parameters['method'] == 'SaSAC':
         if not os.path.exists(manager.save_model_path):
             kwargs['policy'] = OURMultiInputPolicyTraj
             kwargs['replay_buffer_class'] = OURDictReplayBufferTraj
@@ -85,7 +85,7 @@ def get_model(manager,train_env=None, causal_keys = None, max_step_num=50):
             model = OURSACTraj(**kwargs)
         else:
             model = OURSACTraj.load(manager.save_model_path,env=train_env)
-    if manager.model_parameters['method'] == 'OURMethodAll':
+    if manager.model_parameters['method'] == 'SaCCMAll':
         if not os.path.exists(manager.save_model_path):
             kwargs['policy'] = OURMultiInputPolicyTraj
             kwargs['replay_buffer_class'] = OURDictReplayBufferTraj
@@ -130,7 +130,7 @@ def get_model(manager,train_env=None, causal_keys = None, max_step_num=50):
 #             use_weighted_info_nce= manager.model_parameters['use_weighted_info_nce'],
 #             contrast_batch_size = manager.model_parameters['contrast_batch_size'],
 #         )
-#     if manager.model_parameters['method'] == 'RNNSAC':
+#     if manager.model_parameters['method'] == 'TESAC':
 #         if not os.path.exists(manager.save_model_path):
 #             kwargs['policy'] = OURMultiInputPolicyStep
 #             kwargs['replay_buffer_class'] = OURDictReplayBufferStep
@@ -138,7 +138,7 @@ def get_model(manager,train_env=None, causal_keys = None, max_step_num=50):
 #             model = OURSACStep(**kwargs)
 #         else:
 #             model = OURSACStep.load(manager.save_model_path,env=train_env)
-#     if manager.model_parameters['method'] == 'ENVDIFF':
+#     if manager.model_parameters['method'] == 'CCM':
 #         if not os.path.exists(manager.save_model_path):
 #             kwargs['policy'] = OURMultiInputPolicyStep
 #             kwargs['replay_buffer_class'] = OURDictReplayBufferStep
@@ -146,7 +146,7 @@ def get_model(manager,train_env=None, causal_keys = None, max_step_num=50):
 #             model = OURSACStep(**kwargs)
 #         else:
 #             model = OURSACStep.load(manager.save_model_path,env=train_env)
-#     if manager.model_parameters['method'] == 'OURMethod':
+#     if manager.model_parameters['method'] == 'SaCCM':
 #         if not os.path.exists(manager.save_model_path):
 #             kwargs['policy'] = OURMultiInputPolicyStep
 #             kwargs['replay_buffer_class'] = OURDictReplayBufferStep
@@ -154,7 +154,7 @@ def get_model(manager,train_env=None, causal_keys = None, max_step_num=50):
 #             model = OURSACStep(**kwargs)
 #         else:
 #             model = OURSACStep.load(manager.save_model_path,env=train_env)
-#     if manager.model_parameters['method'] == 'OURMethodOne':
+#     if manager.model_parameters['method'] == 'SaSAC':
 #         if not os.path.exists(manager.save_model_path):
 #             kwargs['policy'] = OURMultiInputPolicyStep
 #             kwargs['replay_buffer_class'] = OURDictReplayBufferStep
@@ -162,7 +162,7 @@ def get_model(manager,train_env=None, causal_keys = None, max_step_num=50):
 #             model = OURSACStep(**kwargs)
 #         else:
 #             model = OURSACStep.load(manager.save_model_path,env=train_env)
-#     if manager.model_parameters['method'] == 'OURMethodAll':
+#     if manager.model_parameters['method'] == 'SaCCMAll':
 #         if not os.path.exists(manager.save_model_path):
 #             kwargs['policy'] = OURMultiInputPolicyStep
 #             kwargs['replay_buffer_class'] = OURDictReplayBufferStep

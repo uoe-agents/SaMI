@@ -82,7 +82,7 @@ mkdir output
 CUDA_VISIBLE_DEVICES=0 python main.py \
     --env_name PandaPush-v3 \
     --env_hook PandaHook \
-    --method OURMethod \
+    --method SaCCM \
     --buffer_size 1000 \
     --train_freq 128 \
     --gradient_steps 16 \
@@ -101,7 +101,7 @@ CUDA_VISIBLE_DEVICES=0 python main.py \
 CUDA_VISIBLE_DEVICES=0 python main.py \
     --env_name AntEnv \
     --env_hook DominoHook \
-    --method OURMethod \
+    --method SaCCM \
     --adversarial_loss_coef 0.1 \
     --use_weighted_info_nce \
     --seed 421 \

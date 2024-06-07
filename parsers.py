@@ -3,7 +3,7 @@ import argparse
 def get_args():
     parser = argparse.ArgumentParser()
     # model_info
-    parser.add_argument('--method', default='OURMethod')
+    parser.add_argument('--method', default='SaCCM')
     parser.add_argument('--adversarial_loss_coef', default=0.01, type=float)
     parser.add_argument('--batch_size',default=16,type=int)
     parser.add_argument('--contrast_batch_size',default=16,type=int)
