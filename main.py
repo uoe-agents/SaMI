@@ -33,8 +33,8 @@ if __name__ == '__main__':
     max_step = ENV_MAX_STEP[manager.model_parameters['env_name']]
     hook:BaseHook = eval(manager.model_parameters['env_hook'])()
     try:
-        if not os.path.exists(manager.save_model_path) or \
-            manager.model_parameters['use_continue_train']:
+        if not os.path.exists(manager.save_model_path) or \ 
+            manager.model_parameters['use_continue_train']: # Train or Continue training
             # prepare environment
             envs_info = eval(manager.model_parameters['train_envs'])
             envs = []
@@ -58,7 +58,7 @@ if __name__ == '__main__':
                 
             test_model(model, manager,hook, (i+1) * 1_00_000)
             train_env.close()
-        else:
+        else:   # Test
             model = get_model(manager,causal_keys=hook.causal_keys,max_step_num=max_step)
             model.set_logger(manager.setup_logger())
             test_model(model, manager, hook)

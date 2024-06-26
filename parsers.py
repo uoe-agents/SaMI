@@ -3,7 +3,7 @@ import argparse
 def get_args():
     parser = argparse.ArgumentParser()
     # model_info
-    parser.add_argument('--method', default='SaCCM')
+    parser.add_argument('--method', default='SaCCM')    # We privide the implements of SaCCM, SaTESAC, CCM and TESAC.
     parser.add_argument('--adversarial_loss_coef', default=0.01, type=float)
     parser.add_argument('--batch_size',default=16,type=int)
     parser.add_argument('--contrast_batch_size',default=16,type=int)
@@ -28,7 +28,7 @@ def get_args():
     parser.add_argument('--test_envs', default="[]", type=str, help="[(friction, mass),...]") # 
 
     # train
-    parser.add_argument('--use_continue_train',action="store_true", default=False)
+    parser.add_argument('--use_continue_train',action="store_true", default=False)  # set "use_continue_train=True" to load a exist model and continue training
     # parser.add_argument('--use_continue_train', default=True, type=bool)
     parser.add_argument('--save_video',action="store_true", default=False)
     # parser.add_argument('--save_video',default=True, type=bool)
