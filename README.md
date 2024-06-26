@@ -4,9 +4,9 @@ This is the official implementation of Skill-aware Mutural Information (SaMI) fr
 SaMI is a plug-and-play module that can be integrated with any Meta-RL algorithm. In this repository, we provide implementations of two baselines: CCM and TESAC. We have also equipped these baselines with SaMI, resulting in SaSSM and SaTESAC.
 
 ### Requirements
-We assume you have access to MuJoCo and we shared some experience on deal with potentional issues, see file [install_mujoco-py.md](install_mujoco-py.md).
+We assume you have access to MuJoCo. We have shared some experiences on dealing with potential issues, see the file [install_mujoco-py.md](install_mujoco-py.md).
 
-You may need to install some required dependencies when creating a conda encironment:
+You may need to install some required dependencies when creating a conda environment:
 
 ```bash
 python>=3.9

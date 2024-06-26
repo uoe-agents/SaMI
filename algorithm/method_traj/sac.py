@@ -240,6 +240,7 @@ class SAC(OffPolicyAlgorithm):
 
     @profile
     def _train(self,gradient_step,batch_size):
+        ###  Train Encoder
         if self.contrast_batch_size > 0 and gradient_step % self.contrast_training_interval ==0:
             replay_data = self.replay_buffer.sample_contrast(self.contrast_batch_size)  # type: ignore[union-attr]
             loss_fn = InfoNCE()
@@ -247,7 +248,7 @@ class SAC(OffPolicyAlgorithm):
                                      replay_data.neg_trajectories, replay_data.neg_trajectory_rewards, replay_data.neg_trajectory_dones
             encoder_loss = []
             weights = []
-            for positive_traj, positive_reward,positive_done, negative_traj, negative_reward, negative_done in zip(pt, pr, pd, nt, nr, nd):
+            for positive_traj, positive_reward, positive_done, negative_traj, negative_reward, negative_done in zip(pt, pr, pd, nt, nr, nd):
                 weight = positive_reward.mean() - negative_reward.mean()
                 weight = th.clip(self.adversarial_loss_coef*weight,0.0,1.0)
                 query = self.encoder(positive_traj)
@@ -278,6 +279,8 @@ class SAC(OffPolicyAlgorithm):
             encoder_loss = th.tensor(0.0)
             weights =th.tensor(0.0)
         
+
+        ### Train RL
         # Sample replay buffer
         replay_data = self.replay_buffer.sample(batch_size, env=self._vec_normalize_env)  # type: ignore[union-attr]
         # We need to sample because `log_std` may have changed between two gradient steps

@@ -10,7 +10,18 @@ from stable_baselines3.common.vec_env import DummyVecEnv
 
 from logger import Manager
 
-def next_observation(model,prev_observations,actions,observations, dones):
+def next_observation(model, prev_observations,actions,observations, dones):
+    """
+    Return: observation
+        observations['causal']: context embedding
+        observations['hidden_h']: hidden state
+        observations['hidden_c']: cell state
+
+    prev_observations: Previous observations
+    actions: Actions
+    observations: Observations
+    dones: Dones
+    """
     if 'hidden_h' in observations:
         # for rnn 
         # reset next obs hidden_h and hidden_c

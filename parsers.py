@@ -10,7 +10,7 @@ def get_args():
     parser.add_argument('--contrast_buffer_type',default='fine_grained',type=str)
     parser.add_argument('--contrast_training_interval',default=1,type=int)
     # train_info
-    parser.add_argument('--time_step', default=500_000, type=int)
+    parser.add_argument('--time_step', default=500_000, type=int)   # timestep for each environment
     parser.add_argument('--causal_dim', default=6, type=int)
     parser.add_argument('--causal_hidden_dim', default=128, type=int)
     parser.add_argument('--buffer_size', default=100, type=int)
