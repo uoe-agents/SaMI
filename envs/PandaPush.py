@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 '''
 @File    :   PandaPush.py
-@Author  :   lixin 
+@Author  :   Lixin & Xuehui 
 @Version :   1.0
 @Desc    :   None
 '''

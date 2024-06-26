@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 '''
 @File    :   main.py
-@Author  :   lixin 
+@Author  :   Lixin & Xuehui
 @Version :   1.0
-@Desc    :   自动化训练+测试
+@Desc    :   Training & Zero-shot generalisation (Test)
 '''
 import os
 from logger import Manager
