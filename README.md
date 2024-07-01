@@ -35,8 +35,7 @@ pip install gym==0.23.0
 pip install beautifulsoup4 # for results visualization
 ```
 
-
-#### Modify the code of some libraries
+We need to modify the code of two libraries (i.e., Gymnasium and Stable-Baselines3) in order to run SaMI. Please update them according to the code provided below:
 
 ```python
 # stable_baselines3/common/vec_env/dummy_vec_env.py:70
