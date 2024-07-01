@@ -1,5 +1,7 @@
 # SaMI
-This is the official implementation of Skill-aware Mutural Information (SaMI) from the paper Skill-aware Mutual Information Optimisation for Generalisation in Reinforcement Learning. 
+This is the official implementation of Skill-aware Mutural Information (SaMI) from the paper Skill-aware Mutual Information Optimisation for Generalisation in Reinforcement Learning. on arxiv: https://arxiv.org/pdf/2406.04815
+
+by [Xuehui Yu](https://github.com/yuxuehui), Mhairi Dunion, [Xin Li](https://github.com/loxs123), Stefano V. Albrecht
 
 SaMI is a plug-and-play module that can be integrated with any Meta-RL algorithm. In this repository, we provide implementations of two baselines: CCM and TESAC. We have also equipped these baselines with SaMI, resulting in SaSSM and SaTESAC.
 
