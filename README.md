@@ -81,7 +81,7 @@ if self._elapsed_steps >= self._max_episode_steps:
     truncated = True
 ```
 
-### Instructions
+### :page_facing_up: Instructions
 
 Download the code and produce the `output` folder, where all the outputs are going to be stored including train/eval logs.
 
@@ -101,10 +101,10 @@ The `configs` folder contains bash scripts for all the algorithms used in the pa
 sh configs/mujoco_ant_train.sh
 ```
 
-### Results and Plots From Paper
+### :chart_with_upwards_trend: Results and Plots From Paper
 The data for the experiment results in the paper can be found here. These files contain the evaluation returns for all algorithms and seeds used to create Figures.
 
-### Citation
+### :paperclip: Citation
 ```
 @misc{yu2024skillaware,
       title={Skill-aware Mutual Information Optimisation for Generalisation in Reinforcement Learning}, 
