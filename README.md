@@ -7,6 +7,9 @@ SaMI is a plug-and-play module that can be integrated with any Meta-RL algorithm
 
 **TODO**
 - [ ] Change name "SaSAC" to "SaTESAC";
+- [ ] Change name "DominoHook" to "MujocoHook"
+- [ ] Change name "train_env" to "train_task"
+- [ ] Change name "test_env" to "test_task"
 
 
 ### :inbox_tray: Requirements
@@ -78,43 +81,18 @@ if self._elapsed_steps >= self._max_episode_steps:
     truncated = True
 ```
 
-### Download the code and run it
+### Instructions
+
+Download the code and run it
 
 ```bash
 git clone https://github.com/uoe-agents/SaMI.git
 cd SaMI
 mkdir output
-
-# panda
-CUDA_VISIBLE_DEVICES=0 python main.py \
-    --env_name PandaPush-v3 \
-    --env_hook PandaHook \
-    --method SaCCM \
-    --buffer_size 1000 \
-    --train_freq 128 \
-    --gradient_steps 16 \
-    --learning_rate 1e-3 \
-    --batch_size 256 \
-    --contrast_batch_size 256 \
-    --encoder_tau 0.05 \
-    --seed 100 \
-    --test_envs "[(0, 10), (1, 10), (10, 10), (30, 10)]" \
-    --test_eps_num_per_env 50 \
-    --use_wandb \
-    --time_step 1_000_000 \
-    --train_envs "[(0, 1), (0, 5), (1, 1),(1, 5)]"
-
-# domino [ant env]
-CUDA_VISIBLE_DEVICES=0 python main.py \
-    --env_name AntEnv \
-    --env_hook DominoHook \
-    --method SaCCM \
-    --adversarial_loss_coef 0.1 \
-    --use_weighted_info_nce \
-    --seed 421 \
-    --use_wandb \
-    --test_envs "[([0.4, 0.5], [0.4, 0.5]),([0.40, 0.50], [1.50, 1.60]),([1.50, 1.60], [0.40, 0.50]),([1.50, 1.60], [1.50, 1.60])]" \
-    --test_eps_num_per_env 5 \
-    --train_envs "[([0.75,0.85], [0.75,0.85]),([0.75,0.85], [1.0,1.15,1.25]),([1.0,1.15,1.25], [0.75,0.85]),([1.0,1.15,1.25], [1.0,1.15,1.25])]"
 ```
 
+You can run the code uing the configuration specified in 'parsers.py' with:
+
+```bash
+python main.py
+```
