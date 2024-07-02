@@ -83,7 +83,7 @@ if self._elapsed_steps >= self._max_episode_steps:
 
 ### Instructions
 
-Download the code and run it
+Download the code and produce the `output` folder, where all the outputs are going to be stored including train/eval logs.
 
 ```bash
 git clone https://github.com/uoe-agents/SaMI.git
@@ -91,8 +91,27 @@ cd SaMI
 mkdir output
 ```
 
-You can run the code uing the configuration specified in 'parsers.py' with:
-
+You can run the code uing the configuration specified in `parsers.py` with:
 ```bash
 python main.py
+```
+
+The `configs` folder contains bash scripts for all the algorithms used in the paper on the Panda-gym and Mujoco tasks as examples. You can run a specific configuration using the bash script, for example:
+```bash
+sh configs/mujoco_ant_train.sh
+```
+
+### Results and Plots From Paper
+The data for the experiment results in the paper can be found here. These files contain the evaluation returns for all algorithms and seeds used to create Figures.
+
+### Citation
+```
+@misc{yu2024skillaware,
+      title={Skill-aware Mutual Information Optimisation for Generalisation in Reinforcement Learning}, 
+      author={Xuehui Yu and Mhairi Dunion and Xin Li and Stefano V. Albrecht},
+      year={2024},
+      eprint={2406.04815},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
 ```
