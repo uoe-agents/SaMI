@@ -10,6 +10,7 @@ SaMI is a plug-and-play module that can be integrated with any Meta-RL algorithm
 - [ ] Change name "DominoHook" to "MujocoHook"
 - [ ] Change name "train_env" to "train_task"
 - [ ] Change name "test_env" to "test_task"
+- [ ] Main part needs videos which show SaCCM can Push, Pick&Place
 
 
 ### :inbox_tray: Requirements
