@@ -3,6 +3,7 @@ CUDA_VISIBLE_DEVICES=0 python main.py \
     --env_name PandaPush-v3 \
     --env_hook PandaHook \
     --method SaCCM \
+    --adversarial_loss_coef 0.01 \
     --buffer_size 1000 \
     --train_freq 128 \
     --gradient_steps 16 \
