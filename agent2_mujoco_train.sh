@@ -18,7 +18,7 @@ conda run -n dmcontrol python main.py \
     --env_name AntEnv \
     --env_hook DominoHook \
     --method TESAC \
-    --seed 200 \
+    --seed 150 \
     --adversarial_loss_coef 0.1 \
     --buffer_size 100 \
     --contrast_batch_size 12 \
@@ -32,7 +32,7 @@ conda run -n dmcontrol python main.py \
     --env_name HalfCheetahEnv \
     --env_hook DominoHook \
     --method TESAC \
-    --seed 200 \
+    --seed 150 \
     --adversarial_loss_coef 0.1 \
     --buffer_size 100 \
     --contrast_batch_size 12 \
@@ -46,7 +46,7 @@ conda run -n dmcontrol python main.py \
     --env_name CrippleAntEnv \
     --env_hook DominoHook \
     --method TESAC \
-    --seed 200 \
+    --seed 150 \
     --adversarial_loss_coef 0.1 \
     --buffer_size 100 \
     --contrast_batch_size 12 \
@@ -60,7 +60,7 @@ conda run -n dmcontrol python main.py \
     --env_name CrippleHalfCheetahEnv \
     --env_hook DominoHook \
     --method TESAC \
-    --seed 200 \
+    --seed 150 \
     --adversarial_loss_coef 0.1 \
     --buffer_size 100 \
     --contrast_batch_size 12 \
@@ -75,7 +75,7 @@ conda run -n dmcontrol python main.py \
     --env_hook DominoHook \
     --method TESAC \
     --use_wandb \
-    --seed 200 \
+    --seed 150 \
     --adversarial_loss_coef 0.1 \
     --buffer_size 100 \
     --contrast_batch_size 12 \
@@ -89,7 +89,7 @@ conda run -n dmcontrol python main.py \
     --env_hook DominoHook \
     --method TESAC \
     --use_wandb \
-    --seed 200 \
+    --seed 150 \
     --adversarial_loss_coef 0.1 \
     --buffer_size 100 \
     --contrast_batch_size 12 \
@@ -103,7 +103,7 @@ conda run -n dmcontrol python main.py \
 #     --env_name AntEnv \
 #     --env_hook DominoHook \
 #     --method CCM \
-#     --seed 200 \
+#     --seed 150 \
 #     --adversarial_loss_coef 0.1 \
 #     --buffer_size 100 \
 #     --contrast_batch_size 12 \
@@ -117,7 +117,7 @@ conda run -n dmcontrol python main.py \
 #     --env_name HalfCheetahEnv \
 #     --env_hook DominoHook \
 #     --method CCM \
-#     --seed 200 \
+#     --seed 150 \
 #     --adversarial_loss_coef 0.1 \
 #     --buffer_size 100 \
 #     --contrast_batch_size 12 \
@@ -131,7 +131,7 @@ conda run -n dmcontrol python main.py \
 #     --env_name CrippleAntEnv \
 #     --env_hook DominoHook \
 #     --method CCM \
-#     --seed 200 \
+#     --seed 150 \
 #     --adversarial_loss_coef 0.1 \
 #     --buffer_size 100 \
 #     --contrast_batch_size 12 \
@@ -145,7 +145,7 @@ conda run -n dmcontrol python main.py \
 #     --env_name CrippleHalfCheetahEnv \
 #     --env_hook DominoHook \
 #     --method CCM \
-#     --seed 200 \
+#     --seed 150 \
 #     --adversarial_loss_coef 0.1 \
 #     --buffer_size 100 \
 #     --contrast_batch_size 12 \
@@ -160,7 +160,7 @@ conda run -n dmcontrol python main.py \
 #     --env_hook DominoHook \
 #     --method CCM \
 #     --use_wandb \
-#     --seed 200 \
+#     --seed 150 \
 #     --adversarial_loss_coef 0.1 \
 #     --buffer_size 100 \
 #     --contrast_batch_size 12 \
@@ -174,7 +174,7 @@ conda run -n dmcontrol python main.py \
 #     --env_hook DominoHook \
 #     --method CCM \
 #     --use_wandb \
-#     --seed 200 \
+#     --seed 150 \
 #     --adversarial_loss_coef 0.1 \
 #     --buffer_size 100 \
 #     --contrast_batch_size 12 \
@@ -189,7 +189,7 @@ conda run -n dmcontrol python main.py \
 #     --env_name AntEnv \
 #     --env_hook DominoHook \
 #     --method SaCCM \
-#     --seed 200 \
+#     --seed 150 \
 #     --adversarial_loss_coef 0.1 \
 #     --buffer_size 100 \
 #     --contrast_batch_size 12 \
@@ -203,7 +203,7 @@ conda run -n dmcontrol python main.py \
 #     --env_name HalfCheetahEnv \
 #     --env_hook DominoHook \
 #     --method SaCCM \
-#     --seed 200 \
+#     --seed 150 \
 #     --adversarial_loss_coef 0.1 \
 #     --buffer_size 100 \
 #     --contrast_batch_size 12 \
@@ -217,7 +217,7 @@ conda run -n dmcontrol python main.py \
 #     --env_name CrippleAntEnv \
 #     --env_hook DominoHook \
 #     --method SaCCM \
-#     --seed 200 \
+#     --seed 150 \
 #     --adversarial_loss_coef 0.1 \
 #     --buffer_size 100 \
 #     --contrast_batch_size 12 \
@@ -231,7 +231,7 @@ conda run -n dmcontrol python main.py \
 #     --env_name CrippleHalfCheetahEnv \
 #     --env_hook DominoHook \
 #     --method SaCCM \
-#     --seed 200 \
+#     --seed 150 \
 #     --adversarial_loss_coef 0.1 \
 #     --buffer_size 100 \
 #     --contrast_batch_size 12 \
@@ -246,7 +246,7 @@ conda run -n dmcontrol python main.py \
 #     --env_hook DominoHook \
 #     --method SaCCM \
 #     --use_wandb \
-#     --seed 200 \
+#     --seed 150 \
 #     --adversarial_loss_coef 0.1 \
 #     --buffer_size 100 \
 #     --contrast_batch_size 12 \
@@ -260,7 +260,7 @@ conda run -n dmcontrol python main.py \
 #     --env_hook DominoHook \
 #     --method SaCCM \
 #     --use_wandb \
-#     --seed 200 \
+#     --seed 150 \
 #     --adversarial_loss_coef 0.1 \
 #     --buffer_size 100 \
 #     --contrast_batch_size 12 \
@@ -274,7 +274,7 @@ conda run -n dmcontrol python main.py \
 #     --env_name AntEnv \
 #     --env_hook DominoHook \
 #     --method SaSAC \
-#     --seed 200 \
+#     --seed 150 \
 #     --adversarial_loss_coef 0.1 \
 #     --buffer_size 100 \
 #     --contrast_batch_size 12 \
@@ -288,7 +288,7 @@ conda run -n dmcontrol python main.py \
 #     --env_name HalfCheetahEnv \
 #     --env_hook DominoHook \
 #     --method SaSAC \
-#     --seed 200 \
+#     --seed 150 \
 #     --adversarial_loss_coef 0.1 \
 #     --buffer_size 100 \
 #     --contrast_batch_size 12 \
@@ -302,7 +302,7 @@ conda run -n dmcontrol python main.py \
 #     --env_name CrippleAntEnv \
 #     --env_hook DominoHook \
 #     --method SaSAC \
-#     --seed 200 \
+#     --seed 150 \
 #     --adversarial_loss_coef 0.1 \
 #     --buffer_size 100 \
 #     --contrast_batch_size 12 \
@@ -316,7 +316,7 @@ conda run -n dmcontrol python main.py \
 #     --env_name CrippleHalfCheetahEnv \
 #     --env_hook DominoHook \
 #     --method SaSAC \
-#     --seed 200 \
+#     --seed 150 \
 #     --adversarial_loss_coef 0.1 \
 #     --buffer_size 100 \
 #     --contrast_batch_size 12 \
@@ -331,7 +331,7 @@ conda run -n dmcontrol python main.py \
 #     --env_hook DominoHook \
 #     --method SaSAC \
 #     --use_wandb \
-#     --seed 200 \
+#     --seed 150 \
 #     --adversarial_loss_coef 0.1 \
 #     --buffer_size 100 \
 #     --contrast_batch_size 12 \
@@ -344,7 +344,7 @@ conda run -n dmcontrol python main.py \
 #     --env_name HopperEnv \
 #     --env_hook DominoHook \
 #     --method SaSAC \
-#     --seed 200 \
+#     --seed 150 \
 #     --adversarial_loss_coef 0.1 \
 #     --buffer_size 100 \
 #     --contrast_batch_size 12 \
