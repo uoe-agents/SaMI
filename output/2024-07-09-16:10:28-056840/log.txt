@@ -1,0 +1,83 @@
+Using cuda device
+##########step:0003996##########
+cur_time : 2024-07-09-16:12:25-525901
+time/episodes : 4
+rollout/ep_rew_mean : 58.98347878193418
+rollout/ep_len_mean : 987.0
+time/fps : 81
+time/time_elapsed : 48
+time/total_timesteps : 3996
+rollout/success_rate : 0.0
+#################################
+##########step:0007992##########
+cur_time : 2024-07-09-16:14:15-036239
+train/learning_rate : 0.001
+train/n_updates : 128
+train/ent_coef : 0.8872955217957497
+train/actor_loss : -28.63290548324585
+train/critic_loss : 1.428178109228611
+train/weight : 0.0
+train/ent_coef_loss : -1.6086932122707367
+train/encoder_loss : 0.0
+time/episodes : 8
+rollout/ep_rew_mean : 28.669817615010743
+rollout/ep_len_mean : 987.0
+time/fps : 50
+time/time_elapsed : 158
+time/total_timesteps : 7992
+rollout/success_rate : 0.0
+#################################
+##########step:0011988##########
+cur_time : 2024-07-09-16:16:10-116213
+train/learning_rate : 0.001
+train/n_updates : 256
+train/ent_coef : 0.7806973084807396
+train/actor_loss : -44.553043603897095
+train/critic_loss : 2.7519225627183914
+train/weight : 0.003422200086788507
+train/ent_coef_loss : -3.327815070748329
+train/encoder_loss : 0.03404032491380349
+time/episodes : 12
+rollout/ep_rew_mean : 53.93534677980045
+rollout/ep_len_mean : 987.0
+time/fps : 43
+time/time_elapsed : 273
+time/total_timesteps : 11988
+rollout/success_rate : 0.0
+#################################
+##########step:0015984##########
+cur_time : 2024-07-09-16:17:59-089889
+train/learning_rate : 0.001
+train/n_updates : 384
+train/ent_coef : 0.6870186179876328
+train/actor_loss : -53.264567852020264
+train/critic_loss : 3.5955763161182404
+train/weight : 0.0031305431039072573
+train/ent_coef_loss : -5.034459561109543
+train/encoder_loss : 0.031138153484789655
+time/episodes : 16
+rollout/ep_rew_mean : 42.41870596766175
+rollout/ep_len_mean : 987.0
+time/fps : 41
+time/time_elapsed : 382
+time/total_timesteps : 15984
+rollout/success_rate : 0.0
+#################################
+##########step:0019980##########
+cur_time : 2024-07-09-16:19:44-269719
+train/learning_rate : 0.001
+train/n_updates : 512
+train/ent_coef : 0.6046625599265099
+train/actor_loss : -56.834527015686035
+train/critic_loss : 2.654259905219078
+train/weight : 0.004394847390358336
+train/ent_coef_loss : -6.736594349145889
+train/encoder_loss : 0.04370602569542825
+time/episodes : 20
+rollout/ep_rew_mean : 25.939743089394973
+rollout/ep_len_mean : 987.0
+time/fps : 40
+time/time_elapsed : 487
+time/total_timesteps : 19980
+rollout/success_rate : 0.0
+#################################

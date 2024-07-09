@@ -1,0 +1,453 @@
+Using cuda device
+##########step:0002000##########
+cur_time : 2024-07-09-16:06:30-819384
+time/episodes : 4
+rollout/ep_rew_mean : 413.7648385703974
+rollout/ep_len_mean : 488.0
+time/fps : 113
+time/time_elapsed : 17
+time/total_timesteps : 2000
+rollout/success_rate : 0.0
+#################################
+##########step:0004000##########
+cur_time : 2024-07-09-16:06:46-261531
+time/episodes : 8
+rollout/ep_rew_mean : 438.97434816329553
+rollout/ep_len_mean : 488.0
+time/fps : 120
+time/time_elapsed : 33
+time/total_timesteps : 4000
+rollout/success_rate : 0.0
+#################################
+##########step:0006000##########
+cur_time : 2024-07-09-16:07:13-373024
+train/learning_rate : 0.001
+train/n_updates : 64
+train/ent_coef : 0.9459615908563137
+train/actor_loss : -9.649696171283722
+train/critic_loss : 0.22363684605807066
+train/weight : 0.0
+train/ent_coef_loss : -0.27941922936588526
+train/encoder_loss : 0.0
+time/episodes : 12
+rollout/ep_rew_mean : 435.84773586162106
+rollout/ep_len_mean : 488.0
+time/fps : 99
+time/time_elapsed : 60
+time/total_timesteps : 6000
+rollout/success_rate : 0.0
+#################################
+##########step:0008000##########
+cur_time : 2024-07-09-16:07:52-374673
+train/learning_rate : 0.001
+train/n_updates : 128
+train/ent_coef : 0.8875030502676964
+train/actor_loss : -15.373629331588745
+train/critic_loss : 0.6388177536427975
+train/weight : 0.0
+train/ent_coef_loss : -0.5950163342058659
+train/encoder_loss : 0.0
+time/episodes : 16
+rollout/ep_rew_mean : 355.0399559990434
+rollout/ep_len_mean : 488.0
+time/fps : 80
+time/time_elapsed : 99
+time/total_timesteps : 8000
+rollout/success_rate : 0.0
+#################################
+##########step:0010000##########
+cur_time : 2024-07-09-16:08:24-228596
+train/learning_rate : 0.001
+train/n_updates : 192
+train/ent_coef : 0.8328531086444855
+train/actor_loss : -20.373945355415344
+train/critic_loss : 1.1547338031232357
+train/weight : 0.0
+train/ent_coef_loss : -0.9039904773235321
+train/encoder_loss : 0.0
+time/episodes : 20
+rollout/ep_rew_mean : 592.5607461300276
+rollout/ep_len_mean : 488.0
+time/fps : 76
+time/time_elapsed : 131
+time/total_timesteps : 10000
+rollout/success_rate : 0.0
+#################################
+##########step:0012000##########
+cur_time : 2024-07-09-16:08:59-200977
+train/learning_rate : 0.001
+train/n_updates : 256
+train/ent_coef : 0.7817837931215763
+train/actor_loss : -24.640414118766785
+train/critic_loss : 2.04089392721653
+train/weight : 0.0
+train/ent_coef_loss : -1.2091268375515938
+train/encoder_loss : 0.0
+time/episodes : 24
+rollout/ep_rew_mean : 678.4916415257442
+rollout/ep_len_mean : 488.0
+time/fps : 72
+time/time_elapsed : 166
+time/total_timesteps : 12000
+rollout/success_rate : 0.0
+#################################
+##########step:0014000##########
+cur_time : 2024-07-09-16:09:34-957457
+train/learning_rate : 0.001
+train/n_updates : 320
+train/ent_coef : 0.7340712212026119
+train/actor_loss : -28.79473340511322
+train/critic_loss : 1.6598932519555092
+train/weight : 0.0
+train/ent_coef_loss : -1.5014373883605003
+train/encoder_loss : 0.0
+time/episodes : 28
+rollout/ep_rew_mean : 673.6281029778979
+rollout/ep_len_mean : 488.0
+time/fps : 69
+time/time_elapsed : 201
+time/total_timesteps : 14000
+rollout/success_rate : 0.0
+#################################
+##########step:0016000##########
+cur_time : 2024-07-09-16:10:04-463114
+train/learning_rate : 0.001
+train/n_updates : 384
+train/ent_coef : 0.6894948333501816
+train/actor_loss : -32.36656594276428
+train/critic_loss : 1.9638200849294662
+train/weight : 0.0
+train/ent_coef_loss : -1.7875730469822884
+train/encoder_loss : 0.0
+time/episodes : 32
+rollout/ep_rew_mean : 678.6549958543181
+rollout/ep_len_mean : 488.0
+time/fps : 69
+time/time_elapsed : 231
+time/total_timesteps : 16000
+rollout/success_rate : 0.0
+#################################
+##########step:0018000##########
+cur_time : 2024-07-09-16:10:43-806071
+train/learning_rate : 0.001
+train/n_updates : 448
+train/ent_coef : 0.6477998867630959
+train/actor_loss : -34.65659737586975
+train/critic_loss : 1.7508385702967644
+train/weight : 0.0
+train/ent_coef_loss : -2.0538245141506195
+train/encoder_loss : 0.0
+time/episodes : 36
+rollout/ep_rew_mean : 695.1559337216562
+rollout/ep_len_mean : 488.0
+time/fps : 66
+time/time_elapsed : 270
+time/total_timesteps : 18000
+rollout/success_rate : 0.0
+#################################
+##########step:0020000##########
+cur_time : 2024-07-09-16:11:14-065613
+train/learning_rate : 0.001
+train/n_updates : 512
+train/ent_coef : 0.6090267598628998
+train/actor_loss : -36.917237758636475
+train/critic_loss : 1.7822320014238358
+train/weight : 0.0
+train/ent_coef_loss : -2.316021129488945
+train/encoder_loss : 0.0
+time/episodes : 40
+rollout/ep_rew_mean : 673.3840666643323
+rollout/ep_len_mean : 488.0
+time/fps : 66
+time/time_elapsed : 300
+time/total_timesteps : 20000
+rollout/success_rate : 0.0
+#################################
+##########step:0022000##########
+cur_time : 2024-07-09-16:11:45-830903
+train/learning_rate : 0.001
+train/n_updates : 560
+train/ent_coef : 0.5814977586269379
+train/actor_loss : -37.694191694259644
+train/critic_loss : 2.2664443999528885
+train/weight : 0.0
+train/ent_coef_loss : -2.5332349091768265
+train/encoder_loss : 0.0
+time/episodes : 44
+rollout/ep_rew_mean : 704.1551451646152
+rollout/ep_len_mean : 488.0
+time/fps : 66
+time/time_elapsed : 332
+time/total_timesteps : 22000
+rollout/success_rate : 0.0
+#################################
+##########step:0024000##########
+cur_time : 2024-07-09-16:12:21-631000
+train/learning_rate : 0.001
+train/n_updates : 624
+train/ent_coef : 0.5466042272746563
+train/actor_loss : -38.92742466926575
+train/critic_loss : 2.5627708062529564
+train/weight : 0.0
+train/ent_coef_loss : -2.821511209011078
+train/encoder_loss : 0.0
+time/episodes : 48
+rollout/ep_rew_mean : 694.959335411671
+rollout/ep_len_mean : 488.0
+time/fps : 65
+time/time_elapsed : 368
+time/total_timesteps : 24000
+rollout/success_rate : 0.0
+#################################
+##########step:0026000##########
+cur_time : 2024-07-09-16:12:50-504123
+train/learning_rate : 0.001
+train/n_updates : 688
+train/ent_coef : 0.5138326250016689
+train/actor_loss : -40.31729602813721
+train/critic_loss : 1.9594542905688286
+train/weight : 0.0
+train/ent_coef_loss : -3.087188795208931
+train/encoder_loss : 0.0
+time/episodes : 52
+rollout/ep_rew_mean : 689.7342345607873
+rollout/ep_len_mean : 488.0
+time/fps : 65
+time/time_elapsed : 397
+time/total_timesteps : 26000
+rollout/success_rate : 0.0
+#################################
+##########step:0028000##########
+cur_time : 2024-07-09-16:13:28-303392
+train/learning_rate : 0.001
+train/n_updates : 752
+train/ent_coef : 0.48326535522937775
+train/actor_loss : -40.962040185928345
+train/critic_loss : 2.2433285266160965
+train/weight : 0.0
+train/ent_coef_loss : -3.3244216293096542
+train/encoder_loss : 0.0
+time/episodes : 56
+rollout/ep_rew_mean : 685.7915447480159
+rollout/ep_len_mean : 488.0
+time/fps : 64
+time/time_elapsed : 435
+time/total_timesteps : 28000
+rollout/success_rate : 0.0
+#################################
+##########step:0030000##########
+cur_time : 2024-07-09-16:14:01-288731
+train/learning_rate : 0.001
+train/n_updates : 816
+train/ent_coef : 0.45447779819369316
+train/actor_loss : -40.89685368537903
+train/critic_loss : 5.417795568704605
+train/weight : 0.0
+train/ent_coef_loss : -3.6232209652662277
+train/encoder_loss : 0.0
+time/episodes : 60
+rollout/ep_rew_mean : 705.8315928861756
+rollout/ep_len_mean : 488.0
+time/fps : 64
+time/time_elapsed : 468
+time/total_timesteps : 30000
+rollout/success_rate : 0.0
+#################################
+##########step:0032000##########
+cur_time : 2024-07-09-16:14:33-574969
+train/learning_rate : 0.001
+train/n_updates : 880
+train/ent_coef : 0.42720540799200535
+train/actor_loss : -41.256431579589844
+train/critic_loss : 2.052166737616062
+train/weight : 0.0
+train/ent_coef_loss : -3.91178560256958
+train/encoder_loss : 0.0
+time/episodes : 64
+rollout/ep_rew_mean : 712.1824227695856
+rollout/ep_len_mean : 488.0
+time/fps : 63
+time/time_elapsed : 500
+time/total_timesteps : 32000
+rollout/success_rate : 0.0
+#################################
+##########step:0034000##########
+cur_time : 2024-07-09-16:15:11-227024
+train/learning_rate : 0.001
+train/n_updates : 944
+train/ent_coef : 0.4016097243875265
+train/actor_loss : -41.14348530769348
+train/critic_loss : 1.8755576089024544
+train/weight : 0.0
+train/ent_coef_loss : -4.125205606222153
+train/encoder_loss : 0.0
+time/episodes : 68
+rollout/ep_rew_mean : 717.2602432736396
+rollout/ep_len_mean : 488.0
+time/fps : 63
+time/time_elapsed : 538
+time/total_timesteps : 34000
+rollout/success_rate : 0.0
+#################################
+##########step:0036000##########
+cur_time : 2024-07-09-16:15:39-896319
+train/learning_rate : 0.001
+train/n_updates : 1008
+train/ent_coef : 0.37772865779697895
+train/actor_loss : -41.25991725921631
+train/critic_loss : 1.858725756406784
+train/weight : 0.0
+train/ent_coef_loss : -4.37288498878479
+train/encoder_loss : 0.0
+time/episodes : 72
+rollout/ep_rew_mean : 708.5129348080558
+rollout/ep_len_mean : 488.0
+time/fps : 63
+time/time_elapsed : 566
+time/total_timesteps : 36000
+rollout/success_rate : 0.0
+#################################
+##########step:0038000##########
+cur_time : 2024-07-09-16:16:16-677235
+train/learning_rate : 0.001
+train/n_updates : 1072
+train/ent_coef : 0.35519840009510517
+train/actor_loss : -40.80789351463318
+train/critic_loss : 1.9972971603274345
+train/weight : 0.0
+train/ent_coef_loss : -4.652321100234985
+train/encoder_loss : 0.0
+time/episodes : 76
+rollout/ep_rew_mean : 712.4673583536157
+rollout/ep_len_mean : 488.0
+time/fps : 62
+time/time_elapsed : 603
+time/total_timesteps : 38000
+rollout/success_rate : 0.0
+#################################
+##########step:0040000##########
+cur_time : 2024-07-09-16:16:49-417780
+train/learning_rate : 0.001
+train/n_updates : 1136
+train/ent_coef : 0.3340550325810909
+train/actor_loss : -40.28775429725647
+train/critic_loss : 1.7443350479006767
+train/weight : 0.0
+train/ent_coef_loss : -4.898784250020981
+train/encoder_loss : 0.0
+time/episodes : 80
+rollout/ep_rew_mean : 714.4244775900374
+rollout/ep_len_mean : 488.0
+time/fps : 62
+time/time_elapsed : 636
+time/total_timesteps : 40000
+rollout/success_rate : 0.0
+#################################
+##########step:0042000##########
+cur_time : 2024-07-09-16:17:24-030282
+train/learning_rate : 0.001
+train/n_updates : 1200
+train/ent_coef : 0.314156461507082
+train/actor_loss : -40.30567288398743
+train/critic_loss : 1.7097185477614403
+train/weight : 0.0
+train/ent_coef_loss : -5.193622410297394
+train/encoder_loss : 0.0
+time/episodes : 84
+rollout/ep_rew_mean : 709.4927077006063
+rollout/ep_len_mean : 488.0
+time/fps : 62
+time/time_elapsed : 670
+time/total_timesteps : 42000
+rollout/success_rate : 0.0
+#################################
+##########step:0044000##########
+cur_time : 2024-07-09-16:17:59-725155
+train/learning_rate : 0.001
+train/n_updates : 1248
+train/ent_coef : 0.2999862264841795
+train/actor_loss : -39.87482404708862
+train/critic_loss : 1.8502754271030426
+train/weight : 0.0
+train/ent_coef_loss : -5.385571599006653
+train/encoder_loss : 0.0
+time/episodes : 88
+rollout/ep_rew_mean : 709.2527915715809
+rollout/ep_len_mean : 488.0
+time/fps : 62
+time/time_elapsed : 706
+time/total_timesteps : 44000
+rollout/success_rate : 0.0
+#################################
+##########step:0046000##########
+cur_time : 2024-07-09-16:18:38-604088
+train/learning_rate : 0.001
+train/n_updates : 1312
+train/ent_coef : 0.2820662371814251
+train/actor_loss : -39.23325228691101
+train/critic_loss : 1.9168090522289276
+train/weight : 0.0
+train/ent_coef_loss : -5.654373407363892
+train/encoder_loss : 0.0
+time/episodes : 92
+rollout/ep_rew_mean : 711.58632002813
+rollout/ep_len_mean : 488.0
+time/fps : 61
+time/time_elapsed : 745
+time/total_timesteps : 46000
+rollout/success_rate : 0.0
+#################################
+##########step:0048000##########
+cur_time : 2024-07-09-16:19:23-678871
+train/learning_rate : 0.001
+train/n_updates : 1376
+train/ent_coef : 0.2652211133390665
+train/actor_loss : -38.89760184288025
+train/critic_loss : 1.5801274925470352
+train/weight : 0.0
+train/ent_coef_loss : -5.782053768634796
+train/encoder_loss : 0.0
+time/episodes : 96
+rollout/ep_rew_mean : 703.6529115935061
+rollout/ep_len_mean : 488.0
+time/fps : 60
+time/time_elapsed : 790
+time/total_timesteps : 48000
+rollout/success_rate : 0.0
+#################################
+##########step:0050000##########
+cur_time : 2024-07-09-16:20:00-447775
+train/learning_rate : 0.001
+train/n_updates : 1440
+train/ent_coef : 0.2496141530573368
+train/actor_loss : -38.5523898601532
+train/critic_loss : 1.5216993764042854
+train/weight : 0.0
+train/ent_coef_loss : -6.073864728212357
+train/encoder_loss : 0.0
+time/episodes : 100
+rollout/ep_rew_mean : 714.5250764363016
+rollout/ep_len_mean : 488.0
+time/fps : 60
+time/time_elapsed : 827
+time/total_timesteps : 50000
+rollout/success_rate : 0.0
+#################################
+##########step:0052000##########
+cur_time : 2024-07-09-16:20:46-954345
+train/learning_rate : 0.001
+train/n_updates : 1504
+train/ent_coef : 0.23486877791583538
+train/actor_loss : -37.73389506340027
+train/critic_loss : 1.558952122926712
+train/weight : 0.0
+train/ent_coef_loss : -6.302254229784012
+train/encoder_loss : 0.0
+time/episodes : 104
+rollout/ep_rew_mean : 728.0123657744406
+rollout/ep_len_mean : 488.0
+time/fps : 59
+time/time_elapsed : 873
+time/total_timesteps : 52000
+rollout/success_rate : 0.0
+#################################

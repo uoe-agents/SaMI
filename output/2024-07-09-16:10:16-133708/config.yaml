@@ -1,0 +1,49 @@
+code_path: /home/yxue/SaMI/output/2024-07-09-16:10:16-133708/code.zip
+config_path: /home/yxue/SaMI/output/2024-07-09-16:10:16-133708/config.yaml
+log_path: /home/yxue/SaMI/output/2024-07-09-16:10:16-133708/log.txt
+model_parameters:
+  adversarial_loss_coef: 0.1
+  batch_size: 12
+  buffer_size: 100
+  causal_dim: 6
+  causal_hidden_dim: 128
+  config_path: ''
+  contrast_batch_size: 12
+  contrast_buffer_type: fine_grained
+  contrast_training_interval: 1
+  encoder_tau: 0.05
+  env_hook: DominoHook
+  env_name: CrippleHalfCheetahEnv
+  gradient_steps: 16
+  learning_rate: 0.001
+  method: SaCCM
+  neg_radio: 0.5
+  save_video: false
+  seed: 200
+  test_envs: '[([4, 5], [0], [0.4, 0.5]),([4, 5], [0],[1.5, 1.6])]'
+  test_eps_num_per_env: 5
+  time_step: 500000
+  train_envs: '[([0, 1], [0], [0.75,0.85]),([0, 1], [0], [1.0,1.15,1.25]),([2, 3],
+    [0], [0.75,0.85]),([2, 3], [0], [1.0,1.15,1.25])]'
+  train_freq: 128
+  use_continue_train: false
+  use_reward_norm: false
+  use_wandb: true
+  use_weighted_info_nce: false
+  wandb_project_name: skill-aware-rl
+  wandb_team_name: skill-aware-rl
+recoder: !!python/object:tools.video.VideoRecorder
+  enabled: false
+  fps: 10
+  frames: []
+  height: 256
+  save_dir: /home/yxue/SaMI/output/2024-07-09-16:10:16-133708/videos
+  width: 256
+save_model_path: /home/yxue/SaMI/output/2024-07-09-16:10:16-133708/model.zip
+save_path: /home/yxue/SaMI/output
+sub_save_path: /home/yxue/SaMI/output/2024-07-09-16:10:16-133708
+test_image_path: /home/yxue/SaMI/output/2024-07-09-16:10:16-133708/images
+test_path: /home/yxue/SaMI/output/2024-07-09-16:10:16-133708/test_result.yaml
+test_table_path: /home/yxue/SaMI/output/2024-07-09-16:10:16-133708/tables
+test_tsne_path: /home/yxue/SaMI/output/2024-07-09-16:10:16-133708/tsne.jpg
+test_video_path: /home/yxue/SaMI/output/2024-07-09-16:10:16-133708/videos
