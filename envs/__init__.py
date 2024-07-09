@@ -20,10 +20,10 @@ from .PandaHook import PandaHook
 from .DominoHook import DominoHook
 
 ENV_MAX_STEP = {
-    'AntEnv': 500,
-    'CrippleHalfCheetahEnv':500,
-    'CrippleAntEnv':500,
-    'HalfCheetahEnv':500,
+    'AntEnv': 1000,
+    'CrippleHalfCheetahEnv':1000,
+    'CrippleAntEnv':1000,
+    'HalfCheetahEnv':1000,
     'SlimHumanoidEnv':500,
     'HopperEnv':500,
     'PandaPush-v3': 50
