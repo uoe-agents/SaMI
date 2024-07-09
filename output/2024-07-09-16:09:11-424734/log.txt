@@ -135,3 +135,75 @@ time/time_elapsed : 641
 time/total_timesteps : 32000
 rollout/success_rate : 0.0
 #################################
+##########step:0036000##########
+cur_time : 2024-07-09-16:22:25-010083
+train/learning_rate : 0.001
+train/n_updates : 1008
+train/ent_coef : 0.36978178657591343
+train/actor_loss : -30.12128186225891
+train/critic_loss : 1.4038175791502
+train/weight : 0.10000000149011612
+train/ent_coef_loss : -9.74568897485733
+train/encoder_loss : 0.9928401932120323
+time/episodes : 36
+rollout/ep_rew_mean : -140.22305647448368
+rollout/ep_len_mean : 988.0
+time/fps : 49
+time/time_elapsed : 729
+time/total_timesteps : 36000
+rollout/success_rate : 0.0
+#################################
+##########step:0040000##########
+cur_time : 2024-07-09-16:23:54-083384
+train/learning_rate : 0.001
+train/n_updates : 1136
+train/ent_coef : 0.3260938785970211
+train/actor_loss : -27.288753390312195
+train/critic_loss : 1.309889979660511
+train/weight : 0.10000000149011612
+train/ent_coef_loss : -10.893818795681
+train/encoder_loss : 0.9926353879272938
+time/episodes : 40
+rollout/ep_rew_mean : -148.7494505687823
+rollout/ep_len_mean : 988.0
+time/fps : 48
+time/time_elapsed : 818
+time/total_timesteps : 40000
+rollout/success_rate : 0.0
+#################################
+##########step:0044000##########
+cur_time : 2024-07-09-16:25:16-980232
+train/learning_rate : 0.001
+train/n_updates : 1248
+train/ent_coef : 0.2922297324985266
+train/actor_loss : -24.59164798259735
+train/critic_loss : 1.23698540776968
+train/weight : 0.10000000149011612
+train/ent_coef_loss : -11.858520865440369
+train/encoder_loss : 0.9923644699156284
+time/episodes : 44
+rollout/ep_rew_mean : -167.33878100003673
+rollout/ep_len_mean : 988.0
+time/fps : 48
+time/time_elapsed : 901
+time/total_timesteps : 44000
+rollout/success_rate : 0.0
+#################################
+##########step:0048000##########
+cur_time : 2024-07-09-16:26:45-022854
+train/learning_rate : 0.001
+train/n_updates : 1376
+train/ent_coef : 0.2579418532550335
+train/actor_loss : -21.751129031181335
+train/critic_loss : 1.2075979262590408
+train/weight : 0.10000000149011612
+train/ent_coef_loss : -12.973021686077118
+train/encoder_loss : 0.9919842146337032
+time/episodes : 48
+rollout/ep_rew_mean : -120.36348711452119
+rollout/ep_len_mean : 988.0
+time/fps : 48
+time/time_elapsed : 989
+time/total_timesteps : 48000
+rollout/success_rate : 0.0
+#################################

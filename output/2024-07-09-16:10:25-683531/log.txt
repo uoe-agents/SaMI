@@ -81,3 +81,75 @@ time/time_elapsed : 492
 time/total_timesteps : 20000
 rollout/success_rate : 0.0
 #################################
+##########step:0024000##########
+cur_time : 2024-07-09-16:21:39-174394
+train/learning_rate : 0.001
+train/n_updates : 624
+train/ent_coef : 0.5408782884478569
+train/actor_loss : -56.46747040748596
+train/critic_loss : 3.0599668473005295
+train/weight : 0.008923229179345071
+train/ent_coef_loss : -8.21320515871048
+train/encoder_loss : 0.08503504749387503
+time/episodes : 24
+rollout/ep_rew_mean : 46.39791926166111
+rollout/ep_len_mean : 988.0
+time/fps : 39
+time/time_elapsed : 600
+time/total_timesteps : 24000
+rollout/success_rate : 0.0
+#################################
+##########step:0028000##########
+cur_time : 2024-07-09-16:23:29-210417
+train/learning_rate : 0.001
+train/n_updates : 752
+train/ent_coef : 0.4761338960379362
+train/actor_loss : -54.56165814399719
+train/critic_loss : 2.079997092485428
+train/weight : 0.008741689263843
+train/ent_coef_loss : -9.879164695739746
+train/encoder_loss : 0.0846767092589289
+time/episodes : 28
+rollout/ep_rew_mean : 66.21363621340372
+rollout/ep_len_mean : 988.0
+time/fps : 39
+time/time_elapsed : 710
+time/total_timesteps : 28000
+rollout/success_rate : 0.0
+#################################
+##########step:0032000##########
+cur_time : 2024-07-09-16:25:20-494416
+train/learning_rate : 0.001
+train/n_updates : 880
+train/ent_coef : 0.4192599467933178
+train/actor_loss : -51.42364525794983
+train/critic_loss : 1.9211352616548538
+train/weight : 0.00721113859617617
+train/ent_coef_loss : -11.54267007112503
+train/encoder_loss : 0.07033416605554521
+time/episodes : 32
+rollout/ep_rew_mean : 62.3775336198014
+rollout/ep_len_mean : 988.0
+time/fps : 38
+time/time_elapsed : 821
+time/total_timesteps : 32000
+rollout/success_rate : 0.0
+#################################
+##########step:0036000##########
+cur_time : 2024-07-09-16:27:10-568119
+train/learning_rate : 0.001
+train/n_updates : 1008
+train/ent_coef : 0.3692084439098835
+train/actor_loss : -47.58989715576172
+train/critic_loss : 1.7791262567043304
+train/weight : 0.007943119300762191
+train/ent_coef_loss : -13.20899772644043
+train/encoder_loss : 0.07665281277149916
+time/episodes : 36
+rollout/ep_rew_mean : 67.21441880259242
+rollout/ep_len_mean : 988.0
+time/fps : 38
+time/time_elapsed : 931
+time/total_timesteps : 36000
+rollout/success_rate : 0.0
+#################################
