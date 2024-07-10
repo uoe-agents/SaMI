@@ -14,8 +14,8 @@ import logging
 import zipfile
 import sys
 
-os.environ["WANDB_MODE"] = "offline" # wandb离线
-os.environ["WANDB_MODE"] = "dryrun"
+# os.environ["WANDB_MODE"] = "offline" # wandb离线
+# os.environ["WANDB_MODE"] = "dryrun"
 
 import matplotlib.pyplot as plt
 import numpy as np
