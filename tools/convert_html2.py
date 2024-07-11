@@ -96,7 +96,7 @@ import tools
 parser = argparse.ArgumentParser()
 parser.add_argument('--date_start', default='2000-01-19-00:00:00-000000')
 parser.add_argument('--date_end', default='2100-01-19-00:00:00-000000')
-parser.add_argument('--output_dir', default='outputskill_aware_used_wrighted_seed_201_205_0509')
+parser.add_argument('--output_dir', default='output')
 parser.add_argument('--log_type', default='train') # or test continue train
 parser.add_argument('--cuda', default='0')
 args = parser.parse_args()
@@ -131,7 +131,7 @@ for file in files:
             if len(train_reward) == 0:
                 train_reward.append('暂无')
             else:
-                train_reward = train_reward[len(train_reward)//2-5:len(train_reward)//2]
+                train_reward = train_reward[len(train_reward)-5:]
                 train_reward = [float(_r) for _r in train_reward]
                 train_reward = sum(train_reward) / len(train_reward)
 
