@@ -90,7 +90,7 @@ import re
 import yaml
 from datetime import datetime
 from bs4 import BeautifulSoup
-sys.path.append('/home/lixin/work/rl_learning/rl_learning')
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__)).replace('tools','')
 import tools
 
 parser = argparse.ArgumentParser()
