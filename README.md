@@ -7,6 +7,7 @@ by [Xuehui Yu](https://github.com/yuxuehui), [Mhairi Dunion](https://github.com/
 **Challenge Problem**
 Meta-Reinforcement Learning (Meta-RL) agents can struggle to operate across tasks with varying environmental features that require different optimal skills (i.e., different modes of behaviors). An ideal RL algorithm should be able to learn a single policy to perform multiple tasks and generalise to new environments.
 
+https://github.com/user-attachments/assets/77e224d2-f8f3-412d-b658-158761629438
 
 <p align=center>
 <video width="666" controls><source src="docs/media/sami.mp4" type="video/mp4">
