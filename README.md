@@ -19,9 +19,11 @@ SaMI is a plug-and-play module that can be integrated with any Meta-RL algorithm
 - [ ] Change name "test_env" to "test_task"
 - [ ] Main part needs videos which show SaCCM can Push, Pick&Place
 
-### 📈 Results and Plots From Paper
+### 🤖 🤖 Our Skill-aware Robot 👏 👏
 
-The data for the experiment results in the paper can be found here. These files contain the evaluation returns for all algorithms and seeds used to create Figures.
+#### Panda-gym
+
+We open-sourced our modified Panda-gym benchmark on [Skill-aware-Panda-gym](https://github.com/uoe-agents/Skill-aware-Panda-gym). During the training process, we alter the values of cube mass and table friction. In the test setting, we test on previously unseen mass and friction values. The following shows the training and testing videos of SaCCM on different tasks (0.5x speed):
 
 
 <table border="1" cellpadding="3" cellspacing="0" style="width: 60%;margin:auto">
@@ -189,6 +191,10 @@ The `configs` folder contains bash scripts for all the algorithms used in the pa
 ```bash
 sh configs/mujoco_ant_train.sh
 ```
+
+### 📈 Results and Plots From Paper
+
+The data for the experiment results in the paper can be found here. These files contain the evaluation returns for all algorithms and seeds used to create Figures.
 
 ### 📎 Citation
 
