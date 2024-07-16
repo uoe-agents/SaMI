@@ -26,7 +26,7 @@ The data for the experiment results in the paper can be found here. These files 
 
 <table border="1" cellpadding="3" cellspacing="0" style="width: 60%;margin:auto">
     <tr>
-        <td width="15%" height="100%">
+        <td width="18%" height="100%">
             Friction = 5.0
         </td>
         <td width="20%" height="100%">
@@ -39,7 +39,7 @@ The data for the experiment results in the paper can be found here. These files 
         </td>
     </tr>
     <tr>
-        <td width="15%" height="100%">
+        <td width="18%" height="100%">
             Friction = 1.0
         </td>
         <td width="20%" height="100%">
@@ -53,7 +53,7 @@ The data for the experiment results in the paper can be found here. These files 
         </td>
     </tr>
 	<tr>
-        <td width="15%" height="100%">
+        <td width="18%" height="100%">
             Friction = 0.1
         </td>
         <td width="20%" height="100%">
@@ -67,7 +67,7 @@ The data for the experiment results in the paper can be found here. These files 
         </td>
     </tr>
 <tr>
-        <td width="15%" height="100%"></td>
+        <td width="18%" height="100%"></td>
         <td width="20%" height="100%">Mass = 1.0</td>
 	<td width="20%" height="100%">Mass = 5.0 </td>
 	<td width="20%" height="100%">Mass = 10.0</td>
