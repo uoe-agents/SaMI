@@ -25,7 +25,7 @@ SaMI is a plug-and-play module that can be integrated with any Meta-RL algorithm
 
 We open-sourced our modified Panda-gym benchmark on [Skill-aware-Panda-gym](https://github.com/uoe-agents/Skill-aware-Panda-gym). During the training process, we alter the values of cube mass and table friction. In the test setting, we test on previously unseen mass and friction values. The following shows the training and testing videos of SaCCM on different tasks (0.5x speed):
 
-<table border="1" cellpadding="3" cellspacing="0" style="width: 60%;margin:auto">
+<table cellpadding="3" cellspacing="0" style="width: 60%;margin:auto">
     <tr>
         <td width="18%" height="100%">
             Friction = 5.0
