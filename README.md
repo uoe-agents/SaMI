@@ -19,6 +19,33 @@ SaMI is a plug-and-play module that can be integrated with any Meta-RL algorithm
 - [ ] Change name "test_env" to "test_task"
 - [ ] Main part needs videos which show SaCCM can Push, Pick&Place
 
+### 📈 Results and Plots From Paper
+
+The data for the experiment results in the paper can be found here. These files contain the evaluation returns for all algorithms and seeds used to create Figures.
+
+#### Crippled Half-Cheetah
+
+During the training process, we alter the values of mass and damping, and randomly cripple ***one of the front leg rotors*** (rotor 0/1/3). In the test setting, we test on previously unseen mass and damping values. More importantly, in the moderate test setting, we randomly cripple ***one of the back leg rotors***. In the extreme test setting, we increase the difficulty by randomly crippling ***two rotors from both the front and back legs***. The following shows the training and testing videos of SaCCM on different tasks (first 60 seconds, 2x speed):
+
+<p align=center>
+<img src="docs/gif/crippledhalfcheetah/([3], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([0], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([1], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([2], [0], [1.0]).gif" width=200>
+</p>
+<p align=center>
+<img src="" width=200> <img src="docs/gif/crippledhalfcheetah/([0, 3], [1], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([1, 4], [1], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([4, 5], [1], [1.0]).gif" width=200>
+</p>
+
+#### Crippled Ant
+
+#### Half-Cheetah
+
+#### Ant
+
+#### SlimHumanoid
+
+#### Walker (New)
+
+#### Crippled Walker (New)
+
 ### 📥 Requirements
 
 We assume you have access to MuJoCo. We have shared some experiences on dealing with potential issues, see the file [install_mujoco-py.md](install_mujoco-py.md).
@@ -110,36 +137,6 @@ The `configs` folder contains bash scripts for all the algorithms used in the pa
 ```bash
 sh configs/mujoco_ant_train.sh
 ```
-
-### 📈 Results and Plots From Paper
-
-The data for the experiment results in the paper can be found here. These files contain the evaluation returns for all algorithms and seeds used to create Figures.
-
-#### Crippled Half-Cheetah
-
-During the training process, we alter the values of mass and damping, and randomly cripple ***one of the front leg rotors*** (rotor 0/1/3). In the test setting, we test on previously unseen mass and damping values. More importantly, in the moderate test setting, we randomly cripple ***one of the back leg rotors***. In the extreme test setting, we increase the difficulty by randomly crippling ***two rotors from both the front and back legs***. The following shows the training and testing videos of SaCCM on different tasks (first 60 seconds, 2x speed):
-
-
-<p align=center>
-<img src="docs/gif/crippledhalfcheetah/([3], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([0], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([1], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([2], [0], [1.0]).gif" width=200>
-</p>
-<p align=center>
-<img src="" width=200> <img src="docs/gif/crippledhalfcheetah/([0, 3], [1], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([1, 4], [1], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([4, 5], [1], [1.0]).gif" width=200>
-</p>
-
-
-#### Crippled Ant
-
-#### Half-Cheetah
-
-#### Ant
-
-#### SlimHumanoid
-
-#### Walker (New)
-
-#### Crippled Walker (New)
-
 
 ### 📎 Citation
 
