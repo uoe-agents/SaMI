@@ -30,10 +30,10 @@ The data for the experiment results in the paper can be found here. These files 
             Friction=5.0
         </td>
         <td width="20%" height="100%">
-            <img src="docs/gif/panda_gym/SaCCM-frction5-mass1.gif" width=250>
+            <img src="docs/gif/panda_gym/SaCCM-frction5-mass1.gif" width=200>
         </td>
 	<td width="20%" height="100%">
-            <img src="docs/gif/panda_gym/SaCCM_friction5_mass5.gif" width=250>
+            <img src="docs/gif/panda_gym/SaCCM_friction5_mass5.gif" width=200>
         </td>
 	<td width="20%" height="100%">
         </td>
@@ -43,13 +43,13 @@ The data for the experiment results in the paper can be found here. These files 
             Friction=1.0
         </td>
         <td width="20%" height="100%">
-            <img src="docs/gif/panda_gym/SaCCM-frction1-mass1.gif" width=250>
+            <img src="docs/gif/panda_gym/SaCCM-frction1-mass1.gif" width=200>
         </td>
 	<td width="20%" height="100%">
-            <img src="docs/gif/panda_gym/SaCCM-friction1-mass5.gif" width=250>
+            <img src="docs/gif/panda_gym/SaCCM-friction1-mass5.gif" width=200>
         </td>
 	<td width="20%" height="100%">
-		<img src="docs/gif/panda_gym/SaCCM_friction1_mass10.gif" width=250>
+		<img src="docs/gif/panda_gym/SaCCM_friction1_mass10.gif" width=200>
         </td>
     </tr>
 </table>
@@ -63,7 +63,7 @@ During the training process, we alter the values of mass and damping, and random
 <img src="docs/gif/crippledhalfcheetah/([3], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([0], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([1], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([2], [0], [1.0]).gif" width=200>
 </p>
 <p align=center>
-<img src="" width=200> <img src="docs/gif/crippledhalfcheetah/([0, 3], [1], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([1, 4], [1], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([4, 5], [1], [1.0]).gif" width=200>
+<img src="docs/gif/crippledhalfcheetah/([0, 3], [1], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([1, 4], [1], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([4, 5], [1], [1.0]).gif" width=200>
 </p>
 
 #### Crippled Ant
