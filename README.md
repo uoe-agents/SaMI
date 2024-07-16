@@ -30,10 +30,10 @@ The data for the experiment results in the paper can be found here. These files 
             Friction=5.0
         </td>
         <td width="20%" height="100%">
-            <img src="docs/gif/panda_gym/SaCCM-frction5-mass1.gif" width=320>
+            <img src="docs/gif/panda_gym/SaCCM-frction5-mass1.gif" width=200>
         </td>
 	<td width="20%" height="100%">
-            <img src="docs/gif/panda_gym/SaCCM_friction5_mass5.gif" width=320>
+            <img src="docs/gif/panda_gym/SaCCM_friction5_mass5.gif" width=200>
         </td>
 	<td width="20%" height="100%">
         </td>
