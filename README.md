@@ -1,19 +1,31 @@
-# Skill-aware Mutural Information (SaMI) 
+# Skill-aware Mutural Information (SaMI)
+
 This is the official implementation of Skill-aware Mutural Information (SaMI) from the paper Skill-aware Mutual Information Optimisation for Generalisation in Reinforcement Learning. on arxiv: https://arxiv.org/pdf/2406.04815
 
 by [Xuehui Yu](https://github.com/yuxuehui), [Mhairi Dunion](https://github.com/mhairidunion), [Xin Li](https://github.com/loxs123), Stefano V. Albrecht
 
+**Challenge Problem**
+Meta-Reinforcement Learning (Meta-RL) agents can struggle to operate across tasks with varying environmental features that require different optimal skills (i.e., different modes of behaviors). An ideal RL algorithm should be able to learn a single policy to perform multiple tasks and generalise to new environments.
+
+
+<p align=center>
+<video width="666" controls><source src="docs/media/sami.mp4" type="video/mp4">
+</p>
+
+
+
 SaMI is a plug-and-play module that can be integrated with any Meta-RL algorithm. In this repository, we provide implementations of two baselines: [CCM](https://cdn.aaai.org/ojs/16914/16914-13-20408-1-2-20210518.pdf) and [TESAC](https://arxiv.org/pdf/1910.10897). We have equipped these baselines with SaMI, resulting in SaSSM and SaTESAC.
 
 **TODO**
+
 - [ ] Change name "SaSAC" to "SaTESAC";
 - [ ] Change name "DominoHook" to "MujocoHook"
 - [ ] Change name "train_env" to "train_task"
 - [ ] Change name "test_env" to "test_task"
 - [ ] Main part needs videos which show SaCCM can Push, Pick&Place
 
+### 📥 Requirements
 
-### :inbox_tray: Requirements
 We assume you have access to MuJoCo. We have shared some experiences on dealing with potential issues, see the file [install_mujoco-py.md](install_mujoco-py.md).
 
 You may need to install some required dependencies when creating a conda environment:
@@ -82,7 +94,7 @@ if self._elapsed_steps >= self._max_episode_steps:
     truncated = True
 ```
 
-### :page_facing_up: Instructions
+### 📄 Instructions
 
 Download the code and produce the `output` folder, where all the outputs are going to be stored including train/eval logs.
 
@@ -93,19 +105,23 @@ mkdir output
 ```
 
 You can run the code uing the configuration specified in `parsers.py` with:
+
 ```bash
 python main.py
 ```
 
 The `configs` folder contains bash scripts for all the algorithms used in the paper on the Panda-gym and Mujoco tasks as examples. You can run a specific configuration using the bash script, for example:
+
 ```bash
 sh configs/mujoco_ant_train.sh
 ```
 
-### :chart_with_upwards_trend: Results and Plots From Paper
+### 📈 Results and Plots From Paper
+
 The data for the experiment results in the paper can be found here. These files contain the evaluation returns for all algorithms and seeds used to create Figures.
 
-### :paperclip: Citation
+### 📎 Citation
+
 ```
 @misc{yu2024skillaware,
       title={Skill-aware Mutual Information Optimisation for Generalisation in Reinforcement Learning}, 
