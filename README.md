@@ -24,9 +24,9 @@ SaMI is a plug-and-play module that can be integrated with any Meta-RL algorithm
 The data for the experiment results in the paper can be found here. These files contain the evaluation returns for all algorithms and seeds used to create Figures.
 
 
-<table border="1" cellpadding="3" cellspacing="0" style="width: 60%;margin:auto">
+<div style="text-align:center"><table border="1" cellpadding="3" cellspacing="0" style="width: 60%;margin:auto">
     <tr>
-        <td width="6%" height="100%">
+        <td width="10%" height="100%">
             Friction = 5.0
         </td>
         <td width="20%" height="100%">
@@ -39,7 +39,7 @@ The data for the experiment results in the paper can be found here. These files 
         </td>
     </tr>
     <tr>
-        <td width="6%" height="100%">
+        <td width="10%" height="100%">
             Friction = 1.0
         </td>
         <td width="20%" height="100%">
@@ -53,7 +53,7 @@ The data for the experiment results in the paper can be found here. These files 
         </td>
     </tr>
 	<tr>
-        <td width="6%" height="100%">
+        <td width="10%" height="100%">
             Friction = 0.1
         </td>
         <td width="20%" height="100%">
@@ -67,12 +67,12 @@ The data for the experiment results in the paper can be found here. These files 
         </td>
     </tr>
 <tr>
-        <td width="6%" height="100%"></td>
+        <td width="10%" height="100%"></td>
         <td width="20%" height="100%">Mass = 1.0</td>
 	<td width="20%" height="100%">Mass = 5.0 </td>
 	<td width="20%" height="100%">Mass = 10.0</td>
     </tr>
-</table>
+</table></div>
 
 
 #### Crippled Half-Cheetah
