@@ -5,7 +5,7 @@ This is the official implementation of Skill-aware Mutural Information (SaMI) fr
 by [Xuehui Yu](https://github.com/yuxuehui), [Mhairi Dunion](https://github.com/mhairidunion), [Xin Li](https://github.com/loxs123), Stefano V. Albrecht
 
 **Challenge Problem: **
-Meta-Reinforcement Learning (Meta-RL) agents can struggle to operate across tasks with varying environmental features that require different optimal skills (i.e., different modes of behaviors). An ideal RL algorithm should be able to learn a single policy to perform multiple tasks and generalise to new environments.
+Meta-Reinforcement Learning (Meta-RL) agents can struggle to operate across tasks with varying environmental features that require different optimal skills (i.e., different modes of behaviors). An ideal RL algorithm should be able to learn a single policy to perform multiple tasks and generalise to new and unseen tasks.
 
 https://github.com/user-attachments/assets/2d644ccb-851c-4053-bfc4-0923f5c26080
 
@@ -24,7 +24,6 @@ SaMI is a plug-and-play module that can be integrated with any Meta-RL algorithm
 #### Panda-gym
 
 We open-sourced our modified Panda-gym benchmark on [Skill-aware-Panda-gym](https://github.com/uoe-agents/Skill-aware-Panda-gym). During the training process, we alter the values of cube mass and table friction. In the test setting, we test on previously unseen mass and friction values. The following shows the training and testing videos of SaCCM on different tasks (0.5x speed):
-
 
 <table border="1" cellpadding="3" cellspacing="0" style="width: 60%;margin:auto">
     <tr>
@@ -75,7 +74,6 @@ We open-sourced our modified Panda-gym benchmark on [Skill-aware-Panda-gym](http
 	<td width="20%" height="100%">Mass = 10.0</td>
     </tr>
 </table>
-
 
 #### Crippled Half-Cheetah
 
