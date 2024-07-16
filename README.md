@@ -24,14 +24,21 @@ SaMI is a plug-and-play module that can be integrated with any Meta-RL algorithm
 The data for the experiment results in the paper can be found here. These files contain the evaluation returns for all algorithms and seeds used to create Figures.
 
 
-
-```
-|表头|表头|
-|----|----|
-|<p align=center>
-<img src="docs/gif/crippledhalfcheetah/([3], [0], [1.0]).gif" width=200></p>|单元格|
-|单元格|单元格|
-```
+<table>
+    <tr>
+        <td width="6%" height="100%">
+            Friction=5.0
+        </td>
+        <td width="20%" height="100%">
+            <img src="docs/gif/panda_gym/SaCCM-frction5-mass1.gif" width=320>
+        </td>
+	<td width="20%" height="100%">
+            <img src="docs/gif/panda_gym/SaCCM_friction5_mass5.gif" width=320>
+        </td>
+	<td width="20%" height="100%">
+        </td>
+    </tr>
+</table>
 
 
 #### Crippled Half-Cheetah
