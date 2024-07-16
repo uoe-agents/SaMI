@@ -7,13 +7,7 @@ by [Xuehui Yu](https://github.com/yuxuehui), [Mhairi Dunion](https://github.com/
 **Challenge Problem**
 Meta-Reinforcement Learning (Meta-RL) agents can struggle to operate across tasks with varying environmental features that require different optimal skills (i.e., different modes of behaviors). An ideal RL algorithm should be able to learn a single policy to perform multiple tasks and generalise to new environments.
 
-https://github.com/user-attachments/assets/77e224d2-f8f3-412d-b658-158761629438
-
-<p align=center>
-<video width="666" controls><source src="docs/media/sami.mp4" type="video/mp4">
-</p>
-
-
+https://github.com/user-attachments/assets/818a514c-f2a4-4aed-8742-3e4181cd78dfhttps://github.com/user-attachments/assets/77e224d2-f8f3-412d-b658-15876162943
 
 SaMI is a plug-and-play module that can be integrated with any Meta-RL algorithm. In this repository, we provide implementations of two baselines: [CCM](https://cdn.aaai.org/ojs/16914/16914-13-20408-1-2-20210518.pdf) and [TESAC](https://arxiv.org/pdf/1910.10897). We have equipped these baselines with SaMI, resulting in SaSSM and SaTESAC.
 
