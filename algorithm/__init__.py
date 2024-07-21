@@ -37,7 +37,7 @@ def get_model(manager,train_env=None, causal_keys = None, max_step_num=50):
                 max_eps_length=max_step_num,
                 neg_radio=manager.model_parameters['neg_radio'],
             ),
-            learning_starts = 1000 * train_env.num_envs,
+            learning_starts = 2000 * train_env.num_envs,
             verbose=1,
             encoder_tau = manager.model_parameters['encoder_tau'],
             adversarial_loss_coef = manager.model_parameters['adversarial_loss_coef'],
