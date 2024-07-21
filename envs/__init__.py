@@ -24,8 +24,8 @@ ENV_MAX_STEP = {
     'CrippleHalfCheetahEnv':1000,
     'CrippleAntEnv':1000,
     'HalfCheetahEnv':1000,
-    'SlimHumanoidEnv':500,
-    'HopperEnv':500,
+    'SlimHumanoidEnv':2000,
+    'HopperEnv':2000,
     'PandaPush-v3': 50
 }
 
