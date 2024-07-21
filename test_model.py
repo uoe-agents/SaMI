@@ -62,7 +62,7 @@ def test_model(model, manager:Manager, hook, time_steps=-1):
         while len(hook.test_infos[hook.encoder_env_info(_env_info)]['eps_states']) < manager.model_parameters['test_eps_num_per_env']:
             observations = test_env.reset()
             states = None
-            # episode_starts = np.ones((test_env.num_envs,), dtype=bool)
+            episode_starts = np.ones((test_env.num_envs,), dtype=bool)
             _eps_states = []
             manager.reset_video()
             for eps_i in range(hook.max_step_num):
