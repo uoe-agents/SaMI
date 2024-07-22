@@ -22,7 +22,7 @@ SaMI is a plug-and-play module that can be integrated with any Meta-RL algorithm
 
 ### 🤖 🤖 Our Skill-aware Robot 👏 👏
 
-#### Panda-gym
+#### Panda-gym ✔️
 
 We open-sourced our modified Panda-gym benchmark on [Skill-aware-Panda-gym](https://github.com/uoe-agents/Skill-aware-Panda-gym). During the training process, we alter the values of cube mass and table friction. In the test setting, we test on previously unseen mass and friction values. The following shows the training and testing videos of SaCCM on different tasks (0.5x speed):
 
@@ -76,7 +76,7 @@ We open-sourced our modified Panda-gym benchmark on [Skill-aware-Panda-gym](http
     </tr>
 </table>
 
-#### Crippled Half-Cheetah
+#### Crippled Half-Cheetah ✔️
 
 During the training process, we alter the values of mass and damping, and randomly cripple ***one of the front leg rotors*** (rotor 3/4/5). In the test setting, we test on previously unseen mass and damping values. More importantly, in the moderate test setting, we randomly cripple ***one of the back leg rotors*** (rotor 0/1/2). In the extreme test setting, we increase the difficulty by randomly crippling ***two rotors from both the front and back legs***. We found that SaCCM and SaTESAC can adjust the running posture of the Half-Cheetah to cope with different crippled rotors, thereby running as far as possible using different modes of running (i.e., different skills). The following shows the training and testing videos of SaCCM on different tasks (first 60 seconds, 2x speed):
 
@@ -96,7 +96,7 @@ And some faliure cases of CCM:
 <img src="docs/gif/crippledhalfcheetah/CCM_Extreme Test (Cripple Rotor 0&3).gif" width=200> <img src="docs/gif/crippledhalfcheetah/CCM_Extreme Test (Cripple Rotor 1&4).gif" width=200> <img src="docs/gif/crippledhalfcheetah/CCM_Extreme Test (Cripple Rotor 4&5).gif" width=200>
 </p>
 
-#### Crippled Ant
+#### Crippled Ant (longer episode length)
 
 During the training process, we alter the values of mass and damping, and randomly cripple one of legs (leg 0/1/2/3). In the test setting, we test on previously unseen mass and damping values. More importantly, in the extreme test setting, we also randomly cripple two legs. The following shows the training and testing videos of SaCCM on different tasks (first 60 seconds, 2x speed):
 
@@ -104,7 +104,7 @@ During the training process, we alter the values of mass and damping, and random
 <img src="docs/gif/crippledant/SaCCM_Training_(Crippled_0).gif" width=200> <img src="docs/gif/crippledant/SaCCM_Training_(Crippled_1&4).gif" width=200>
 </p>
 
-#### Hopper
+#### Hopper ✔️
 
 During the training process, we alter the values of mass and damping. In the test setting, we test on previously unseen mass and damping values. In the Hopper environment, we found that in order to adapt to different mass values, the TESAC/CCM/SaTESAC/SaCCM policy tends to learn only one skill, which is ***the Hopper hopping forward on the floor***. The following shows the training and testing videos of SaTESAC on different tasks (first 180 seconds, 6x speed):
 
@@ -114,9 +114,9 @@ During the training process, we alter the values of mass and damping. In the tes
 
 #### Half-Cheetah
 
-#### Ant
+#### Ant (longer episode length)
 
-#### SlimHumanoid
+#### SlimHumanoid ✔️/(longer episode length)
 
 During the training process, we alter the values of mass and damping. In the test setting, we test on previously unseen mass and damping values. In the SlimHumanoid environment, we found that in order to adapt to different mass and damping values, the TESAC/CCM/SaTESAC/SaCCM policy tends to learn only one skill, which is ***the Humanoid Robot crawling on the ground using one elbow**.* When the damping is relatively high (damping=1.6), the Humanoid Robot can crawl forward stably, but when the damping is low (damping=0.6), it tends to roll. The following shows the training and testing videos of SaCCM on different tasks (first 180 seconds, 6x speed):
 
