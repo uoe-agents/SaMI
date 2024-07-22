@@ -18,6 +18,7 @@ SaMI is a plug-and-play module that can be integrated with any Meta-RL algorithm
 - [ ] Change name "train_env" to "train_task"
 - [ ] Change name "test_env" to "test_task"
 - [ ] Main part needs videos which show SaCCM can Push, Pick&Place
+- [ ] The number of training tasks must be a multiple of 4, otherwise there will be a tensor dimension mismatch issue.
 
 ### 🤖 🤖 Our Skill-aware Robot 👏 👏
 
@@ -88,15 +89,28 @@ During the training process, we alter the values of mass and damping, and random
 
 #### Crippled Ant
 
+#### Hopper
+
+(6x speed):
+
+
+<p align=center>
+<img src="docs/gif/hopper/Extreme_Test_(mass=0.25, damping=0.25).gif" width=200> 
+</p>
+
+
 #### Half-Cheetah
 
 #### Ant
 
 #### SlimHumanoid
 
-#### Walker (New)
+(4x speed):
 
-#### Crippled Walker (New)
+<p align=center>
+<img src="docs/gif/slimhumanoid/Moderate_Test_(mass=0.6,damping=0.6)x6.gif" width=200> 
+</p>
+
 
 ### 📥 Requirements
 
