@@ -229,7 +229,7 @@ class CrippleAntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         elif self.crippled_leg == 3:
             geom_rgba[12, :3] = np.array([1, 0, 0])
             geom_rgba[13, :3] = np.array([1, 0, 0])
-        self.model.geom_rgba[:] = geom_rgba
+        self.model.geom_rgba[:] = geom_rgba.copy()
 
         # Make the removed leg not affect anything
         temp_size = self._init_geom_size.copy()

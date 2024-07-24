@@ -10,8 +10,11 @@ from .ant_env import AntEnv # mass_scale_set damping_scale_set
 from .half_cheetah_cripple_env import CrippleHalfCheetahEnv # cripple_set extreme_set mass_scale_set
 from .ant_cripple_env import CrippleAntEnv # cripple_set extreme_set mass_scale_set
 from .half_cheetah_env import HalfCheetahEnv # mass_scale_set damping_scale_set
+from .humanoidstandup import HumanoidStandupEnv # mass_scale_set damping_scale_set
 from .slim_humanoid_env import SlimHumanoidEnv # mass_scale_set damping_scale_set
 from .hopper_env import HopperEnv # mass_scale_set damping_scale_set
+from .hopper_cripple_env import CrippleHopperEnv # mass_scale_set damping_scale_set
+from .walker2d import WalkerEnv # mass_scale_set damping_scale_set
 from .cartpole import RandomCartPole_Force_Length as Cartpoleenvs # force_set length_set
 from .pendulum import RandomPendulumAll as Pendulumenvs # mass_set length_set
 
@@ -21,17 +24,23 @@ ENV_CLS = {
     'CrippleAntEnv':CrippleAntEnv,
     'HalfCheetahEnv':HalfCheetahEnv,
     'SlimHumanoidEnv':SlimHumanoidEnv,
+    'HumanoidStandupEnv':HumanoidStandupEnv,
     'HopperEnv':HopperEnv,
+    'CrippleHopperEnv':CrippleHopperEnv,
+    'WalkerEnv':WalkerEnv,
     'Cartpoleenvs':Cartpoleenvs,
     'Pendulumenvs':Pendulumenvs
 }
 ENV_CAUSAL = {
     'AntEnv':['mass_scale_set','damping_scale_set'],
     'CrippleHalfCheetahEnv':['cripple_set','extreme_set','mass_scale_set'],
+    'CrippleHopperEnv':['cripple_set','extreme_set','mass_scale_set'],
     'CrippleAntEnv':['cripple_set','extreme_set','mass_scale_set'],
     'HalfCheetahEnv':['mass_scale_set','damping_scale_set'],
     'SlimHumanoidEnv':['mass_scale_set','damping_scale_set'],
+    'HumanoidStandupEnv':['mass_scale_set','damping_scale_set'],
     'HopperEnv':['mass_scale_set','damping_scale_set'],
+    'WalkerEnv':['mass_scale_set','damping_scale_set'],
     'Cartpoleenvs':['force_set','length_set'],
     'Pendulumenvs':['mass_set','length_set']
 }
@@ -42,7 +51,10 @@ ENV_MAX_STEP = {
     'CrippleAntEnv':1000,
     'HalfCheetahEnv':1000,
     'SlimHumanoidEnv':2000,
+    'HumanoidStandupEnv':100,
     'HopperEnv':2000,
+    'CrippleHopperEnv':100,
+    'WalkerEnv':100,
     'Cartpoleenvs':1000,
     'Pendulumenvs':1000
 }

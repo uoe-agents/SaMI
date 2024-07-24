@@ -10,8 +10,11 @@ from .ant_env import AntEnv # mass_scale_set damping_scale_set
 from .half_cheetah_cripple_env import CrippleHalfCheetahEnv # cripple_set extreme_set mass_scale_set
 from .ant_cripple_env import CrippleAntEnv # cripple_set extreme_set mass_scale_set
 from .half_cheetah_env import HalfCheetahEnv # mass_scale_set damping_scale_set
+from .humanoidstandup import HumanoidStandupEnv # mass_scale_set damping_scale_set
 from .slim_humanoid_env import SlimHumanoidEnv # mass_scale_set damping_scale_set
 from .hopper_env import HopperEnv # mass_scale_set damping_scale_set
+from .hopper_cripple_env import CrippleHopperEnv # mass_scale_set damping_scale_set
+from .walker2d import WalkerEnv # mass_scale_set damping_scale_set
 from .cartpole import RandomCartPole_Force_Length as Cartpoleenvs # force_set length_set
 from .pendulum import RandomPendulumAll as Pendulumenvs # mass_set length_set
 
@@ -24,8 +27,11 @@ ENV_MAX_STEP = {
     'CrippleHalfCheetahEnv':1000,
     'CrippleAntEnv':3000,
     'HalfCheetahEnv':1000,
-    'SlimHumanoidEnv':2000,
+    'SlimHumanoidEnv':1000,
+    'HumanoidStandupEnv':100,
     'HopperEnv':2000,
+    'CrippleHopperEnv':100,
+    'WalkerEnv':100,
     'PandaPush-v3': 50
 }
 
@@ -41,7 +47,7 @@ for task in ["Push", "PickAndPlace"]:
     ENV_IDS.append(env_id)
 
 for env in ['AntEnv','CrippleHalfCheetahEnv','CrippleAntEnv','HalfCheetahEnv',
-             'SlimHumanoidEnv','HopperEnv','Cartpoleenvs','Pendulumenvs']:
+             'SlimHumanoidEnv','HumanoidStandupEnv','HopperEnv', 'CrippleHopperEnv', 'WalkerEnv','Cartpoleenvs','Pendulumenvs']:
     env_id = f"{env}"
     register(
         id=env_id,
