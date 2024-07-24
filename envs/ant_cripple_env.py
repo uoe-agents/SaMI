@@ -16,7 +16,7 @@ class CrippleAntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
 
         self.current_trajectory_reward = 0
         self.current_trajectory_length = 0
-        self.max_eps_length = 1000
+        self.max_eps_length = 3000
         mujoco_env.MujocoEnv.__init__(self, "%s/assets/ant.xml" % dir_path, 5)
 
         self.n_possible_cripple = 4
@@ -24,12 +24,25 @@ class CrippleAntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         self.cripple_set = cripple_set
         self.extreme_set = extreme_set
 
+        # self.cripple_dict = {
+        #     0: [2, 3],  # front L
+        #     1: [4, 5],  # front R
+        #     2: [6, 7],  # back L
+        #     3: [0, 1],  # back R
+        # }
+        # self.cripple_dict = {
+        #     0: [3],  # front L
+        #     1: [5],  # front R
+        #     2: [7],  # back L
+        #     3: [1],  # back R
+        # } # can use the torso
+
         self.cripple_dict = {
-            0: [2, 3],  # front L
-            1: [4, 5],  # front R
-            2: [6, 7],  # back L
-            3: [0, 1],  # back R
-        }
+            0: [2],  # front L
+            1: [4],  # front R
+            2: [6],  # back L
+            3: [0],  # back R
+        } # can use the link
 
         self._init_geom_rgba = self.model.geom_rgba.copy()
         self._init_geom_contype = self.model.geom_contype.copy()
@@ -57,6 +70,13 @@ class CrippleAntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         if self.cripple_mask is None:
             a = a
         else:
+            # # for c_ind in range(len(a)):
+            # #     if self.cripple_mask[c_ind] == 0:
+            # #         a[c_ind] = -0.5
+            # for c_ind in range(len(a)):
+            #     if self.cripple_mask[c_ind] == 0:
+            #         a[c_ind] = 0.5
+
             a = self.cripple_mask * a
         self.do_simulation(a, self.frame_skip)
         xposafter = self.get_body_com("torso")[0]
