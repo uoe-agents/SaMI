@@ -13,7 +13,7 @@ class AntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         self.causal_hidden_dim = causal_hidden_dim
         self.current_trajectory_length = 0
         self.current_trajectory_reward = 0
-        self.max_eps_length = 2000
+        self.max_eps_length = 100
         mujoco_env.MujocoEnv.__init__(self, '%s/assets/ant.xml' % dir_path, 5)
 
         self.original_mass = np.copy(self.model.body_mass)
@@ -43,7 +43,10 @@ class AntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
 
         reward_ctrl = -0.005 * np.square(a).sum()
         reward_run = (xposafter - self.xposbefore) / self.dt
-        reward_contact = 0.0
+        # reward_contact = 0.0
+        reward_contact = (
+            -0.5 * 1e-3 * np.sum(np.square(np.clip(self.sim.data.cfrc_ext, -1, 1)))
+        )
         reward_survive = 0.05
         reward = reward_run + reward_ctrl + reward_contact + reward_survive
         self.current_trajectory_length += 1
@@ -118,7 +121,10 @@ class AntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         reward_ctrl = -0.005 * np.sum(np.square(act), axis=-1)
         reward_run = obs['observation'][..., 0]
 
-        reward_contact = 0.0
+        # reward_contact = 0.0
+        reward_contact = (
+            -0.5 * 1e-3 * np.sum(np.square(np.clip(self.sim.data.cfrc_ext, -1, 1)))
+        )
         reward_survive = 0.05
         reward = reward_run + reward_ctrl + reward_contact + reward_survive
 
@@ -129,7 +135,10 @@ class AntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
             reward_ctrl = -0.005 * tf.reduce_sum(tf.square(act), axis=-1)
             reward_run = obs[..., 0]
 
-            reward_contact = 0.0
+            # reward_contact = 0.0
+            reward_contact = (
+            -0.5 * 1e-3 * np.sum(np.square(np.clip(self.sim.data.cfrc_ext, -1, 1)))
+        )
             reward_survive = 0.05
             reward = reward_run + reward_ctrl + reward_contact + reward_survive
             return reward
