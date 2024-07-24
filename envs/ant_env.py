@@ -13,7 +13,7 @@ class AntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         self.causal_hidden_dim = causal_hidden_dim
         self.current_trajectory_length = 0
         self.current_trajectory_reward = 0
-        self.max_eps_length = 100
+        self.max_eps_length = 2000
         mujoco_env.MujocoEnv.__init__(self, '%s/assets/ant.xml' % dir_path, 5)
 
         self.original_mass = np.copy(self.model.body_mass)
