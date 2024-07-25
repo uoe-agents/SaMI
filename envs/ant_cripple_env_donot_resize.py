@@ -284,7 +284,7 @@ class CrippleAntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         total_crippled_joints = []
         for j in self.crippled_joint:
             total_crippled_joints += self.cripple_dict[j]
-        self.set_crippled_joint(self.crippled_joint)
+        # self.set_crippled_joint(self.crippled_joint)
         self.cripple_mask[total_crippled_joints] = 0
 
         mass = np.copy(self.original_mass)

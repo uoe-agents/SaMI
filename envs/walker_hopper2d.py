@@ -6,23 +6,30 @@ from gym.envs.mujoco import mujoco_env
 import gymnasium.spaces as spaces
 from .utils import convert_observation_to_space
 
-class WalkerEnv(mujoco_env.MujocoEnv, utils.EzPickle):
-    def __init__(
-        self, mass_scale_set=[0.75, 1.0, 1.25], damping_scale_set=[0.75, 1.0, 1.25],causal_dim=-1,causal_hidden_dim=-1,
-    ):
+class WalkerHopperEnv(mujoco_env.MujocoEnv, utils.EzPickle):
+    def __init__(self, cripple_set=[0, 1, 2, 3], extreme_set=[0], mass_scale_set=[1.0], causal_dim=-1, causal_hidden_dim=-1):
+        self.cripple_mask = None
         self.causal_dim = causal_dim
         self.causal_hidden_dim = causal_hidden_dim
         self.current_trajectory_reward = 0
         self.current_trajectory_length = 0
         self.max_eps_length = 2000
         mujoco_env.MujocoEnv.__init__(self, "walker2d.xml", 4)
+
+        self.cripple_mask = np.ones(self.action_space.shape)
+        self.cripple_set = cripple_set
+        self.extreme_set = extreme_set
+
+        self._init_geom_rgba = self.model.geom_rgba.copy()
+        self._init_geom_contype = self.model.geom_contype.copy()
+        self._init_geom_size = self.model.geom_size.copy()
+        self._init_geom_pos = self.model.geom_pos.copy()
         self.original_mass = np.copy(self.model.body_mass)
-        self.original_damping = np.copy(self.model.dof_damping)
-
         self.mass_scale_set = mass_scale_set
-        self.damping_scale_set = damping_scale_set
+        # self.damping_scale_set = damping_scale_set
+        # self.original_damping = np.copy(self.model.dof_damping)
 
-        utils.EzPickle.__init__(self, mass_scale_set, damping_scale_set)
+        utils.EzPickle.__init__(self, cripple_set, extreme_set)
         ob = self._get_obs()
         self.observation_space = convert_observation_to_space(ob)
         bounds = self.model.actuator_ctrlrange.copy()
@@ -31,12 +38,16 @@ class WalkerEnv(mujoco_env.MujocoEnv, utils.EzPickle):
 
 
     def _set_observation_space(self, observation):
-        super(WalkerEnv, self)._set_observation_space(observation)
+        super(WalkerHopperEnv, self)._set_observation_space(observation)
         proc_observation = self.obs_preproc(observation['observation'][None])
         self.proc_observation_space_dims = proc_observation.shape[-1]
 
     def step(self, a):
         posbefore = self.sim.data.qpos[0]
+        if self.cripple_mask is None:
+            a = a
+        else:
+            a = self.cripple_mask * a
         self.do_simulation(a, self.frame_skip)
         posafter, height, ang = self.sim.data.qpos[0:3]
         alive_bonus = 1.0
@@ -91,8 +102,8 @@ class WalkerEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         random_index = self.np_random.randint(len(self.mass_scale_set))
         self.mass_scale = self.mass_scale_set[random_index]
 
-        random_index = self.np_random.randint(len(self.damping_scale_set))
-        self.damping_scale = self.damping_scale_set[random_index]
+        # random_index = self.np_random.randint(len(self.damping_scale_set))
+        # self.damping_scale = self.damping_scale_set[random_index]
 
         self.change_env()
         return self._get_obs()
@@ -116,20 +127,78 @@ class WalkerEnv(mujoco_env.MujocoEnv, utils.EzPickle):
 
         return _thunk
 
+    def set_crippled_joint(self, temp_cripple_joint):
+        # Colour the removed leg to red
+        geom_rgba = self._init_geom_rgba.copy()
+        for joint in temp_cripple_joint:
+            geom_rgba[joint+2, :3] = np.array([1, 0, 0])
+        self.model.geom_rgba[:] = geom_rgba.copy()
+
+        # Make the removed leg not affect anything
+        temp_size = self._init_geom_size.copy()
+        temp_pos = self._init_geom_pos.copy()
+        for value in temp_cripple_joint:
+            if value == 0:
+                # thigh rotor
+                temp_size[value+2, 0] = temp_size[value+2, 0] / 2
+                temp_size[value+2, 1] = temp_size[value+2, 1] / 2
+                temp_pos[value+3, :]  = temp_pos[value+2, :]
+            elif value == 1:
+                # leg rotor
+                temp_size[value+2, 0] = temp_size[value+2, 0] / 2
+                temp_size[value+2, 1] = temp_size[value+2, 1] / 2
+                temp_pos[value+3, :]  = temp_pos[value+2, :]
+            elif value == 2:
+                # foot rotor
+                temp_size[value+2, 0] = temp_size[value+2, 0] / 2
+                temp_size[value+2, 1] = temp_size[value+2, 1] / 2
+            elif value == 3:
+                # left thigh rotor
+                temp_size[value+2, 0] = temp_size[value+2, 0] / 2
+                temp_size[value+2, 1] = temp_size[value+2, 1] / 2
+                temp_pos[value+3, :]  = temp_pos[value+2, :]
+            elif value == 4:
+                # left leg rotor
+                temp_size[value+2, 0] = temp_size[value+2, 0] / 2
+                temp_size[value+2, 1] = temp_size[value+2, 1] / 2
+                temp_pos[value+3, :]  = temp_pos[value+2, :]
+            elif value == 5:
+                # left foot rotor
+                temp_size[value+2, 0] = temp_size[value+2, 0] / 2
+                temp_size[value+2, 1] = temp_size[value+2, 1] / 2
+        self.model.geom_size[:] = temp_size.copy()
+        self.model.geom_pos[:] = temp_pos.copy()
+
     def change_env(self):
+        action_dim = self.action_space.shape
+        self.cripple_mask = np.ones(action_dim)
+        if self.extreme_set == [0]:
+            self.crippled_joint = np.array([self.np_random.choice(self.cripple_set)])
+            self.cripple_mask[self.crippled_joint] = 0
+        elif self.extreme_set == [1]:
+            self.crippled_joint = self.np_random.choice(self.cripple_set, 2, replace=False)
+            self.cripple_mask[self.crippled_joint] = 0
+        elif self.extreme_set == [2]:
+            self.crippled_joint = np.array([])
+        else:
+            raise ValueError(self.extreme_set)
+        
+        
+        self.set_crippled_joint(self.crippled_joint)
+
         mass = np.copy(self.original_mass)
-        damping = np.copy(self.original_damping)
+        # damping = np.copy(self.original_damping)
         mass *= self.mass_scale
-        damping *= self.damping_scale
+        # damping *= self.damping_scale
 
         self.model.body_mass[:] = mass
-        self.model.dof_damping[:] = damping
+        # self.model.dof_damping[:] = damping
 
     def change_mass(self, mass):
         self.mass_scale = mass
 
-    def change_damping(self, damping):
-        self.damping_scale = damping
+    # def change_damping(self, damping):
+    #     self.damping_scale = damping
 
     def viewer_setup(self):
         # self.viewer.cam.trackbodyid = 2
@@ -143,7 +212,7 @@ class WalkerEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         self.viewer.cam.elevation = -20
 
     def get_sim_parameters(self):
-        return np.array([self.mass_scale, self.damping_scale])
+        return np.array([self.crippled_joint]).reshape(-1)
 
     def num_modifiable_parameters(self):
         return 2

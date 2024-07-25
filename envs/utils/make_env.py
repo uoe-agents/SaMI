@@ -152,6 +152,30 @@ def get_cripple_hopper_env(cripple_set, extreme_set, mass_scale_set,causal_dim,c
         return env
     return _init
 
+def get_cripple_walker_env(cripple_set, extreme_set, mass_scale_set,causal_dim,causal_hidden_dim):
+    def _init():
+        env = gymnasium.make(f'CrippleWalkerEnv', 
+                             cripple_set=cripple_set, 
+                             extreme_set=extreme_set,
+                             mass_scale_set=mass_scale_set,
+                             causal_dim=causal_dim,
+                             causal_hidden_dim=causal_hidden_dim)
+        env.reset()
+        return env
+    return _init
+    
+def get_walker_hopper_env(cripple_set, extreme_set, mass_scale_set,causal_dim,causal_hidden_dim):
+    def _init():
+        env = gymnasium.make(f'WalkerHopperEnv', 
+                             cripple_set=cripple_set, 
+                             extreme_set=extreme_set,
+                             mass_scale_set=mass_scale_set,
+                             causal_dim=causal_dim,
+                             causal_hidden_dim=causal_hidden_dim)
+        env.reset()
+        return env
+    return _init
+
 def get_cripple_ant_env(cripple_set, extreme_set, mass_scale_set,causal_dim,causal_hidden_dim):
     def _init():
         env = gymnasium.make(f'CrippleAntEnv', 
@@ -217,7 +241,7 @@ def make_env(name,**kwargs):
             return get_hopper_env(mass_scale_set, damping_scale_set,causal_dim,causal_hidden_dim)
         elif name == 'WalkerEnv':
             return get_walker_env(mass_scale_set, damping_scale_set,causal_dim,causal_hidden_dim)
-    elif name == 'CrippleHalfCheetahEnv' or name == 'CrippleAntEnv' or name == 'CrippleHopperEnv':
+    elif name == 'CrippleHalfCheetahEnv' or name == 'CrippleAntEnv' or name == 'CrippleHopperEnv' or name == 'CrippleWalkerEnv' or name == 'WalkerHopperEnv':
         cripple_set = kwargs.get('cripple_set', [0, 1, 2, 3])
         extreme_set = kwargs.get('extreme_set', [0])
         mass_scale_set = kwargs.get('mass_scale_set', [1.0])
@@ -225,8 +249,12 @@ def make_env(name,**kwargs):
             return get_cripple_half_cheetah_env(cripple_set, extreme_set, mass_scale_set,causal_dim,causal_hidden_dim)
         elif name == 'CrippleAntEnv':
             return get_cripple_ant_env(cripple_set, extreme_set, mass_scale_set,causal_dim,causal_hidden_dim)
-        if name == 'CrippleHopperEnv':
+        elif name == 'CrippleHopperEnv':
             return get_cripple_hopper_env(cripple_set, extreme_set, mass_scale_set,causal_dim,causal_hidden_dim)
+        elif name == 'CrippleWalkerEnv':
+            return get_cripple_walker_env(cripple_set, extreme_set, mass_scale_set,causal_dim,causal_hidden_dim)
+        elif name == 'WalkerHopperEnv':
+            return get_walker_hopper_env(cripple_set, extreme_set, mass_scale_set,causal_dim,causal_hidden_dim)
     elif name == 'Cartpoleenvs':
         force_set = kwargs.get('force_set', [1.0])
         length_set = kwargs.get('length_set', [1.0])

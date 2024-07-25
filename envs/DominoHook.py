@@ -15,6 +15,8 @@ from .slim_humanoid_env import SlimHumanoidEnv # mass_scale_set damping_scale_se
 from .hopper_env import HopperEnv # mass_scale_set damping_scale_set
 from .hopper_cripple_env import CrippleHopperEnv # mass_scale_set damping_scale_set
 from .walker2d import WalkerEnv # mass_scale_set damping_scale_set
+from .walker2d_cripple_env import CrippleWalkerEnv # mass_scale_set damping_scale_set
+from .walker_hopper2d import WalkerHopperEnv # mass_scale_set damping_scale_set
 from .cartpole import RandomCartPole_Force_Length as Cartpoleenvs # force_set length_set
 from .pendulum import RandomPendulumAll as Pendulumenvs # mass_set length_set
 
@@ -27,7 +29,9 @@ ENV_CLS = {
     'HumanoidStandupEnv':HumanoidStandupEnv,
     'HopperEnv':HopperEnv,
     'CrippleHopperEnv':CrippleHopperEnv,
+    'CrippleWalkerEnv':CrippleWalkerEnv,
     'WalkerEnv':WalkerEnv,
+    'WalkerHopperEnv':WalkerHopperEnv,
     'Cartpoleenvs':Cartpoleenvs,
     'Pendulumenvs':Pendulumenvs
 }
@@ -35,6 +39,8 @@ ENV_CAUSAL = {
     'AntEnv':['mass_scale_set','damping_scale_set'],
     'CrippleHalfCheetahEnv':['cripple_set','extreme_set','mass_scale_set'],
     'CrippleHopperEnv':['cripple_set','extreme_set','mass_scale_set'],
+    'CrippleWalkerEnv':['cripple_set','extreme_set','mass_scale_set'],
+    'WalkerHopperEnv':['cripple_set','extreme_set','mass_scale_set'],
     'CrippleAntEnv':['cripple_set','extreme_set','mass_scale_set'],
     'HalfCheetahEnv':['mass_scale_set','damping_scale_set'],
     'SlimHumanoidEnv':['mass_scale_set','damping_scale_set'],
@@ -54,7 +60,9 @@ ENV_MAX_STEP = {
     'HumanoidStandupEnv':100,
     'HopperEnv':2000,
     'CrippleHopperEnv':100,
-    'WalkerEnv':100,
+    'CrippleWalkerEnv':2000,
+    'WalkerHopperEnv':2000,
+    'WalkerEnv':2000,
     'Cartpoleenvs':1000,
     'Pendulumenvs':1000
 }

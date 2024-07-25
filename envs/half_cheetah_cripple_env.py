@@ -9,8 +9,8 @@ from .utils import convert_observation_to_space
 class CrippleHalfCheetahEnv(mujoco_env.MujocoEnv, utils.EzPickle):
     def __init__(self, cripple_set=[0, 1, 2, 3], extreme_set=[0], mass_scale_set=[1.0], causal_dim=-1, causal_hidden_dim=-1):
         """
-        If extreme set=[0], neutral
-        If extreme set=[1], extreme
+        If extreme set=[0], neutral, cripple 1 joint
+        If extreme set=[1], extreme, cripple 1 joints
         """
         self.prev_qpos = None
 
