@@ -24,12 +24,12 @@ class CrippleAntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         self.cripple_set = cripple_set
         self.extreme_set = extreme_set
 
-        # self.cripple_dict = {
-        #     0: [2, 3],  # front L
-        #     1: [4, 5],  # front R
-        #     2: [6, 7],  # back L
-        #     3: [0, 1],  # back R
-        # }
+        self.cripple_dict = {
+            0: [2, 3],  # front L
+            1: [4, 5],  # front R
+            2: [6, 7],  # back L
+            3: [0, 1],  # back R
+        }
         # self.cripple_dict = {
         #     0: [3],  # front L
         #     1: [5],  # front R
@@ -37,12 +37,12 @@ class CrippleAntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         #     3: [1],  # back R
         # } # can use the torso
 
-        self.cripple_dict = {
-            0: [2],  # front L
-            1: [4],  # front R
-            2: [6],  # back L
-            3: [0],  # back R
-        } # can use the link
+        # self.cripple_dict = {
+        #     0: [2],  # front L
+        #     1: [4],  # front R
+        #     2: [6],  # back L
+        #     3: [0],  # back R
+        # } # can use the link
 
         self._init_geom_rgba = self.model.geom_rgba.copy()
         self._init_geom_contype = self.model.geom_contype.copy()
@@ -76,7 +76,6 @@ class CrippleAntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
             # for c_ind in range(len(a)):
             #     if self.cripple_mask[c_ind] == 0:
             #         a[c_ind] = 0.5
-
             a = self.cripple_mask * a
         self.do_simulation(a, self.frame_skip)
         xposafter = self.get_body_com("torso")[0]
@@ -283,6 +282,9 @@ class CrippleAntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
             )
         else:
             raise ValueError(self.extreme_set)
+
+        for i_joint in self.crippled_joint:
+            self.set_crippled_joint(i_joint)
 
         self.cripple_mask = np.ones(self.action_space.shape)
         total_crippled_joints = []

@@ -48,7 +48,7 @@ ENV_CAUSAL = {
 ENV_MAX_STEP = {
     'AntEnv': 1000,
     'CrippleHalfCheetahEnv':1000,
-    'CrippleAntEnv':1000,
+    'CrippleAntEnv':3000,
     'HalfCheetahEnv':1000,
     'SlimHumanoidEnv':2000,
     'HumanoidStandupEnv':100,
