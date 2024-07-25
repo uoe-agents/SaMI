@@ -64,17 +64,25 @@ class HumanoidStandupEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         return next_obs - obs
 
     def step(self, a):
-        old_obs = np.copy(self._get_obs()['observation'])
+        # old_obs = np.copy(self._get_obs()['observation'])
         self.do_simulation(a, self.frame_skip)
+        pos_after = self.sim.data.qpos[2]
         data = self.sim.data
-        lin_vel_cost = 0.25 / 0.015 * old_obs[..., 22]
+        uph_cost = (pos_after - 0) / self.model.opt.timestep
+
         quad_ctrl_cost = 0.1 * np.square(data.ctrl).sum()
-        quad_impact_cost = 0.0
-        qpos = self.sim.data.qpos
-        done = bool((qpos[2] < 1.0) or (qpos[2] > 2.0))
-        alive_bonus = 5.0 * (1 - float(done))
+        quad_impact_cost = 0.5e-6 * np.square(data.cfrc_ext).sum()
+        quad_impact_cost = min(quad_impact_cost, 10)
+        reward = uph_cost - quad_ctrl_cost - quad_impact_cost + 1
+        alive_bonus = 1.0
+        # lin_vel_cost = 0.25 / 0.015 * old_obs[..., 22]
+        # quad_ctrl_cost = 0.1 * np.square(data.ctrl).sum()
+        # quad_impact_cost = 0.0
+        # qpos = self.sim.data.qpos
+        # done = bool((qpos[2] < 1.0) or (qpos[2] > 2.0))
+        # alive_bonus = 5.0 * (1 - float(done))
         done = False
-        reward = lin_vel_cost - quad_ctrl_cost - quad_impact_cost + alive_bonus
+        # reward = lin_vel_cost - quad_ctrl_cost - quad_impact_cost + alive_bonus
         self.current_trajectory_reward += reward
         self.current_trajectory_length += 1
         if self.current_trajectory_length == self.max_eps_length:
@@ -88,7 +96,7 @@ class HumanoidStandupEnv(mujoco_env.MujocoEnv, utils.EzPickle):
                         r = self.current_trajectory_reward,
                         l = self.current_trajectory_length
                     ),
-                    reward_linvel=lin_vel_cost,
+                    reward_linvel=uph_cost,
                     reward_quadctrl=-quad_ctrl_cost,
                     reward_alive=alive_bonus,
                     reward_impact=-quad_impact_cost,
@@ -105,7 +113,7 @@ class HumanoidStandupEnv(mujoco_env.MujocoEnv, utils.EzPickle):
                         r = self.current_trajectory_reward,
                         l = self.current_trajectory_length
                     ),
-                    reward_linvel=lin_vel_cost,
+                    reward_linvel=uph_cost,
                     reward_quadctrl=-quad_ctrl_cost,
                     reward_alive=alive_bonus,
                     reward_impact=-quad_impact_cost,
@@ -140,33 +148,51 @@ class HumanoidStandupEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         return self._get_obs()
 
     def reward(self, obs, action, next_obs):
-        ctrl = action
+        # ctrl = action
 
-        lin_vel_cost = 0.25 / 0.015 * obs['observation'][..., 22]
-        quad_ctrl_cost = 0.1 * np.sum(np.square(ctrl), axis=-1)
-        quad_impact_cost = 0.0
+        pos_after = self.sim.data.qpos[2]
+        data = self.sim.data
+        uph_cost = (pos_after - 0) / self.model.opt.timestep
 
-        done = bool((obs['observation'][..., 1] < 1.0) or (obs['observation'][..., 1] > 2.0))
-        alive_bonus = 5.0 * (not done)
+        quad_ctrl_cost = 0.1 * np.square(data.ctrl).sum()
+        quad_impact_cost = 0.5e-6 * np.square(data.cfrc_ext).sum()
+        quad_impact_cost = min(quad_impact_cost, 10)
+        reward = uph_cost - quad_ctrl_cost - quad_impact_cost + 1
 
-        reward = lin_vel_cost - quad_ctrl_cost - quad_impact_cost + alive_bonus
+
+        # lin_vel_cost = 0.25 / 0.015 * obs['observation'][..., 22]
+        # quad_ctrl_cost = 0.1 * np.sum(np.square(ctrl), axis=-1)
+        # quad_impact_cost = 0.0
+
+        # done = bool((obs['observation'][..., 1] < 1.0) or (obs['observation'][..., 1] > 2.0))
+        # alive_bonus = 5.0 * (not done)
+
+        # reward = lin_vel_cost - quad_ctrl_cost - quad_impact_cost + alive_bonus
 
         return reward
 
     def tf_reward_fn(self):
         def _thunk(obs, act, next_obs):
-            ctrl = act
+            pos_after = self.sim.data.qpos[2]
+            data = self.sim.data
+            uph_cost = (pos_after - 0) / self.model.opt.timestep
 
-            lin_vel_cost = 0.25 / 0.015 * obs[..., 22]
-            quad_ctrl_cost = 0.1 * tf.compat.v1.reduce_sum(tf.compat.v1.square(ctrl), axis=-1)
-            quad_impact_cost = 0.0
+            quad_ctrl_cost = 0.1 * np.square(data.ctrl).sum()
+            quad_impact_cost = 0.5e-6 * np.square(data.cfrc_ext).sum()
+            quad_impact_cost = min(quad_impact_cost, 10)
+            reward = uph_cost - quad_ctrl_cost - quad_impact_cost + 1
+            # ctrl = act
 
-            alive_bonus = 5.0 * tf.compat.v1.cast(
-                tf.compat.v1.logical_and(tf.compat.v1.greater(obs[..., 1], 1.0), tf.compat.v1.less(obs[..., 1], 2.0)),
-                dtype=tf.compat.v1.float32,
-            )
+            # lin_vel_cost = 0.25 / 0.015 * obs[..., 22]
+            # quad_ctrl_cost = 0.1 * tf.compat.v1.reduce_sum(tf.compat.v1.square(ctrl), axis=-1)
+            # quad_impact_cost = 0.0
 
-            reward = lin_vel_cost - quad_ctrl_cost - quad_impact_cost + alive_bonus
+            # alive_bonus = 5.0 * tf.compat.v1.cast(
+            #     tf.compat.v1.logical_and(tf.compat.v1.greater(obs[..., 1], 1.0), tf.compat.v1.less(obs[..., 1], 2.0)),
+            #     dtype=tf.compat.v1.float32,
+            # )
+
+            # reward = lin_vel_cost - quad_ctrl_cost - quad_impact_cost + alive_bonus
             return reward
 
         return _thunk
