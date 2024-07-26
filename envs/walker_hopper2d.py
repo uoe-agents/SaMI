@@ -141,8 +141,9 @@ class WalkerHopperEnv(mujoco_env.MujocoEnv, utils.EzPickle):
             if value == 0:
                 # thigh rotor
                 temp_size[value+2, 0] = temp_size[value+2, 0] / 2
-                temp_size[value+2, 1] = temp_size[value+2, 1] / 2
+                temp_size[value+2, 1] = temp_size[value+2, 1] / 2   # length
                 temp_pos[value+3, :]  = temp_pos[value+2, :]
+                temp_pos[value+4, :]  = temp_pos[value+3, :]
             elif value == 1:
                 # leg rotor
                 temp_size[value+2, 0] = temp_size[value+2, 0] / 2
@@ -152,11 +153,13 @@ class WalkerHopperEnv(mujoco_env.MujocoEnv, utils.EzPickle):
                 # foot rotor
                 temp_size[value+2, 0] = temp_size[value+2, 0] / 2
                 temp_size[value+2, 1] = temp_size[value+2, 1] / 2
+                temp_pos[value+2, :]  = temp_pos[value+1, :]
             elif value == 3:
                 # left thigh rotor
                 temp_size[value+2, 0] = temp_size[value+2, 0] / 2
                 temp_size[value+2, 1] = temp_size[value+2, 1] / 2
                 temp_pos[value+3, :]  = temp_pos[value+2, :]
+                temp_pos[value+4, :]  = temp_pos[value+3, :]
             elif value == 4:
                 # left leg rotor
                 temp_size[value+2, 0] = temp_size[value+2, 0] / 2
@@ -166,6 +169,7 @@ class WalkerHopperEnv(mujoco_env.MujocoEnv, utils.EzPickle):
                 # left foot rotor
                 temp_size[value+2, 0] = temp_size[value+2, 0] / 2
                 temp_size[value+2, 1] = temp_size[value+2, 1] / 2
+                temp_pos[value+2, :]  = temp_pos[value+1, :]
         self.model.geom_size[:] = temp_size.copy()
         self.model.geom_pos[:] = temp_pos.copy()
 
