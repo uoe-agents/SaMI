@@ -178,8 +178,10 @@ class WalkerHopperEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         elif self.extreme_set == [1]:
             self.crippled_joint = self.np_random.choice(self.cripple_set, 2, replace=False)
             self.cripple_mask[self.crippled_joint] = 0
-        elif self.extreme_set == [2]:
+        elif self.extreme_set == [2]:   # no cripple
             self.crippled_joint = np.array([])
+        elif self.extreme_set == [3]:   # cripple the entir leg
+            self.crippled_joint = self.np_random.choice(self.cripple_set, 3, replace=False)
         else:
             raise ValueError(self.extreme_set)
         
