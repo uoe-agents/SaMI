@@ -16,7 +16,7 @@ class CrippleAntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
 
         self.current_trajectory_reward = 0
         self.current_trajectory_length = 0
-        self.max_eps_length = 3000
+        self.max_eps_length = 2000
         mujoco_env.MujocoEnv.__init__(self, "%s/assets/ant.xml" % dir_path, 5)
 
         self.n_possible_cripple = 4

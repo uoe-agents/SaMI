@@ -104,6 +104,11 @@ During the training process, we alter the values of mass and damping, and random
 <img src="docs/gif/crippledant/SaCCM_Training_(Crippled_0).gif" width=200> <img src="docs/gif/crippledant/SaCCM_Training_(Crippled_1&4).gif" width=200>
 </p>
 
+* [ ] SAC training setting: [([0], [0],[1.0])]
+* [ ] SAC training setting: [([0], [2],[1.0])]
+* [ ] SAC training setting: [([0,1], [1],[1.0])]
+* [ ] SAC training setting: [([0,3], [1],[1.0])]
+
 #### Hopper ✔️
 
 During the training process, we alter the values of mass and damping. In the test setting, we test on previously unseen mass and damping values. In the Hopper environment, we found that in order to adapt to different mass values, the TESAC/CCM/SaTESAC/SaCCM policy tends to learn only one skill, which is ***the Hopper hopping forward on the floor***. The following shows the training and testing videos of SaTESAC on different tasks (first 180 seconds, 6x speed):
@@ -125,8 +130,17 @@ During the training process, we alter the values of mass and damping, and random
 </p>
 
 <p align=center>
-<img src="docs/gif/walkerhopper/SaCCM([3], [0], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([4], [0], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([5], [0], [1.0]).gif" width=200>
-</p>  <img src="docs/gif/walkerhopper/SaCCM_([3, 4, 5], [3], [1.0]).gif" width=200>
+<img src="docs/gif/walkerhopper/SaCCM([3], [0], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([4], [0], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([5], [0], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([3, 4, 5], [3], [1.0]).gif" width=200>
+</p>
+
+* [ ] Multiple seeds training (5 seeds))
+  Training task: [([0,1,2], [3], [1.0]),([1], [2], [1.0]),([0,1,2], [3], [1.0]), ([0],[2], [1.0])]
+  Moderate task: [([0], [0], [1.0]),([1], [0], [1.0]), ([2], [0], [1.0])]
+  Extreme task: [([3], [0], [1.0]), ([4], [0], [1.0]), ([5], [0], [1.0]), ([3,4,5], [3], [1.0])]
+* [ ] Multiple seeds training (1 seeds))
+  Training task: [([0,1,2], [3], [0.75,0.85,1.0,1.15,1.25]),([1], [2], [0.75,0.85,1.0,1.15,1.25]),([0,1,2], [3], [1.0]), ([0],[2], [0.75,0.85,1.0,1.15,1.25])]
+  Moderate task: [([0], [0], [0.4, 0.5,1.5, 1.6]),([1], [0], [0.4, 0.5,1.5, 1.6]), ([2], [0], [0.4, 0.5,1.5, 1.6])]
+  Extreme task: [([3], [0], [0.2,0.4,1.6,1.8]), ([4], [0], [0.2,0.4,1.6,1.8]), ([5], [0], [0.2,0.4,1.6,1.8]), ([3,4,5], [3], [0.2,0.4,1.6,1.8])]
 
 #### Half-Cheetah ✔️
 
@@ -134,6 +148,7 @@ During the training process, we alter the values of mass and damping, and random
 
 #### Ant
 
+* [ ] SAC training setting: [([1.0],[1.0])]
 
 #### SlimHumanoid ✔️
 

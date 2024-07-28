@@ -15,7 +15,7 @@ class CrippleHopperEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         self.causal_hidden_dim = causal_hidden_dim
         self.current_trajectory_reward = 0
         self.current_trajectory_length = 0
-        self.max_eps_length = 100
+        self.max_eps_length = 1000
         mujoco_env.MujocoEnv.__init__(self, "hopper.xml", 4)
 
         self._init_geom_rgba = self.model.geom_rgba.copy()
