@@ -112,23 +112,44 @@ During the training process, we alter the values of mass and damping. In the tes
 <img src="docs/gif/hopper/Extreme_Test_(mass=0.25, damping=0.25).gif" width=200> <img src="docs/gif/hopper/SaTESAC_Extreme_Test_(mass=0.25, damping=1.75).gif" width=200> <img src="docs/gif/hopper/CCM_Extreme_Test_(mass=1.75, damping=0.25).gif" width=200> <img src="docs/gif/hopper/CCM_Extreme_Test_(mass=1.75, damping=1.75).gif" width=200> <img src="docs/gif/hopper/SaTESAC_Super_Extreme_Test_(mass=4.0, damping=1.0).gif" width=200> 
 </p>
 
-#### Crippled Hopper
-
 #### Walker
 
+(mass=0.25,damping=0.25), (mass=0.25,damping=1.75), (mass=1.75,damping=0.25), (mass=1.75,damping=1.75), (mass=4.0,damping=1.0)
+
 #### Crippled Walker
+
+#### WalkerHopper
+
+During the training process, we alter the values of mass and damping, and randomly disable the right leg (i.e., joints 0, 1, and 2). In the test setting, we assess the model on previously unseen mass and damping values. More importantly, in the moderate test setting, we randomly disable one joint in the left or right leg (i.e., joints 0, 1, 2, 3, 4, or 5); in the extreme test setting, we also randomly disable the left leg (i.e., joints 3, 4, and 5). The following shows the training and testing videos of SaCCM on different tasks (first 180 seconds, 6x speed):
+
+<p align=center>
+<img src="docs/gif/walkerhopper/SaCCM_no_crippled_joints.gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([0, 1, 2], [3], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([3, 4, 5], [3], [1.0]).gif" width=200>
+</p>
+
+* [ ] SaCCM Moderate Test in task (cripple joints 0/1/2/3/4/5)
 
 #### Half-Cheetah
 
 #### Ant (longer episode length)
 
-#### SlimHumanoid ✔️/(longer episode length)
+#### SlimHumanoid ✔️
 
 During the training process, we alter the values of mass and damping. In the test setting, we test on previously unseen mass and damping values. In the SlimHumanoid environment, we found that in order to adapt to different mass and damping values, the TESAC/CCM/SaTESAC/SaCCM policy tends to learn only one skill, which is ***the Humanoid Robot crawling on the ground using one elbow**.* When the damping is relatively high (damping=1.6), the Humanoid Robot can crawl forward stably, but when the damping is low (damping=0.6), it tends to roll. The following shows the training and testing videos of SaCCM on different tasks (first 180 seconds, 6x speed):
 
 <p align=center>
 <img src="docs/gif/slimhumanoid/CCM_Moderate_Test_(mass=0.6,damping=0.6).gif" width=200> <img src="docs/gif/slimhumanoid/CCM_Moderate_Test_(mass=0.6,damping=1.5).gif" width=200> <img src="docs/gif/slimhumanoid/CCM_Moderate_Test_(mass=1.5,damping=0.6).gif" width=200> <img src="docs/gif/slimhumanoid/CCM_Moderate_Test_(mass=1.5,damping=1.5).gif" width=200> 
 </p>
+
+### Humanoid Standup ✔️
+
+During the training process, we alter the values of mass and damping. In the test setting, we test on previously unseen mass and damping values. In the HumanoidStand environment, SaCCM and SaTESAC adapt better to varying mass and damping values compared to CCM and TESAC. From the example videos, the Humanoid Robot (using the CCM algorithm) takes more time struggling to stand up. This indicates that distinguishing different tasks according to the skills helps the RL agent to better execute the acquired skills and zero-shot generalise to different tasks. The following shows the training and testing videos of SaCCM on different tasks (first 90 seconds, 3x speed):
+
+<p align=center>
+<img src="docs/gif/humanoidstandup/SaCCM_Moderate_Test_(mass=0.6,damping=0.6).gif" width=200>
+</p>
+
+* [ ] SaCCM Extreme Test in task (mass=0.6,damping=1.5), (mass=1.5,damping=0.6), (mass=1.5,damping=1.5)
+* [ ] CCM Extreme Test in task (mass=0.6,damping=0.6), (mass=0.6,damping=1.5), (mass=1.5,damping=0.6), (mass=1.5,damping=1.5). Need to show CCM struggle a longer time to stand up.
 
 ### 📥 Requirements
 

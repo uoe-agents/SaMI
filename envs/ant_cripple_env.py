@@ -80,10 +80,16 @@ class CrippleAntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         self.do_simulation(a, self.frame_skip)
         xposafter = self.get_body_com("torso")[0]
 
-        reward_ctrl = 0.0
+        # reward_ctrl = 0.0
+        reward_ctrl = -0.5 * np.sum(np.square(a), axis=-1)
         reward_run = (xposafter - self.xposbefore) / self.dt
-        reward_contact = 0.0
-        reward_survive = 0.05
+        # reward_contact = 0.0
+        # reward_survive = 0.05
+        reward_contact = (
+            -0.5 * 1e-3 * np.sum(np.square(np.clip(self.sim.data.cfrc_ext, -1, 1)))
+        )
+        # reward_survive = 0.05
+        reward_survive = 1.0
         reward = reward_run + reward_ctrl + reward_contact + reward_survive
 
         done = False
@@ -173,12 +179,18 @@ class CrippleAntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         return self._get_obs()
 
     def reward(self, obs, act, next_obs):
-        reward_ctrl = 0.0
+        # reward_ctrl = 0.0
+        reward_ctrl = -0.5 * np.sum(np.square(act), axis=-1)
         vel = (next_obs['observation'][..., -3] - obs['observation'][..., -3]) / self.dt
+        # vel = ((next_obs['observation'][-1][0] - self.xposbefore) / self.dt).flat
         reward_run = vel
 
-        reward_contact = 0.0
-        reward_survive = 0.05
+        # reward_contact = 0.0
+        # reward_survive = 0.05
+        reward_contact = (
+            -0.5 * 1e-3 * np.sum(np.square(np.clip(self.sim.data.cfrc_ext, -1, 1)))
+        )
+        reward_survive = 1.0
         reward = reward_run + reward_ctrl + reward_contact + reward_survive
 
         return reward
