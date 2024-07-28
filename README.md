@@ -96,7 +96,7 @@ And some faliure cases of CCM:
 <img src="docs/gif/crippledhalfcheetah/CCM_Extreme Test (Cripple Rotor 0&3).gif" width=200> <img src="docs/gif/crippledhalfcheetah/CCM_Extreme Test (Cripple Rotor 1&4).gif" width=200> <img src="docs/gif/crippledhalfcheetah/CCM_Extreme Test (Cripple Rotor 4&5).gif" width=200>
 </p>
 
-#### Crippled Ant (longer episode length)
+#### Crippled Ant
 
 During the training process, we alter the values of mass and damping, and randomly cripple one of legs (leg 0/1/2/3). In the test setting, we test on previously unseen mass and damping values. More importantly, in the extreme test setting, we also randomly cripple two legs. The following shows the training and testing videos of SaCCM on different tasks (first 60 seconds, 2x speed):
 
@@ -114,11 +114,9 @@ During the training process, we alter the values of mass and damping. In the tes
 
 #### Walker
 
-(mass=0.25,damping=0.25), (mass=0.25,damping=1.75), (mass=1.75,damping=0.25), (mass=1.75,damping=1.75), (mass=4.0,damping=1.0)
+* [ ] SaCCM Extreme Test in task (mass=0.25,damping=0.25), (mass=0.25,damping=1.75), (mass=1.75,damping=0.25), (mass=1.75,damping=1.75), (mass=4.0,damping=1.0)
 
-#### Crippled Walker
-
-#### WalkerHopper
+#### WalkerHopper ✔️
 
 During the training process, we alter the values of mass and damping, and randomly disable the right leg (i.e., joints 0, 1, and 2). In the test setting, we evaluate on previously unseen mass and damping values. More importantly, in the moderate test setting, we randomly disable one joint of either the left or right leg (i.e., joints 0, 1, or 2); in the extreme test setting, we also randomly disable the left leg (i.e., joints 3, 4, and 5) or one joint of the left leg (i.e., joints 3, 4, or 5). The following shows the training and testing videos of SaCCM on different tasks (first 180 seconds, 6x speed):
 
@@ -130,11 +128,12 @@ During the training process, we alter the values of mass and damping, and random
 <img src="docs/gif/walkerhopper/SaCCM([3], [0], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([4], [0], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([5], [0], [1.0]).gif" width=200>
 </p>  <img src="docs/gif/walkerhopper/SaCCM_([3, 4, 5], [3], [1.0]).gif" width=200>
 
+#### Half-Cheetah ✔️
 
+* [ ] Test SaCCM in task [([1.0], [1.0])], [([0.25], [0.25])], [([0.25], [1.75])], [([1.75], [0.25])], [([1.75], [1.75])], [([4.00], [1.00])]
 
-#### Half-Cheetah
+#### Ant
 
-#### Ant (longer episode length)
 
 #### SlimHumanoid ✔️
 
