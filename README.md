@@ -117,9 +117,15 @@ During the training process, we alter the values of mass and damping. In the tes
 <img src="docs/gif/hopper/Extreme_Test_(mass=0.25, damping=0.25).gif" width=200> <img src="docs/gif/hopper/SaTESAC_Extreme_Test_(mass=0.25, damping=1.75).gif" width=200> <img src="docs/gif/hopper/CCM_Extreme_Test_(mass=1.75, damping=0.25).gif" width=200> <img src="docs/gif/hopper/CCM_Extreme_Test_(mass=1.75, damping=1.75).gif" width=200> <img src="docs/gif/hopper/SaTESAC_Super_Extreme_Test_(mass=4.0, damping=1.0).gif" width=200> 
 </p>
 
-#### Walker
+#### Walker ✔️
 
-* [ ] SaCCM Extreme Test in task (mass=0.25,damping=0.25), (mass=0.25,damping=1.75), (mass=1.75,damping=0.25), (mass=1.75,damping=1.75), (mass=4.0,damping=1.0)
+During the training process, we alter the values of mass and damping. In the test setting, we test on previously unseen mass and damping values. In the Walker environment, we found that in order to adapt to different mass values, the TESAC/CCM/SaTESAC/SaCCM policy tends to learn only one skill, which is ***the Walker hopping forward on the floor***. The following shows the training and testing videos of SaTESAC on different tasks (first 180 seconds, 6x speed):
+
+
+<p align=center>
+<img src="docs/gif/walker/walker-sasac-0.250.25.gif" width=200> <img src="docs/gif/walker/walker-sasac-0.251.75.gif" width=200> <img src="docs/gif/walker/walker-sasac-1.750.25.gif" width=200> <img src="docs/gif/walker/walker-sasac-1.751.75.gif" width=200> <img src="docs/gif/walker/walker-sasac-4.01.0.gif" width=200> 
+</p>
+
 
 #### WalkerHopper ✔️
 
@@ -163,11 +169,15 @@ During the training process, we alter the values of mass and damping. In the tes
 During the training process, we alter the values of mass and damping. In the test setting, we test on previously unseen mass and damping values. In the HumanoidStand environment, SaCCM and SaTESAC adapt better to varying mass and damping values compared to CCM and TESAC. From the example videos, the Humanoid Robot (using the CCM algorithm) takes more time struggling to stand up. This indicates that distinguishing different tasks according to the skills helps the RL agent to better execute the acquired skills and zero-shot generalise to different tasks. The following shows the training and testing videos of SaCCM on different tasks (first 90 seconds, 3x speed):
 
 <p align=center>
-<img src="docs/gif/humanoidstandup/SaCCM_Moderate_Test_(mass=0.6,damping=0.6).gif" width=200>
+<img src="docs/gif/humanoidstandup/SaCCM_Moderate_Test_(mass=0.6,damping=0.6).gif" width=200> <img src="docs/gif/humanoidstandup/SaCCM_Moderate_Test_(mass=0.6,damping=1.5).gif" width=200> <img src="docs/gif/humanoidstandup/SaCCM_Moderate_Test_(mass=1.5,damping=0.6).gif" width=200> <img src="docs/gif/humanoidstandup/SaCCM_Moderate_Test_(mass=1.5,damping=1.5).gif" width=200>
 </p>
 
-* [ ] SaCCM Extreme Test in task (mass=0.6,damping=1.5), (mass=1.5,damping=0.6), (mass=1.5,damping=1.5)
-* [ ] CCM Extreme Test in task (mass=0.6,damping=0.6), (mass=0.6,damping=1.5), (mass=1.5,damping=0.6), (mass=1.5,damping=1.5). Need to show CCM struggle a longer time to stand up.
+
+And some faliure cases of CCM:
+
+<p align=center>
+<img src="docs/gif/humanoidstandup/CCM_Moderate_Test_(mass=0.6,damping=0.6).gif" width=200> <img src="docs/gif/humanoidstandup/CCM_Moderate_Test_(mass=0.6,damping=1.5).gif" width=200> <img src="docs/gif/humanoidstandup/CCM_Moderate_Test_(mass=1.5,damping=0.6).gif" width=200> <img src="docs/gif/humanoidstandup/CCM_Moderate_Test_(mass=1.5,damping=1.5).gif" width=200>
+</p>
 
 ### 📥 Requirements
 
