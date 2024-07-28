@@ -83,8 +83,6 @@ class CrippleAntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         # reward_ctrl = 0.0
         reward_ctrl = -0.5 * np.sum(np.square(a), axis=-1)
         reward_run = (xposafter - self.xposbefore) / self.dt
-        # reward_contact = 0.0
-        # reward_survive = 0.05
         reward_contact = (
             -0.5 * 1e-3 * np.sum(np.square(np.clip(self.sim.data.cfrc_ext, -1, 1)))
         )
@@ -186,10 +184,10 @@ class CrippleAntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         reward_run = vel
 
         # reward_contact = 0.0
-        # reward_survive = 0.05
         reward_contact = (
             -0.5 * 1e-3 * np.sum(np.square(np.clip(self.sim.data.cfrc_ext, -1, 1)))
         )
+        # reward_survive = 0.05
         reward_survive = 1.0
         reward = reward_run + reward_ctrl + reward_contact + reward_survive
 
@@ -202,7 +200,8 @@ class CrippleAntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
             reward_run = vel
 
             reward_contact = 0.0
-            reward_survive = 0.05
+            # reward_survive = 0.05
+            reward_survive = 1.0
             reward = reward_run + reward_ctrl + reward_contact + reward_survive
             return reward
 
