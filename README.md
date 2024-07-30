@@ -17,7 +17,6 @@ SaMI is a plug-and-play module that can be integrated with any Meta-RL algorithm
 - [ ] Change name "DominoHook" to "MujocoHook"
 - [ ] Change name "train_env" to "train_task"
 - [ ] Change name "test_env" to "test_task"
-- [ ] Main part needs videos which show SaCCM can Push, Pick&Place
 - [ ] The number of training tasks must be a multiple of 4, otherwise there will be a tensor dimension mismatch issue.
 
 ### 🤖 🤖 Our Skill-aware Robot 👏 👏
@@ -125,7 +124,7 @@ During the training process, we alter the values of mass and damping. In the tes
 <img src="docs/gif/walker/walker-sasac-0.250.25.gif" width=200> <img src="docs/gif/walker/walker-sasac-0.251.75.gif" width=200> <img src="docs/gif/walker/walker-sasac-1.750.25.gif" width=200> <img src="docs/gif/walker/walker-sasac-1.751.75.gif" width=200> <img src="docs/gif/walker/walker-sasac-4.01.0.gif" width=200> 
 </p>
 
-* [ ] multiple seeds multi-task training (same to Hopper)
+* [ ] SaCCM/SaTESAC/TESAC/CCM multiple seeds multi-task training (same to Hopper)
 
 #### WalkerHopper ✔️
 
@@ -177,6 +176,8 @@ And some faliure cases of CCM:
 <p align=center>
 <img src="docs/gif/humanoidstandup/CCM_Moderate_Test_(mass=0.6,damping=0.6).gif" width=200> <img src="docs/gif/humanoidstandup/CCM_Moderate_Test_(mass=0.6,damping=1.5).gif" width=200> <img src="docs/gif/humanoidstandup/CCM_Moderate_Test_(mass=1.5,damping=0.6).gif" width=200> <img src="docs/gif/humanoidstandup/CCM_Moderate_Test_(mass=1.5,damping=1.5).gif" width=200>
 </p>
+
+* [ ] SaCCM/SaTESAC/TESAC/CCM multiple seeds multi-task training (same to SlimHumanoid)
 
 ### 📥 Requirements
 
