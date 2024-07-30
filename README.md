@@ -78,7 +78,7 @@ We open-sourced our modified Panda-gym benchmark on [Skill-aware-Panda-gym](http
 
 #### Crippled Half-Cheetah ✔️
 
-During the training process, we alter the values of mass and damping, and randomly cripple ***one of the front leg rotors*** (rotor 3/4/5). In the test setting, we test on previously unseen mass and damping values. More importantly, in the moderate test setting, we randomly cripple ***one of the back leg rotors*** (rotor 0/1/2). In the extreme test setting, we increase the difficulty by randomly crippling ***two rotors from both the front and back legs***. We found that SaCCM and SaTESAC can adjust the running posture of the Half-Cheetah to cope with different crippled rotors, thereby running as far as possible using different modes of running (i.e., different skills). The following shows the training and testing videos of SaCCM on different tasks (first 60 seconds, 2x speed):
+During the training process, we alter the values of mass and damping, and randomly cripple ***one of the front leg joints*** (joint 3, 4 or 5). In the test setting, we test on previously unseen mass and damping values. More importantly, in the moderate test setting, we randomly cripple ***one of the back leg joints*** (joint 0, 1 or 2). In the extreme test setting, we increase the difficulty by randomly crippling ***two joints from both the front and back legs***. We found that SaCCM and SaTESAC can adjust the running posture of the Half-Cheetah to cope with different crippled joints, thereby running as far as possible using different modes of running (i.e., different skills). The following shows the training and testing videos of SaCCM on different tasks (first 60 seconds, 2x speed):
 
 <p align=center>
 <img src="docs/gif/crippledhalfcheetah/([3], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([0], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([1], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([2], [0], [1.0]).gif" width=200>
@@ -104,10 +104,10 @@ During the training process, we alter the values of mass and damping, and random
 <img src="docs/gif/crippledant/SaCCM_Training_(Crippled_0).gif" width=200> <img src="docs/gif/crippledant/SaCCM_Training_(Crippled_1&4).gif" width=200>
 </p>
 
-* [ ] SAC training setting: [([0], [0],[1.0])]
-* [ ] SAC training setting: [([0], [2],[1.0])]
-* [ ] SAC training setting: [([0,1], [1],[1.0])]
-* [ ] SAC training setting: [([0,3], [1],[1.0])]
+* [ ] SAC single-task training setting: [([0], [0],[1.0])], reward ctrl = 0.1, 0.05
+* [ ] SAC single-task training setting: [([0], [2],[1.0])], reward ctrl = 0.1, 0.05
+* [ ] SAC single-task training setting: [([0,1], [1],[1.0])], reward ctrl = 0.1, 0.05s
+* [ ] SAC single-task training setting: [([0,3], [1],[1.0])], reward ctrl = 0.1, 0.05
 
 #### Hopper ✔️
 
@@ -121,15 +121,15 @@ During the training process, we alter the values of mass and damping. In the tes
 
 During the training process, we alter the values of mass and damping. In the test setting, we test on previously unseen mass and damping values. In the Walker environment, we found that in order to adapt to different mass values, the TESAC/CCM/SaTESAC/SaCCM policy tends to learn only one skill, which is ***the Walker hopping forward on the floor***. The following shows the training and testing videos of SaTESAC on different tasks (first 180 seconds, 6x speed):
 
-
 <p align=center>
 <img src="docs/gif/walker/walker-sasac-0.250.25.gif" width=200> <img src="docs/gif/walker/walker-sasac-0.251.75.gif" width=200> <img src="docs/gif/walker/walker-sasac-1.750.25.gif" width=200> <img src="docs/gif/walker/walker-sasac-1.751.75.gif" width=200> <img src="docs/gif/walker/walker-sasac-4.01.0.gif" width=200> 
 </p>
 
+* [ ] multiple seeds multi-task training (same to Hopper)
 
 #### WalkerHopper ✔️
 
-During the training process, we alter the values of mass and damping, and randomly disable the right leg (i.e., joints 0, 1, and 2). In the test setting, we evaluate on previously unseen mass and damping values. More importantly, in the moderate test setting, we randomly disable one joint of either the left or right leg (i.e., joints 0, 1, or 2); in the extreme test setting, we also randomly disable the left leg (i.e., joints 3, 4, and 5) or one joint of the left leg (i.e., joints 3, 4, or 5). The following shows the training and testing videos of SaCCM on different tasks (first 180 seconds, 6x speed):
+During the training process, we alter the values of mass and damping, and randomly disable the right leg (i.e., three joints 0, 1, and 2). In the test setting, we evaluate on previously unseen mass and damping values. More importantly, in the moderate test setting, we randomly disable one joint of the right leg (i.e., joints 0, 1, or 2); in the extreme test setting, we also randomly disable the left leg (i.e., three joints 3, 4, and 5) or one joint of the left leg (i.e., joint 3, 4, or 5). The following shows the training and testing videos of SaCCM on different tasks (first 180 seconds, 6x speed):
 
 <p align=center>
 <img src="docs/gif/walkerhopper/SaCCM_no_crippled_joints.gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([0, 1, 2], [3], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([1], [0], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([2], [0], [1.0]).gif" width=200>
@@ -154,7 +154,7 @@ During the training process, we alter the values of mass and damping, and random
 
 #### Ant
 
-* [ ] SAC training setting: [([1.0],[1.0])]
+* [ ] SAC single-task training setting: [([1.0],[1.0])], reward ctrl = 0.1, 0.05 (walking), 0.1 (rolling)
 
 #### SlimHumanoid ✔️
 
@@ -171,7 +171,6 @@ During the training process, we alter the values of mass and damping. In the tes
 <p align=center>
 <img src="docs/gif/humanoidstandup/SaCCM_Moderate_Test_(mass=0.6,damping=0.6).gif" width=200> <img src="docs/gif/humanoidstandup/SaCCM_Moderate_Test_(mass=0.6,damping=1.5).gif" width=200> <img src="docs/gif/humanoidstandup/SaCCM_Moderate_Test_(mass=1.5,damping=0.6).gif" width=200> <img src="docs/gif/humanoidstandup/SaCCM_Moderate_Test_(mass=1.5,damping=1.5).gif" width=200>
 </p>
-
 
 And some faliure cases of CCM:
 
