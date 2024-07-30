@@ -97,10 +97,10 @@ And some faliure cases of CCM:
 
 #### Crippled Ant
 
-During the training process, we alter the values of mass and damping, and randomly cripple one of legs (leg 0/1/2/3). In the test setting, we test on previously unseen mass and damping values. More importantly, in the extreme test setting, we also randomly cripple two legs. The following shows the training and testing videos of SaCCM on different tasks (first 60 seconds, 2x speed):
+During the training process, we alter the values of mass and damping, and randomly cripple one of legs (leg 0, 1, 2 or 3). In the test setting, we test on previously unseen mass and damping values. More importantly, in the extreme test setting, we also randomly cripple two legs. The following shows the training and testing videos of SaCCM on different tasks (first 60 seconds, 2x speed):
 
 <p align=center>
-<img src="docs/gif/crippledant/SaCCM_Training_(Crippled_0).gif" width=200> <img src="docs/gif/crippledant/SaCCM_Training_(Crippled_1&4).gif" width=200>
+<img src="/home/yxue/SaMI/docs/gif/crippledant/reward_ctrl_0.05_([0], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledant/SAC_reward_ctrl_0.1_([0, 1], [1], [1.0]).gif" width=200>
 </p>
 
 * [ ] SAC single-task training setting: [([0], [0],[1.0])], reward ctrl = 0.1, 0.05
