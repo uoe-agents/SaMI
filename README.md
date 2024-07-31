@@ -95,18 +95,13 @@ And some faliure cases of CCM:
 <img src="docs/gif/crippledhalfcheetah/CCM_Extreme Test (Cripple Rotor 0&3).gif" width=200> <img src="docs/gif/crippledhalfcheetah/CCM_Extreme Test (Cripple Rotor 1&4).gif" width=200> <img src="docs/gif/crippledhalfcheetah/CCM_Extreme Test (Cripple Rotor 4&5).gif" width=200>
 </p>
 
-#### Crippled Ant
+#### Crippled Ant ✔️
 
-During the training process, we alter the values of mass and damping, and randomly cripple one of legs (leg 0, 1, 2 or 3). In the test setting, we test on previously unseen mass and damping values. More importantly, in the extreme test setting, we also randomly cripple two legs. The following shows the training and testing videos of SaCCM on different tasks (first 60 seconds, 2x speed):
+During the training process, we alter the values of mass and damping, and randomly cripple one of legs (leg 0, 1, 2 or 3). In the test setting, we test on previously unseen mass and damping values. More importantly, in the extreme test setting, we also randomly cripple two legs. ***When it has 3 or 4 legs available, the Ant Robot learns to roll to adapt to varying mass and damping. However, during zero-shot generalisation, when only 2 legs are available, the Ant Robot can no longer roll. Instead, it adapts by walking using its two legs.***The following shows the training and testing videos of SaTESAC on different tasks (first 60 seconds, 2x speed):
 
 <p align=center>
-<img src="/home/yxue/SaMI/docs/gif/crippledant/reward_ctrl_0.05_([0], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledant/SAC_reward_ctrl_0.1_([0, 1], [1], [1.0]).gif" width=200>
+<img src="docs/gif/crippledant/SaTESAC_reward_ctrl_0.1_([0], [2], [1.0]).gif" width=200> <img src="/home/yxue/SaMI/docs/gif/crippledant/SaTESAC_reward_ctrl_0.1_([2], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledant/SaTESAC_reward_ctrl_0.1_([0, 1], [1], [1.0]).gif" width=200>
 </p>
-
-* [ ] SAC single-task training setting: [([0], [0],[1.0])], reward ctrl = 0.1, 0.05
-* [ ] SAC single-task training setting: [([0], [2],[1.0])], reward ctrl = 0.1, 0.05
-* [ ] SAC single-task training setting: [([0,1], [1],[1.0])], reward ctrl = 0.1, 0.05s
-* [ ] SAC single-task training setting: [([0,3], [1],[1.0])], reward ctrl = 0.1, 0.05
 
 #### Hopper ✔️
 
