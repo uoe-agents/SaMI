@@ -42,7 +42,8 @@ class HopperEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         alive_bonus = 1.0
         reward = (posafter - posbefore) / self.dt
         reward += alive_bonus
-        reward -= 1e-3 * np.square(a).sum()
+        # reward -= 1e-3 * np.square(a).sum() # control cost
+        reward -= 1e-1* np.square(a).sum() # control cost
         done = False
         ob = self._get_obs()
         self.current_trajectory_reward += reward
@@ -101,7 +102,7 @@ class HopperEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         alive_bonus = 1.0
         reward = velocity
         reward += alive_bonus
-        reward -= 1e-3 * np.square(action).sum(axis=-1)
+        reward -= 1e-1* np.square(action).sum(axis=-1)
         return reward
 
     def tf_reward_fn(self):
@@ -110,7 +111,7 @@ class HopperEnv(mujoco_env.MujocoEnv, utils.EzPickle):
             alive_bonus = 1.0
             reward = velocity
             reward += alive_bonus
-            reward -= 1e-3 * tf.compat.v1.reduce_sum(tf.compat.v1.square(act), axis=-1)
+            reward -= 1e-1* tf.compat.v1.reduce_sum(tf.compat.v1.square(act), axis=-1)
             return reward
 
         return _thunk

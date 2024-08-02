@@ -75,16 +75,16 @@ class CrippleAntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
             # #         a[c_ind] = -0.5
             # for c_ind in range(len(a)):
             #     if self.cripple_mask[c_ind] == 0:
-            #         a[c_ind] = 0.5
+            #         a[c_ind] = 0.5s
             a = self.cripple_mask * a
         self.do_simulation(a, self.frame_skip)
         xposafter = self.get_body_com("torso")[0]
 
         # reward_ctrl = 0.0
-        reward_ctrl = -0.5 * np.sum(np.square(a), axis=-1)
+        reward_ctrl = -0.01 * np.sum(np.square(a), axis=-1)
         reward_run = (xposafter - self.xposbefore) / self.dt
         reward_contact = (
-            -0.5 * 1e-3 * np.sum(np.square(np.clip(self.sim.data.cfrc_ext, -1, 1)))
+            -0.5 * np.sum(np.square(np.clip(self.sim.data.cfrc_ext, -1, 1)))
         )
         # reward_survive = 0.05
         reward_survive = 1.0
@@ -178,14 +178,14 @@ class CrippleAntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
 
     def reward(self, obs, act, next_obs):
         # reward_ctrl = 0.0
-        reward_ctrl = -0.5 * np.sum(np.square(act), axis=-1)
+        reward_ctrl = -0.01 * np.sum(np.square(act), axis=-1)
         vel = (next_obs['observation'][..., -3] - obs['observation'][..., -3]) / self.dt
         # vel = ((next_obs['observation'][-1][0] - self.xposbefore) / self.dt).flat
         reward_run = vel
 
         # reward_contact = 0.0
         reward_contact = (
-            -0.5 * 1e-3 * np.sum(np.square(np.clip(self.sim.data.cfrc_ext, -1, 1)))
+            -0.5 * np.sum(np.square(np.clip(self.sim.data.cfrc_ext, -1, 1)))
         )
         # reward_survive = 0.05
         reward_survive = 1.0
@@ -195,11 +195,15 @@ class CrippleAntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
 
     def tf_reward_fn(self):
         def _thunk(obs, act, next_obs):
-            reward_ctrl = 0.0
+            # reward_ctrl = 0.0
+            reward_ctrl = -0.01 * np.sum(np.square(act), axis=-1)
             vel = (next_obs[..., -3] - obs[..., -3]) / self.dt
             reward_run = vel
 
-            reward_contact = 0.0
+            # reward_contact = 0.0
+            reward_contact = (
+            -0.5 * np.sum(np.square(np.clip(self.sim.data.cfrc_ext, -1, 1)))
+        )
             # reward_survive = 0.05
             reward_survive = 1.0
             reward = reward_run + reward_ctrl + reward_contact + reward_survive

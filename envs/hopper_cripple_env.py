@@ -147,10 +147,15 @@ class CrippleHopperEnv(mujoco_env.MujocoEnv, utils.EzPickle):
             self.crippled_joint = np.array([self.np_random.choice(self.cripple_set)])
         elif self.extreme_set == [1]:
             self.crippled_joint = self.np_random.choice(self.cripple_set, 2, replace=False)
+        elif self.extreme_set == [2]:   # do not cripple any joint!!
+            self.crippled_joint = np.array([])
         else:
             raise ValueError(self.extreme_set)
         self.cripple_mask = np.ones(action_dim)
-        self.cripple_mask[self.crippled_joint] = 0
+        total_crippled_joints = []
+        for j in self.crippled_joint:
+            self.cripple_mask[j] = 0
+
 
         geom_rgba = self._init_geom_rgba.copy()
         # f = open("./myfile.txt", "w")

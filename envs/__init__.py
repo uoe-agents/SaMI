@@ -27,7 +27,7 @@ from .DominoHook import DominoHook
 ENV_MAX_STEP = {
     'AntEnv': 2000,
     'CrippleHalfCheetahEnv':1000,
-    'CrippleAntEnv':3000,
+    'CrippleAntEnv':2000,
     'HalfCheetahEnv':1000,
     'SlimHumanoidEnv':1000,
     'HumanoidStandupEnv':2000,
