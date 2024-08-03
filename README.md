@@ -116,8 +116,9 @@ During the training process, we alter the values of mass and damping. In the tes
 During the training process, we alter the values of mass and damping. In the test setting, we evaluate on previously unseen mass and damping values. More importantly, in the extreme test setting, we randomly disable one joint (i.e., joints 0, 1, or 2). SaCCM and SaTESAC learned to ***take a big hop forward at the beginning (i.e., effective exploration)*** and then switch to different skills based on the environmental feedback. The following shows the training and testing videos of SaCCM on different tasks (first 100 seconds, 4x speed):
 
 <p align=center>
-<img src="docs/gif/crippledhopper/SaCCM_training.gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([0], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([1], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([2], [0], [1.0]).gif" width=200> 
-<center style="height:50px"> <br\>
+<img src="docs/gif/crippledhopper/SaCCM_training.gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([0], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([1], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([2], [0], [1.0]).gif" width=200> </p>
+<p align=center>
+<center style="height:50px">
 <div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Hopping forward on the ground</div> 
 <div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Hopping forward on the ground</div> 
 <div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Hopping and falling over</div>  
