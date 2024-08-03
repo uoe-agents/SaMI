@@ -81,21 +81,6 @@ During the training process, we alter the values of mass and damping, and random
 
 <p align=center>
 <img src="docs/gif/crippledhalfcheetah/([3], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([0], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([1], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([2], [0], [1.0]).gif" width=200> </p>
-<center>
-<div tyle="color:orange;display: inline-block;color: #999; width:200px">Run</div> <div style="color:orange;
-    display: inline-block;
-    color: #999; width:200px">
-      在这里插入图片注释
- </div>  <div style="color:orange;
-    display: inline-block;
-    color: #999; width:200px">
-      在这里插入图片注释
- </div>  <div style="color:orange;
-    display: inline-block;
-    color: #999; width:200px">
-      在这里插入图片注释
- </div>
-</center>
 <p align=center>
 <img src="docs/gif/crippledhalfcheetah/([0, 3], [1], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([1, 4], [1], [1.0]).gif" width=200> <img src="docs/gif/crippledhalfcheetah/([4, 5], [1], [1.0]).gif" width=200>
 </p>
@@ -132,12 +117,13 @@ During the training process, we alter the values of mass and damping. In the tes
 
 <p align=center>
 <img src="docs/gif/crippledhopper/SaCCM_training.gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([0], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([1], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([2], [0], [1.0]).gif" width=200> 
-</p><center style="height:50px">
+<center style="height:50px"> <br\>
 <div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Hopping forward on the ground</div> 
 <div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Hopping forward on the ground</div> 
 <div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Hopping and falling over</div>  
 <div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Faceplanting</div>
 </center>
+</p>
 
 And some faliure cases of CCM:
 
