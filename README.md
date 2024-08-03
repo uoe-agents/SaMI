@@ -108,7 +108,8 @@ During the training process, we alter the values of mass and damping, and random
 During the training process, we alter the values of mass and damping. In the test setting, we test on previously unseen mass and damping values. In the Hopper environment, we found that in order to adapt to different mass values, the TESAC/CCM/SaTESAC/SaCCM policy tends to learn only one skill, which is ***the Hopper hopping forward on the floor***. The following shows the training and testing videos of SaTESAC on different tasks (first 180 seconds, 6x speed):
 
 <p align=center>
-<img src="docs/gif/hopper/Extreme_Test_(mass=0.25, damping=0.25).gif" width=200> <img src="docs/gif/hopper/SaTESAC_Extreme_Test_(mass=0.25, damping=1.75).gif" width=200> <img src="docs/gif/hopper/CCM_Extreme_Test_(mass=1.75, damping=0.25).gif" width=200> <img src="docs/gif/hopper/CCM_Extreme_Test_(mass=1.75, damping=1.75).gif" width=200> <img src="docs/gif/hopper/SaTESAC_Super_Extreme_Test_(mass=4.0, damping=1.0).gif" width=200> 
+<img src="docs/gif/hopper/Extreme_Test_(mass=0.25, damping=0.25).gif" width=200> <img src="docs/gif/hopper/SaTESAC_Extreme_Test_(mass=0.25, damping=1.75).gif" width=200> <img src="docs/gif/hopper/CCM_Extreme_Test_(mass=1.75, damping=0.25).gif" width=200></p>
+<p align=center><img src="docs/gif/hopper/CCM_Extreme_Test_(mass=1.75, damping=1.75).gif" width=200> <img src="docs/gif/hopper/SaTESAC_Super_Extreme_Test_(mass=4.0, damping=1.0).gif" width=200> 
 </p>
 
 #### CrippledHopper
@@ -130,7 +131,8 @@ And some faliure cases of CCM:
 During the training process, we alter the values of mass and damping. In the test setting, we test on previously unseen mass and damping values. In the Walker environment, we found that in order to adapt to different mass values, the TESAC/CCM/SaTESAC/SaCCM policy tends to learn only one skill, which is ***the Walker hopping forward on the floor***. The following shows the training and testing videos of SaTESAC on different tasks (first 180 seconds, 6x speed):
 
 <p align=center>
-<img src="docs/gif/walker/walker-sasac-0.250.25.gif" width=200> <img src="docs/gif/walker/walker-sasac-0.251.75.gif" width=200> <img src="docs/gif/walker/walker-sasac-1.750.25.gif" width=200> <img src="docs/gif/walker/walker-sasac-1.751.75.gif" width=200> <img src="docs/gif/walker/walker-sasac-4.01.0.gif" width=200> 
+<img src="docs/gif/walker/walker-sasac-0.250.25.gif" width=200> <img src="docs/gif/walker/walker-sasac-0.251.75.gif" width=200> <img src="docs/gif/walker/walker-sasac-1.750.25.gif" width=200> </p>
+<p align=center><img src="docs/gif/walker/walker-sasac-1.751.75.gif" width=200> <img src="docs/gif/walker/walker-sasac-4.01.0.gif" width=200> 
 </p>
 
 #### WalkerHopper
@@ -145,9 +147,15 @@ During the training process, we alter the values of mass and damping, and random
 <img src="docs/gif/walkerhopper/SaCCM([3], [0], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([4], [0], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([5], [0], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([3, 4, 5], [3], [1.0]).gif" width=200>
 </p>
 
-#### Half-Cheetah ✔️
+#### Half-Cheetah
 
-* [ ] Test SaCCM in task [([1.0], [1.0])], [([0.25], [0.25])], [([0.25], [1.75])], [([1.75], [0.25])], [([1.75], [1.75])], [([4.00], [1.00])]
+During the training process, we alter the values of mass and damping. In the test setting, we test on previously unseen mass and damping values. In the Half-Cheetah environment, during zero-shot generalisation, SaCCM demonstrates different skills for ***running forwards at various speeds*** and ***faceplanting*** (when mass and damping are both relatively high), as well as skills for ***doing flips and falling over*** (when mass = 0.25 and damping = 0.25).The following shows the training and testing videos of SaTESAC on different tasks (first 100 seconds, 4x speed):
+
+<p align=center>
+<img src="docs/gif/half-cheetah/SaCCM_training_task_([1.0], [1.0]).gif" width=200> <img src="docs/gif/half-cheetah/SaCCM_extreme_test_([0.25], [0.25]).gif" width=200> <img src="docs/gif/half-cheetah/SaCCM_extreme_test_([1.75], [0.25]).gif" width=200> </p>
+<p align=center><img src="docs/gif/half-cheetah/SaCCM_extreme_test_([1.75], [1.75]).gif" width=200> <img src="docs/gif/half-cheetah/SaCCM_super_extreme_test_([4.0], [1.0]).gif" width=200> 
+</p>
+
 
 #### Ant
 
