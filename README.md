@@ -167,7 +167,7 @@ During the training process, we alter the values of mass and damping. In the tes
 During the training process, we alter the values of mass and damping. In the test setting, we test on previously unseen mass and damping values. In the HumanoidStand environment, SaCCM and SaTESAC adapt better to varying mass and damping values compared to CCM and TESAC. From the example videos, the Humanoid Robot (using the CCM algorithm) takes more time struggling to stand up. This indicates that distinguishing different tasks according to the skills helps the RL agent to better execute the acquired skills and zero-shot generalise to different tasks. The following shows the training and testing videos of SaCCM on different tasks (first 90 seconds, 3x speed):
 
 <p align=center>
-<img src="docs/gif/humanoidstandup/SaCCM_Moderate_Test_(mass=0.6,damping=0.6).gif" width=200> <img src="docs/gif/humanoidstandup/SaCCM_Moderate_Test_(mass=0.6,damping=1.5).gif" width=200> <img src="docs/gif/humanoidstandup/SaCCM_Moderate_Test_(mass=1.5,damping=0.6).gif" width=200> <img src="docs/gif/humanoidstandup/SaCCM_Moderate_Test_(mass=1.5,damping=1.5).gif" width=200>
+<img src="docs/gif/humanoidstandup/SaCCM_Moderate_Test_(mass=0.6,damping=0.6).gif" width=200> <img src="docs/gif/humanoidstandup/SaCCM_Moderate_Test_(mass=0.6,damping=1.5).gif" width=200> <img src="docs/gif/humanoidstandup/SaCCM_Moderate_Test_(mass=1.5,damping=0.6).gif" width=200> <img src="docs/gif/humanoidstandup/SaCCM_Moderate_Test_(mass=1.5,damping=1.5)_2.gif" width=200>
 </p>
 
 And some faliure cases of CCM:
