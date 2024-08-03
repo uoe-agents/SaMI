@@ -116,7 +116,7 @@ During the training process, we alter the values of mass and damping. In the tes
 During the training process, we alter the values of mass and damping. In the test setting, we evaluate on previously unseen mass and damping values. More importantly, in the extreme test setting, we randomly disable one joint (i.e., joints 0, 1, or 2). The following shows the training and testing videos of SaCCM on different tasks (first 100 seconds, 4x speed):
 
 <p align=center>
-<img src="docs/gif/ccrippledhopper/SaCCM_training.gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([0], [0], [1.0]).gif" width=200> <img src="docs/gif/ccrippledhopper/SaCCM_Extreme_test_([1], [0], [1.0]).gif" width=200> <img src="docs/gif/ccrippledhopper/SaCCM_Extreme_test_([2], [0], [1.0]).gif" width=200> 
+<img src="docs/gif/crippledhopper/SaCCM_training.gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([0], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([1], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([2], [0], [1.0]).gif" width=200> 
 </p>
 
 And some faliure cases of CCM:
