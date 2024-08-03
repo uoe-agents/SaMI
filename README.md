@@ -117,10 +117,10 @@ During the training process, we alter the values of mass and damping. In the tes
 
 <p align=center>
 <img src="docs/gif/crippledhopper/SaCCM_training.gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([0], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([1], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([2], [0], [1.0]).gif" width=200> <center style="height:50px">
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Hopping forward on the ground</div> 
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Hopping forward on the ground</div> 
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Hopping and falling over</div>  
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Faceplanting</div>
+<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:100px">Hopping forward on the ground</div> 
+<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:100px">Hopping forward on the ground</div> 
+<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:100px">Hopping and falling over</div>  
+<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:100px">Faceplanting</div>
 </center> </p>
 
 And some faliure cases of CCM:
