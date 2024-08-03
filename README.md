@@ -116,22 +116,13 @@ During the training process, we alter the values of mass and damping. In the tes
 During the training process, we alter the values of mass and damping. In the test setting, we evaluate on previously unseen mass and damping values. More importantly, in the extreme test setting, we randomly disable one joint (i.e., joints 0, 1, or 2). SaCCM and SaTESAC learned to ***take a big hop forward at the beginning (i.e., effective exploration)*** and then switch to different skills based on the environmental feedback. The following shows the training and testing videos of SaCCM on different tasks (first 100 seconds, 4x speed):
 
 <p align=center>
-<img src="docs/gif/crippledhopper/SaCCM_training.gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([0], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([1], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([2], [0], [1.0]).gif" width=200> <br>
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Hopping forward on the ground</div> 
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Hopping forward on the ground</div> 
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Hopping and falling over</div>  
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Faceplanting</div></p>
+<img src="docs/gif/crippledhopper/SaCCM_training.gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([0], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([1], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([2], [0], [1.0]).gif" width=200> </p>
 
 And some faliure cases of CCM:
 
 <p align=center>
 <img src="docs/gif/crippledhopper/CCM_training.gif" width=200> <img src="docs/gif/crippledhopper/CCM_Extreme_test_([0], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhopper/CCM_Extreme_test_([1], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhopper/CCM_Extreme_test_([2], [0], [1.0]).gif" width=200> 
-</p><center style="height:50px">
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Hopping forward on the ground</div> 
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Hopping forward on the ground</div> 
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Falling over (Failing))</div>  
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Falling over (Failing)</div>
-</center>
+</p>
 
 #### Walker
 
@@ -148,39 +139,20 @@ During the training process, we alter the values of mass and damping, and random
 
 <p align=center>
 <img src="docs/gif/walkerhopper/SaCCM_no_crippled_joints.gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([0, 1, 2], [3], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([1], [0], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([2], [0], [1.0]).gif" width=200>
-</p><center style="height:30px">
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Moving through left leg</div> 
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Moving through left leg</div>  
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Moving through left leg</div> 
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Moving through left leg</div>
-</center>
+</p>
 
 <p align=center>
 <img src="docs/gif/walkerhopper/SaCCM([3], [0], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([4], [0], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([5], [0], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([3, 4, 5], [3], [1.0]).gif" width=200>
-</p><center style="height:30px">
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Hopping through right leg</div> 
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Hopping through right leg</div>  
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Hopping through right leg</div> 
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Hopping through right leg</div>
-</center>
+</p>
 
 #### Half-Cheetah
 
-During the training process, we alter the values of mass and damping. In the test setting, we test on previously unseen mass and damping values. In the Half-Cheetah environment, during zero-shot generalisation, SaCCM demonstrates different skills for ***running forwards at various speeds*** and ***faceplanting*** (when mass and damping are both relatively high), as well as skills for ***doing flips and falling over*** (when mass = 0.25 and damping = 0.25).The following shows the training and testing videos of SaTESAC on different tasks (first 100 seconds, 4x speed):
+During the training process, we alter the values of mass and damping. In the test setting, we test on previously unseen mass and damping values. In the Half-Cheetah environment, during zero-shot generalisation, SaCCM demonstrates different skills for ***running forwards at various speeds*** , as well as skills for ***doing flips and faceplanting*** (when mass = 0.25 and damping = 0.25).The following shows the training and testing videos of SaTESAC on different tasks (first 100 seconds, 4x speed):
 
 <p align=center>
 <img src="docs/gif/half-cheetah/SaCCM_training_task_([1.0], [1.0]).gif" width=200> <img src="docs/gif/half-cheetah/SaCCM_extreme_test_([0.25], [0.25]).gif" width=200> <img src="docs/gif/half-cheetah/SaCCM_extreme_test_([1.75], [0.25]).gif" width=200> </p>
-<center style="height:50px">
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Running forwards</div> 
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Doing flips and falling over</div>  
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Running forwards</div>
-</center>
 <p align=center><img src="docs/gif/half-cheetah/SaCCM_extreme_test_([1.75], [1.75]).gif" width=200> <img src="docs/gif/half-cheetah/SaCCM_super_extreme_test_([4.0], [1.0]).gif" width=200> 
 </p>
-<center style="height:30px">
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Faceplanting</div>  
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Faceplanting</div>
-</center>
 
 #### Ant
 
@@ -192,12 +164,7 @@ During the training process, we alter the values of mass and damping. In the tes
 
 <p align=center>
 <img src="docs/gif/slimhumanoid/CCM_Moderate_Test_(mass=0.6,damping=0.6).gif" width=200> <img src="docs/gif/slimhumanoid/CCM_Moderate_Test_(mass=0.6,damping=1.5).gif" width=200> <img src="docs/gif/slimhumanoid/CCM_Moderate_Test_(mass=1.5,damping=0.6).gif" width=200> <img src="docs/gif/slimhumanoid/CCM_Moderate_Test_(mass=1.5,damping=1.5).gif" width=200> 
-</p><center style="height:50px">
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Flipping forwards</div> 
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Creeping forwards</div>  
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Flipping forwards</div> 
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Creeping forwards</div>
-</center>
+</p>
 
 ### Humanoid Standup
 
@@ -211,12 +178,7 @@ And some faliure cases of CCM:
 
 <p align=center>
 <img src="docs/gif/humanoidstandup/CCM_Moderate_Test_(mass=0.6,damping=0.6).gif" width=200> <img src="docs/gif/humanoidstandup/CCM_Moderate_Test_(mass=0.6,damping=1.5).gif" width=200> <img src="docs/gif/humanoidstandup/CCM_Moderate_Test_(mass=1.5,damping=0.6).gif" width=200> <img src="docs/gif/humanoidstandup/CCM_Moderate_Test_(mass=1.5,damping=1.5).gif" width=200>
-</p><center style="height:50px">
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Standing up</div> 
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Standing up</div>  
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Giving up (Failing)</div> 
-<div style="font-size:11px;color:orange;display: inline-block;color: #999; width:200px">Giving up (Failing)</div>
-</center>
+</p>
 
 ### 📥 Requirements
 
