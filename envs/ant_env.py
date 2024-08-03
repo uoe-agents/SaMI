@@ -42,11 +42,11 @@ class AntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         xposafter = self.get_body_com("torso")[0]
 
         # reward_ctrl = -0.005 * np.square(a).sum()
-        reward_ctrl = -0.5 * np.square(a).sum()
+        reward_ctrl = -0.01 * np.square(a).sum()
         reward_run = (xposafter - self.xposbefore) / self.dt
         # reward_contact = 0.0
         reward_contact = (
-            -0.5 * 1e-3 * np.sum(np.square(np.clip(self.sim.data.cfrc_ext, -1, 1)))
+            -0.5  * np.sum(np.square(np.clip(self.sim.data.cfrc_ext, -1, 1)))
         )
         # reward_survive = 0.05
         reward_survive = 1.0
@@ -120,12 +120,12 @@ class AntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         return self._get_obs()
 
     def reward(self, obs, act, next_obs):
-        reward_ctrl = -0.5 * np.sum(np.square(act), axis=-1)
+        reward_ctrl = -0.01 * np.sum(np.square(act), axis=-1)
         reward_run = obs['observation'][..., 0]
 
         # reward_contact = 0.0
         reward_contact = (
-            -0.5 * 1e-3 * np.sum(np.square(np.clip(self.sim.data.cfrc_ext, -1, 1)))
+            -0.5  * np.sum(np.square(np.clip(self.sim.data.cfrc_ext, -1, 1)))
         )
         reward_survive = 1.0
         reward = reward_run + reward_ctrl + reward_contact + reward_survive
@@ -134,12 +134,12 @@ class AntEnv(mujoco_env.MujocoEnv, utils.EzPickle):
 
     def tf_reward_fn(self):
         def _thunk(obs, act, next_obs):
-            reward_ctrl = -0.5 * tf.reduce_sum(tf.square(act), axis=-1)
+            reward_ctrl = -0.01 * tf.reduce_sum(tf.square(act), axis=-1)
             reward_run = obs[..., 0]
 
             # reward_contact = 0.0
             reward_contact = (
-            -0.5 * 1e-3 * np.sum(np.square(np.clip(self.sim.data.cfrc_ext, -1, 1)))
+            -0.5  * np.sum(np.square(np.clip(self.sim.data.cfrc_ext, -1, 1)))
         )
             reward_survive = 1.0
             reward = reward_run + reward_ctrl + reward_contact + reward_survive
