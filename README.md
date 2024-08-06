@@ -20,6 +20,11 @@ SaMI is a plug-and-play module that can be integrated with any Meta-RL algorithm
 During the training process, we alter the values of cube mass and table friction. In the test setting, we test on previously unseen mass and friction values. The following shows the training and testing videos of SaCCM on different tasks (0.5x speed):
 
 
+<p align=center>
+<img src="docs/panda-gym-media/panda_gym.gif" width=600>
+</p>
+
+
 <table cellpadding="3" cellspacing="0" style="width: 60%;margin:auto">
     <tr>
         <td width="18%" height="100%">
