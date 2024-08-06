@@ -1,29 +1,19 @@
 # Skill-aware Mutural Information (SaMI)
 
-This is the official implementation of Skill-aware Mutural Information (SaMI) from the paper Skill-aware Mutual Information Optimisation for Generalisation in Reinforcement Learning. on arxiv: https://arxiv.org/pdf/2406.04815
+This is the official implementation of Skill-aware Mutural Information (SaMI) from the paper Skill-aware Mutual Information Optimisation for Generalisation in Reinforcement Learning.
 
-by [Xuehui Yu](https://github.com/yuxuehui), [Mhairi Dunion](https://github.com/mhairidunion), [Xin Li](https://github.com/loxs123), Stefano V. Albrecht
-
-**Challenge Problem: **
+**Challenge Problem:**
 Meta-Reinforcement Learning (Meta-RL) agents can struggle to operate across tasks with varying environmental features that require different optimal skills (i.e., different modes of behaviors). An ideal RL algorithm should be able to learn a single policy to perform multiple tasks and generalise to new and unseen tasks.
 
 https://github.com/user-attachments/assets/2d644ccb-851c-4053-bfc4-0923f5c26080
 
 SaMI is a plug-and-play module that can be integrated with any Meta-RL algorithm. In this repository, we provide implementations of two baselines: [CCM](https://cdn.aaai.org/ojs/16914/16914-13-20408-1-2-20210518.pdf) and [TESAC](https://arxiv.org/pdf/1910.10897). We have equipped these baselines with SaMI, resulting in SaCCM and SaTESAC.
 
-**TODO**
-
-- [ ] Change name "SaSAC" to "SaTESAC";
-- [ ] Change name "DominoHook" to "MujocoHook"
-- [ ] Change name "train_env" to "train_task"
-- [ ] Change name "test_env" to "test_task"
-- [ ] The number of training tasks must be a multiple of 4, otherwise there will be a tensor dimension mismatch issue.
-
 ### 🤖 🤖 Our Skill-aware Robot 👏 👏
 
 #### Panda-gym ✔️
 
-We open-sourced our modified Panda-gym benchmark on [Skill-aware-Panda-gym](https://github.com/uoe-agents/Skill-aware-Panda-gym). During the training process, we alter the values of cube mass and table friction. In the test setting, we test on previously unseen mass and friction values. The following shows the training and testing videos of SaCCM on different tasks (0.5x speed):
+During the training process, we alter the values of cube mass and table friction. In the test setting, we test on previously unseen mass and friction values. The following shows the training and testing videos of SaCCM on different tasks (0.5x speed):
 
 <table cellpadding="3" cellspacing="0" style="width: 60%;margin:auto">
     <tr>
@@ -154,10 +144,6 @@ During the training process, we alter the values of mass and damping. In the tes
 <p align=center><img src="docs/gif/half-cheetah/SaCCM_extreme_test_([1.75], [1.75]).gif" width=200> <img src="docs/gif/half-cheetah/SaCCM_super_extreme_test_([4.0], [1.0]).gif" width=200> 
 </p>
 
-#### Ant
-
-* [ ] SAC single-task training setting: [([1.0],[1.0])], reward ctrl = 0.1, 0.05 (walking), 0.1 (rolling)
-
 #### SlimHumanoid
 
 During the training process, we alter the values of mass and damping. In the test setting, we test on previously unseen mass and damping values. In the SlimHumanoid environment, we found that in order to adapt to different mass and damping values, the TESAC/CCM/SaTESAC/SaCCM policy tends to learn only one skill, which is ***the Humanoid Robot crawling on the ground using one elbow**.* When the damping is relatively high (damping=1.6), the Humanoid Robot can crawl forward stably, but when the damping is low (damping=0.6), it tends to roll. The following shows the training and testing videos of SaCCM on different tasks (first 180 seconds, 6x speed):
@@ -248,43 +234,4 @@ self._elapsed_steps += 1
 
 if self._elapsed_steps >= self._max_episode_steps:
     truncated = True
-```
-
-### 📄 Instructions
-
-Download the code and produce the `output` folder, where all the outputs are going to be stored including train/eval logs.
-
-```bash
-git clone https://github.com/uoe-agents/SaMI.git
-cd SaMI
-mkdir output
-```
-
-You can run the code uing the configuration specified in `parsers.py` with:
-
-```bash
-python main.py
-```
-
-The `configs` folder contains bash scripts for all the algorithms used in the paper on the Panda-gym and Mujoco tasks as examples. You can run a specific configuration using the bash script, for example:
-
-```bash
-sh configs/mujoco_ant_train.sh
-```
-
-### 📈 Results and Plots From Paper
-
-The data for the experiment results in the paper can be found here. These files contain the evaluation returns for all algorithms and seeds used to create Figures.
-
-### 📎 Citation
-
-```
-@misc{yu2024skillaware,
-      title={Skill-aware Mutual Information Optimisation for Generalisation in Reinforcement Learning}, 
-      author={Xuehui Yu and Mhairi Dunion and Xin Li and Stefano V. Albrecht},
-      year={2024},
-      eprint={2406.04815},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG}
-}
 ```
