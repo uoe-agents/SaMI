@@ -5,7 +5,7 @@ This is the official implementation of Skill-aware Mutural Information (SaMI) fr
 **Challenge Problem:**
 Meta-Reinforcement Learning (Meta-RL) agents can struggle to operate across tasks with varying environmental features that require different optimal skills (i.e., different modes of behaviors). An ideal RL algorithm should be able to learn a single policy to perform multiple tasks and generalise to new and unseen tasks.
 
-Please see PDF file for our updated manuscript:[SaMI.pdf](SaMI.pdf)
+**Please see PDF file for our updated manuscript: [SaMI.pdf](SaMI.pdf)**
 
 https://github.com/user-attachments/assets/2d644ccb-851c-4053-bfc4-0923f5c26080
 
