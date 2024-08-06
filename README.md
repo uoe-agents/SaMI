@@ -125,16 +125,16 @@ During the training process, we alter the values of mass and damping. In the tes
 <p align=center><img src="docs/gif/walker/walker-sasac-1.751.75.gif" width=200> <img src="docs/gif/walker/walker-sasac-4.01.0.gif" width=200> 
 </p>
 
-#### WalkerHopper
+#### Crippled Walker
 
 During the training process, we alter the values of mass and damping, and randomly disable the right leg (i.e., three joints 0, 1, and 2). In the test setting, we evaluate on previously unseen mass and damping values. More importantly, in the moderate test setting, we randomly disable one joint of the right leg (i.e., joints 0, 1, or 2); in the extreme test setting, we also randomly disable the left leg (i.e., three joints 3, 4, and 5) or one joint of the left leg (i.e., joint 3, 4, or 5). The following shows the training and testing videos of SaCCM on different tasks (first 180 seconds, 6x speed):
 
 <p align=center>
-<img src="docs/gif/walkerhopper/SaCCM_no_crippled_joints.gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([0, 1, 2], [3], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([1], [0], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([2], [0], [1.0]).gif" width=200>
+<img src="docs/gif/Crippled Walker/SaCCM_no_crippled_joints.gif" width=200> <img src="docs/gif/Crippled Walker/SaCCM_([0, 1, 2], [3], [1.0]).gif" width=200> <img src="docs/gif/Crippled Walker/SaCCM_([1], [0], [1.0]).gif" width=200> <img src="docs/gif/Crippled Walker/SaCCM_([2], [0], [1.0]).gif" width=200>
 </p>
 
 <p align=center>
-<img src="docs/gif/walkerhopper/SaCCM([3], [0], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([4], [0], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([5], [0], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([3, 4, 5], [3], [1.0]).gif" width=200>
+<img src="docs/gif/Crippled Walker/SaCCM([3], [0], [1.0]).gif" width=200> <img src="docs/gif/Crippled Walker/SaCCM_([4], [0], [1.0]).gif" width=200> <img src="docs/gif/Crippled Walker/SaCCM_([5], [0], [1.0]).gif" width=200> <img src="docs/gif/Crippled Walker/SaCCM_([3, 4, 5], [3], [1.0]).gif" width=200>
 </p>
 
 #### Half-Cheetah
