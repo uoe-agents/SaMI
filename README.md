@@ -19,48 +19,58 @@ SaMI is a plug-and-play module that can be integrated with any Meta-RL algorithm
 
 During the training process, we alter the values of cube mass and table friction. In the test setting, we test on previously unseen mass and friction values. The following shows the training and testing videos of SaCCM on different tasks (0.5x speed):
 
-`<table cellpadding="3" cellspacing="0" style="width: 60%;margin:auto">`
-    `<tr>`
-        `<td width="18%" height="100%">`
+
+<table cellpadding="3" cellspacing="0" style="width: 60%;margin:auto">
+    <tr>
+        <td width="18%" height="100%">
             Friction = 5.0
-        `</td>`
-        `<td width="20%" height="100%">`
-            `<img src="docs/gif/panda_gym/SaCCM-frction5-mass1.gif" width=200>`
-        `</td>`
-	`<td width="20%" height="100%">`
-            `<img src="docs/gif/panda_gym/SaCCM_friction5_mass5.gif" width=200>`
-        `</td>`
-	`<td width="20%" height="100%">`
-        `</td>`
-    `</tr>`
-    `<tr>`
-        `<td width="18%" height="100%">`
+        </td>
+        <td width="20%" height="100%">
+            <img src="docs/gif/panda_gym/SaCCM-frction5-mass1.gif" width=200>
+        </td>
+	<td width="20%" height="100%">
+            <img src="docs/gif/panda_gym/SaCCM_friction5_mass5.gif" width=200>
+        </td>
+	<td width="20%" height="100%">
+	🚫
+        </td>
+    </tr>
+    <tr>
+        <td width="18%" height="100%">
             Friction = 1.0
-        `</td>`
-        `<td width="20%" height="100%">`
-            `<img src="docs/gif/panda_gym/SaCCM-frction1-mass1.gif" width=200>`
-        `</td>`
-	`<td width="20%" height="100%">`
-            `<img src="docs/gif/panda_gym/SaCCM-friction1-mass5.gif" width=200>`
-        `</td>`
-	`<td width="20%" height="100%">`
-		`<img src="docs/gif/panda_gym/SaCCM_friction1_mass10.gif" width=200>`
-        `</td>`
-    `</tr>`
-	`<tr>`
-        `<td width="18%" height="100%">`
+        </td>
+        <td width="20%" height="100%">
+            <img src="docs/gif/panda_gym/SaCCM-frction1-mass1.gif" width=200>
+        </td>
+	<td width="20%" height="100%">
+            <img src="docs/gif/panda_gym/SaCCM-friction1-mass5.gif" width=200>
+        </td>
+	<td width="20%" height="100%">
+		<img src="docs/gif/panda_gym/SaCCM_friction1_mass10.gif" width=200>
+        </td>
+    </tr>
+	<tr>
+        <td width="18%" height="100%">
             Friction = 0.1
-        `</td>`
-        `<td width="20%" height="100%">`
-            `<img src="docs/gif/panda_gym/SaCCM_friction0.1_mass1.0.gif" width=200>`
-        `</td>`
-	`<td width="20%" height="100%">`
-            `<img src="docs/gif/panda_gym/SaCCM-friction0.1-mass5.gif" width=200>`
-        `</td>`
-	`<td width="20%" height="100%">`
-		`<img src="docs/gif/panda_gym/SaCCM-friction0.1-mass30.gif" width=200>`
-        `</td>`
-    `</tr>`
+        </td>
+        <td width="20%" height="100%">
+            <img src="docs/gif/panda_gym/SaCCM_friction0.1_mass1.0.gif" width=200>
+        </td>
+	<td width="20%" height="100%">
+            <img src="docs/gif/panda_gym/SaCCM-friction0.1-mass5.gif" width=200>
+        </td>
+	<td width="20%" height="100%">
+		<img src="docs/gif/panda_gym/SaCCM-friction0.1-mass30.gif" width=200>
+        </td>
+    </tr>
+<tr>
+        <td width="18%" height="100%"></td>
+        <td width="20%" height="100%">Mass = 1.0</td>
+	<td width="20%" height="100%">Mass = 5.0 </td>
+	<td width="20%" height="100%">Mass = 10.0</td>
+    </tr>
+</table>
+
 
 <tr>
         <td width="18%" height="100%"></td>
