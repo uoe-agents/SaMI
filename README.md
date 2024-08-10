@@ -193,3 +193,8 @@ self._elapsed_steps += 1
 if self._elapsed_steps >= self._max_episode_steps:
     truncated = True
 ```
+
+
+### 📈 Results and Plots From Paper
+
+We adhere to the Policy for Reproducibility & Transparency in Research (anonymous link placeholder). The data for the experiment results in the paper can be found from [MuJoCo.xlsx](data/MuJoCo.xlsx) and [Panda-gym.xls](data/Panda-gym.xls). 
