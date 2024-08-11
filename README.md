@@ -9,7 +9,7 @@ Meta-Reinforcement Learning (Meta-RL) agents can struggle to operate across task
 
 **Please see our demonstration video SaMI.MP4:**
 
-https://github.com/user-attachments/assets/2540b0b5-639d-4242-8e61-3c8a0345b7ac
+https://github.com/user-attachments/assets/295741aa-45bc-4024-a95b-373d2c670854
 
 SaMI is a plug-and-play module that can be integrated with any Meta-RL algorithm. In this repository, we provide implementations of two baselines: [CCM](https://cdn.aaai.org/ojs/16914/16914-13-20408-1-2-20210518.pdf) and [TESAC](https://arxiv.org/pdf/1910.10897). We have equipped these baselines with SaMI, resulting in SaCCM and SaTESAC.
 
