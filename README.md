@@ -50,12 +50,6 @@ During the training process, we alter the values of mass and damping, and random
 <img src="docs/gif/crippledant/SaCCM_reward_ctrl_0.1_([0], [2], [1.0]).gif" width=200> <img src="docs/gif/crippledant/SaCCM_reward_ctrl_0.1_([2], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledant/SaCCM_reward_ctrl_0.1_([0, 1], [1], [1.0]).gif" width=200> <img src="docs/gif/crippledant/SaCCM_reward_ctrl_0.1_([3, 1], [1], [1.0]).gif" width=200>
 </p>
 
-And some faliure cases of CCM:
-
-<p align=center>
-<img src="docs/gif/crippledant/CCM_reward_ctrl_0.1_([0], [2], [1.0]).gif" width=200> <img src="docs/gif/crippledant/CCM_reward_ctrl_0.1_([2], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledant/CCM_reward_ctrl_0.1_([0, 1], [1], [1.0]).gif" width=200> <img src="docs/gif/crippledant/CCM_reward_ctrl_0.1_([3, 1], [1], [1.0]).gif" width=200>
-</p>
-
 #### Hopper
 
 During the training process, we alter the values of mass and damping. In the test setting, we test on previously unseen mass and damping values. In the Hopper environment, we found that in order to adapt to different mass values, the TESAC/CCM/SaTESAC/SaCCM policy tends to learn only one skill, which is ***the Hopper hopping forward on the floor***. The following shows the training and testing videos of SaTESAC on different tasks (first 180 seconds, 6x speed):
