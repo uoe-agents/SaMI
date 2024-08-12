@@ -44,7 +44,7 @@ And some faliure cases of CCM:
 
 #### Crippled Ant
 
-During the training process, we alter the values of mass and damping, and randomly cripple one of legs (leg 0, 1, 2 or 3). In the test setting, we test on previously unseen mass and damping values. More importantly, in the extreme test setting, we also randomly cripple two legs. ***When it has 3 or 4 legs available, the Ant Robot learns to roll to adapt to varying mass and damping. However, during zero-shot generalisation, when only 2 legs are available, the Ant Robot can no longer roll. Instead, it adapts by walking using its two legs.*** The following shows the training and testing videos of SaCCM on different tasks (first 60 seconds, 2x speed):
+During the training process, we alter the values of mass and damping, and randomly cripple one of legs (leg 0, 1, 2 or 3). In the test setting, we test on previously unseen mass and damping values. More importantly, in the extreme test setting, we also randomly cripple two legs. ***When 3 or 4 legs are available, the Ant Robot (trained with SaCCM) rolls to adapt to varying mass and damping. However, with only 2 adjacent legs during zero-shot generalisation, it switches to walking. If 2 opposite legs are available, the Ant can still roll but eventually tips over.* **The following shows the training and testing videos of SaCCM on different tasks (first 60 seconds, 2x speed):
 
 <p align=center>
 <img src="docs/gif/crippledant/SaCCM_reward_ctrl_0.1_([0], [2], [1.0]).gif" width=200> <img src="docs/gif/crippledant/SaCCM_reward_ctrl_0.1_([2], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledant/SaCCM_reward_ctrl_0.1_([0, 1], [1], [1.0]).gif" width=200> <img src="docs/gif/crippledant/SaCCM_reward_ctrl_0.1_([3, 1], [1], [1.0]).gif" width=200>
@@ -59,9 +59,9 @@ During the training process, we alter the values of mass and damping. In the tes
 <p align=center><img src="docs/gif/hopper/CCM_Extreme_Test_(mass=1.75, damping=1.75).gif" width=200> <img src="docs/gif/hopper/SaTESAC_Super_Extreme_Test_(mass=4.0, damping=1.0).gif" width=200> 
 </p>
 
-#### CrippledHopper
+#### Crippled Hopper
 
-During the training process, we alter the values of mass and damping. In the test setting, we evaluate on previously unseen mass and damping values. More importantly, in the extreme test setting, we randomly disable one joint (i.e., joints 0, 1, or 2). SaCCM and SaTESAC learned to ***take a big hop forward at the beginning (i.e., effective exploration)*** and then switch to different skills based on the environmental feedback. The following shows the training and testing videos of SaCCM on different tasks (first 100 seconds, 4x speed):
+During the training process, we alter the values of mass and damping. In the test setting, we evaluate on previously unseen mass and damping values. More importantly, in the extreme test setting, we randomly disable one joint (i.e., joints 0, 1, or 2). SaCCM and SaTESAC learned to ***take a big hop forward at the beginning (i.e., effective exploration)*** and then switch to different skills based on environmental feedback. The following shows the training and testing videos of SaCCM on different tasks (first 100 seconds, 4x speed):
 
 <p align=center>
 <img src="docs/gif/crippledhopper/SaCCM_training.gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([0], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([1], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledhopper/SaCCM_Extreme_test_([2], [0], [1.0]).gif" width=200> </p>
@@ -83,7 +83,7 @@ During the training process, we alter the values of mass and damping. In the tes
 
 #### Crippled Walker
 
-During the training process, we alter the values of mass and damping, and randomly disable the right leg (i.e., three joints 0, 1, and 2). In the test setting, we evaluate on previously unseen mass and damping values. More importantly, in the moderate test setting, we randomly disable one joint of the right leg (i.e., joints 0, 1, or 2); in the extreme test setting, we also randomly disable the left leg (i.e., three joints 3, 4, and 5) or one joint of the left leg (i.e., joint 3, 4, or 5). The following shows the training and testing videos of SaCCM on different tasks (first 180 seconds, 6x speed):
+During the training process, we alter the values of mass and damping, and randomly disable the right leg (i.e., three joints 0, 1, and 2). In the test setting, we evaluate on previously unseen mass and damping values. More importantly, in the moderate test setting, we randomly disable one joint of the right leg (i.e., joints 0, 1, or 2); in the extreme test setting, we also randomly disable the left leg (i.e., three joints 3, 4, and 5) or one joint of the left leg (i.e., joint 3, 4, or 5). ***The Crippled Walker (trained with SaTESAC and SaCCM) learned to hop forward using the right leg in the training and moderate test tasks, and zero-shot generalised to hopping forward using the left leg in the extreme test tasks.*** The following shows the training and testing videos of SaCCM on different tasks (first 180 seconds, 6x speed):
 
 <p align=center>
 <img src="docs/gif/walkerhopper/SaCCM_no_crippled_joints.gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([0, 1, 2], [3], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([1], [0], [1.0]).gif" width=200> <img src="docs/gif/walkerhopper/SaCCM_([2], [0], [1.0]).gif" width=200>
@@ -110,7 +110,7 @@ During the training process, we alter the values of mass and damping. In the tes
 <img src="docs/gif/slimhumanoid/CCM_Moderate_Test_(mass=0.6,damping=0.6).gif" width=200> <img src="docs/gif/slimhumanoid/CCM_Moderate_Test_(mass=0.6,damping=1.5).gif" width=200> <img src="docs/gif/slimhumanoid/CCM_Moderate_Test_(mass=1.5,damping=0.6).gif" width=200> <img src="docs/gif/slimhumanoid/CCM_Moderate_Test_(mass=1.5,damping=1.5).gif" width=200> 
 </p>
 
-### Humanoid Standup
+#### Humanoid Standup
 
 During the training process, we alter the values of mass and damping. In the test setting, we test on previously unseen mass and damping values. In the HumanoidStand environment, SaCCM and SaTESAC learned ***a sitting posture (i.e., effective exploration)*** that makes it easier to stand up, allowing it to generalise well when mass and damping change. This indicates that distinguishing different tasks according to the skills helps the RL agent to better execute the acquired skills and zero-shot generalise to different tasks. The following shows the training and testing videos of SaCCM on different tasks (first 90 seconds, 3x speed):
 
