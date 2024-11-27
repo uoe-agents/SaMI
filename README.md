@@ -10,13 +10,15 @@ Meta-Reinforcement Learning (Meta-RL) agents can struggle to operate across task
 
 **Please see our demonstration video SaMI.MP4:**
 
-https://github.com/user-attachments/assets/295741aa-45bc-4024-a95b-373d2c670854
+https://github.com/user-attachments/assets/e51ef0d6-4689-41b0-947e-fa4b5e7fb5cb
 
 SaNCE can be used alone or combined with other optimisation objectives to train context encoders in Meta-RL algorithms. In this repository, we provide implementations of two baselines: [CCM](https://cdn.aaai.org/ojs/16914/16914-13-20408-1-2-20210518.pdf) and [TESAC](https://arxiv.org/pdf/1910.10897). We have equipped these baselines with SaMI, resulting in SaCCM and SaTESAC.
 
 ### 🤖 🤖 Our Skill-aware Robot 👏 👏
 
-#### Panda-gym
+#### Modified Panda-gym
+
+Our [modified Panda-gym](https://github.com/uoe-agents/Skill-aware-Panda-gym) is based on the the [Panda-gym](https://github.com/qgallouedec/panda-gym). The environments consist of a Panda robotic arm from [Franka Emika](https://franka.de/) that has 7 degrees of freedom and a parallel finger gripper.
 
 During the training process, we alter the values of cube mass and table friction. In the test setting, we test on previously unseen mass and friction values. The following shows the training and testing videos of SaCCM on different tasks (0.5x speed):
 
@@ -219,7 +221,7 @@ sh configs/mujoco_ant_train.sh
 
 ### 📈 Results and Plots From Paper
 
-We adhere to the Policy for Reproducibility & Transparency in Research (anonymous link placeholder). The data for the experiment results in the paper can be found from `data/MuJoCo.xlsx `and `data/Panda-gym.xls`.
+We adhere to the [Policy for Reproducibility & Transparency in Research](https://agents.inf.ed.ac.uk/blog/reproducibility/). The data for the experiment results in the paper can be found from `data/MuJoCo.xlsx `and `data/Panda-gym.xls`.
 
 ### 📎 Citation
 
