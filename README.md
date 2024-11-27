@@ -12,7 +12,7 @@ Meta-Reinforcement Learning (Meta-RL) agents can struggle to operate across task
 
 https://github.com/user-attachments/assets/e51ef0d6-4689-41b0-947e-fa4b5e7fb5cb
 
-SaNCE can be used alone or combined with other optimisation objectives to train context encoders in Meta-RL algorithms. In this repository, we provide implementations of two baselines: [CCM](https://cdn.aaai.org/ojs/16914/16914-13-20408-1-2-20210518.pdf) and [TESAC](https://arxiv.org/pdf/1910.10897). We have equipped these baselines with SaMI, resulting in SaCCM and SaTESAC.
+SaMI can be used alone or combined with other optimisation objectives to train context encoders in Meta-RL algorithms. In this repository, we provide implementations of two baselines: [CCM](https://cdn.aaai.org/ojs/16914/16914-13-20408-1-2-20210518.pdf) and [TESAC](https://arxiv.org/pdf/1910.10897). We have equipped these baselines with SaMI, resulting in SaCCM and SaTESAC.
 
 ### 🤖 🤖 Our Skill-aware Robot 👏 👏
 
