@@ -1,17 +1,18 @@
 # Skill-aware Mutual Information (SaMI)
 
-This is the official implementation of Skill-aware Mutual Information (SaMI) from the paper Skill-aware Mutual Information Optimisation for Generalisation in Reinforcement Learning.
+This is the official implementation of Skill-aware Mutural Information (SaMI) from the paper Skill-aware Mutual Information Optimisation for Generalisation in Reinforcement Learning. on arxiv: https://arxiv.org/pdf/2406.04815
+
+by [Xuehui Yu](https://github.com/yuxuehui), [Mhairi Dunion](https://github.com/mhairidunion), [Xin Li](https://github.com/loxs123), Stefano V. Albrecht
 
 **Challenge Problem:**
 Meta-Reinforcement Learning (Meta-RL) agents can struggle to operate across tasks with varying environmental features that require different optimal skills (i.e., different modes of behaviours). An ideal RL algorithm should be able to learn a single policy to perform multiple tasks and generalise to new and unseen tasks.
 
-**Please see the PDF file for our updated manuscript: [SaMI.pdf](SaMI.pdf)**
 
 **Please see our demonstration video SaMI.MP4:**
 
 https://github.com/user-attachments/assets/295741aa-45bc-4024-a95b-373d2c670854
 
-SaMI is a plug-and-play module that can be integrated with any Meta-RL algorithm. In this repository, we provide implementations of two baselines: [CCM](https://cdn.aaai.org/ojs/16914/16914-13-20408-1-2-20210518.pdf) and [TESAC](https://arxiv.org/pdf/1910.10897). We have equipped these baselines with SaMI, resulting in SaCCM and SaTESAC.
+SaNCE can be used alone or combined with other optimisation objectives to train context encoders in Meta-RL algorithms. In this repository, we provide implementations of two baselines: [CCM](https://cdn.aaai.org/ojs/16914/16914-13-20408-1-2-20210518.pdf) and [TESAC](https://arxiv.org/pdf/1910.10897). We have equipped these baselines with SaMI, resulting in SaCCM and SaTESAC.
 
 ### 🤖 🤖 Our Skill-aware Robot 👏 👏
 
@@ -44,7 +45,7 @@ And some faliure cases of CCM:
 
 #### Crippled Ant
 
-During the training process, we alter the values of mass and damping, and randomly cripple one of legs (leg 0, 1, 2 or 3). In the test setting, we test on previously unseen mass and damping values. More importantly, in the extreme test setting, we also randomly cripple two legs. ***When 3 or 4 legs are available, the Ant Robot (trained with SaCCM) rolls to adapt to varying mass and damping. However, with only 2 adjacent legs during zero-shot generalisation, it switches to walking. If 2 opposite legs are available, the Ant can still roll but eventually tips over.*** The following shows the training and testing videos of SaCCM on different tasks (first 60 seconds, 2x speed):
+During the training process, we alter the values of mass and damping, and randomly cripple one of legs (leg 0, 1, 2 or 3). In the test setting, we test on previously unseen mass and damping values. More importantly, in the extreme test setting, we also randomly cripple two legs. ***When 3 or 4 legs are available, the Ant Robot (trained with SaCCM and SaTESAC) rolls to adapt to varying mass and damping. However, with only 2 adjacent legs during zero-shot generalisation, it switches to walking. If 2 opposite legs are available, the Ant can still roll but eventually tips over.*** The following shows the training and testing videos of SaCCM on different tasks (first 60 seconds, 2x speed):
 
 <p align=center>
 <img src="docs/gif/crippledant/SaCCM_reward_ctrl_0.1_([0], [2], [1.0]).gif" width=200> <img src="docs/gif/crippledant/SaCCM_reward_ctrl_0.1_([2], [0], [1.0]).gif" width=200> <img src="docs/gif/crippledant/SaCCM_reward_ctrl_0.1_([0, 1], [1], [1.0]).gif" width=200> <img src="docs/gif/crippledant/SaCCM_reward_ctrl_0.1_([3, 1], [1], [1.0]).gif" width=200>
@@ -194,6 +195,41 @@ if self._elapsed_steps >= self._max_episode_steps:
     truncated = True
 ```
 
+### 📄 Instructions
+
+Download the code and produce the `output` folder, where all the outputs are going to be stored including train/eval logs.
+
+```bash
+git clone https://github.com/uoe-agents/SaMI.git
+cd SaMI
+mkdir output
+```
+
+You can run the code uing the configuration specified in `parsers.py` with:
+
+```bash
+python main.py
+```
+
+The `configs` folder contains bash scripts for all the algorithms used in the paper on the Panda-gym and Mujoco tasks as examples. You can run a specific configuration using the bash script, for example:
+
+```bash
+sh configs/mujoco_ant_train.sh
+```
+
 ### 📈 Results and Plots From Paper
 
 We adhere to the Policy for Reproducibility & Transparency in Research (anonymous link placeholder). The data for the experiment results in the paper can be found from `data/MuJoCo.xlsx `and `data/Panda-gym.xls`.
+
+### 📎 Citation
+
+```
+@inproceedings{
+yu2024skillaware,
+title={Skill-aware Mutual Information Optimisation for Zero-shot Generalisation in Reinforcement Learning},
+author={Xuehui Yu and Mhairi Dunion and Xin Li and Stefano V Albrecht},
+booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},
+year={2024},
+url={https://openreview.net/forum?id=GtbwJ6mruI}
+}
+```
