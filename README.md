@@ -221,7 +221,7 @@ sh configs/mujoco_ant_train.sh
 
 ### 📈 Results and Plots From Paper
 
-We adhere to the [Policy for Reproducibility & Transparency in Research](https://agents.inf.ed.ac.uk/blog/reproducibility/). The data for the experiment results in the paper can be found from `data/MuJoCo.xlsx `and `data/Panda-gym.xls`.
+We adhere to the [Policy for Reproducibility & Transparency in Research](https://agents-lab.org/blog/reproducibility/). The data for the experiment results in the paper can be found from `data/MuJoCo.xlsx `and `data/Panda-gym.xls`.
 
 ### 📎 Citation
 
