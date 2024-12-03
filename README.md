@@ -10,7 +10,7 @@ Meta-Reinforcement Learning (Meta-RL) agents can struggle to operate across task
 
 **Please see our a SlidesLive demonstration video at 👉 [SaMI SlidesLive]([https://recorder-v3.slideslive.com/?share=96779&s=cffc27e8-d386-41fb-8ab6-fe82a11990e3](https://github.com/user-attachments/assets/caf509e5-f444-4947-b26b-0cfc63686ad3)) or a short version:**
 
-https://github.com/user-attachments/assets/e51ef0d6-4689-41b0-947e-fa4b5e7fb5cb
+https://github.com/user-attachments/assets/caf509e5-f444-4947-b26b-0cfc63686ad3
 
 SaMI can be used alone or combined with other optimisation objectives to train context encoders in Meta-RL algorithms. In this repository, we provide implementations of two baselines: [CCM](https://cdn.aaai.org/ojs/16914/16914-13-20408-1-2-20210518.pdf) and [TESAC](https://arxiv.org/pdf/1910.10897). We have equipped these baselines with SaMI, resulting in SaCCM and SaTESAC.
 
