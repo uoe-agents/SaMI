@@ -154,6 +154,11 @@ pip install gym==0.23.0
 pip install beautifulsoup4 # for results visualization
 ```
 
+You can also creat your conda environment with yml:
+```bash
+conda env create -f torch39.yaml
+```
+
 We need to modify the code of two libraries (i.e., Gymnasium and Stable-Baselines3) in order to run SaMI. Please update them according to the code provided below:
 
 ```python
